@@ -1,11 +1,11 @@
-package main
+package hello
 
 import (
 	"fmt"
 	"rsc.io/quote/v3"
 )
 
-func main() {
+func testHello() {
 	fmt.Println("hello world")
 	fmt.Println(quote.HelloV3())
 }
