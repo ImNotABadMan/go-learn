@@ -1,4 +1,4 @@
 .idea/
-github.com/
-golang.org/
-rsc.io/
+github.com/*
+golang.org/*
+rsc.io/*
