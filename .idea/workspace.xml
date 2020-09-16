@@ -1,0 +1,166 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="BranchesTreeState">
+    <expand />
+    <select />
+  </component>
+  <component name="ChangeListManager">
+    <list default="true" id="e9da9962-a306-49c1-9a46-4bf024666d3b" name="Default Changelist" comment="init1">
+      <change afterPath="$PROJECT_DIR$/api.get/get_t.go" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/hello/hello.go" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/first/first.go" beforeDir="false" afterPath="$PROJECT_DIR$/first/first.go" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/server/server.go" beforeDir="false" afterPath="$PROJECT_DIR$/server/server.go" afterDir="false" />
+    </list>
+    <list id="f05e0f75-3fc6-4787-a062-d8c86506675c" name="git/golang" comment="">
+      <change beforePath="$PROJECT_DIR$/golang.org/x/text/cmd/gotext/examples/extract/locales/de/messages.gotext.json" beforeDir="false" afterPath="$PROJECT_DIR$/golang.org/x/text/cmd/gotext/examples/extract/locales/de/messages.gotext.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/golang.org/x/text/cmd/gotext/examples/extract/locales/de/out.gotext.json" beforeDir="false" afterPath="$PROJECT_DIR$/golang.org/x/text/cmd/gotext/examples/extract/locales/de/out.gotext.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/golang.org/x/text/cmd/gotext/examples/extract/locales/en-US/messages.gotext.json" beforeDir="false" afterPath="$PROJECT_DIR$/golang.org/x/text/cmd/gotext/examples/extract/locales/en-US/messages.gotext.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/golang.org/x/text/cmd/gotext/examples/extract/locales/en-US/out.gotext.json" beforeDir="false" afterPath="$PROJECT_DIR$/golang.org/x/text/cmd/gotext/examples/extract/locales/en-US/out.gotext.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/golang.org/x/text/cmd/gotext/examples/extract/locales/zh/messages.gotext.json" beforeDir="false" afterPath="$PROJECT_DIR$/golang.org/x/text/cmd/gotext/examples/extract/locales/zh/messages.gotext.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/golang.org/x/text/cmd/gotext/examples/extract/locales/zh/out.gotext.json" beforeDir="false" afterPath="$PROJECT_DIR$/golang.org/x/text/cmd/gotext/examples/extract/locales/zh/out.gotext.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/golang.org/x/text/cmd/gotext/examples/extract_http/locales/de/out.gotext.json" beforeDir="false" afterPath="$PROJECT_DIR$/golang.org/x/text/cmd/gotext/examples/extract_http/locales/de/out.gotext.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/golang.org/x/text/cmd/gotext/examples/extract_http/locales/en-US/out.gotext.json" beforeDir="false" afterPath="$PROJECT_DIR$/golang.org/x/text/cmd/gotext/examples/extract_http/locales/en-US/out.gotext.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/golang.org/x/text/cmd/gotext/examples/extract_http/locales/zh/out.gotext.json" beforeDir="false" afterPath="$PROJECT_DIR$/golang.org/x/text/cmd/gotext/examples/extract_http/locales/zh/out.gotext.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/golang.org/x/text/message/pipeline/testdata/test1/locales/de/messages.gotext.json" beforeDir="false" afterPath="$PROJECT_DIR$/golang.org/x/text/message/pipeline/testdata/test1/locales/de/messages.gotext.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/golang.org/x/text/message/pipeline/testdata/test1/locales/de/out.gotext.json.want" beforeDir="false" afterPath="$PROJECT_DIR$/golang.org/x/text/message/pipeline/testdata/test1/locales/de/out.gotext.json.want" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/golang.org/x/text/message/pipeline/testdata/test1/locales/en-US/messages.gotext.json" beforeDir="false" afterPath="$PROJECT_DIR$/golang.org/x/text/message/pipeline/testdata/test1/locales/en-US/messages.gotext.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/golang.org/x/text/message/pipeline/testdata/test1/locales/en-US/out.gotext.json.want" beforeDir="false" afterPath="$PROJECT_DIR$/golang.org/x/text/message/pipeline/testdata/test1/locales/en-US/out.gotext.json.want" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/golang.org/x/text/message/pipeline/testdata/test1/locales/zh/messages.gotext.json" beforeDir="false" afterPath="$PROJECT_DIR$/golang.org/x/text/message/pipeline/testdata/test1/locales/zh/messages.gotext.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/golang.org/x/text/message/pipeline/testdata/test1/locales/zh/out.gotext.json.want" beforeDir="false" afterPath="$PROJECT_DIR$/golang.org/x/text/message/pipeline/testdata/test1/locales/zh/out.gotext.json.want" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/rsc.io/quote/go.mod" beforeDir="false" afterPath="$PROJECT_DIR$/rsc.io/quote/go.mod" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/rsc.io/quote/go.sum" beforeDir="false" afterPath="$PROJECT_DIR$/rsc.io/quote/go.sum" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/rsc.io/quote/quote.go" beforeDir="false" afterPath="$PROJECT_DIR$/rsc.io/quote/quote.go" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/rsc.io/quote/quote_test.go" beforeDir="false" afterPath="$PROJECT_DIR$/rsc.io/quote/quote_test.go" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/rsc.io/quote/v3/quote.go" beforeDir="false" afterPath="$PROJECT_DIR$/rsc.io/quote/v3/quote.go" afterDir="false" />
+    </list>
+    <option name="SHOW_DIALOG" value="false" />
+    <option name="HIGHLIGHT_CONFLICTS" value="true" />
+    <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
+    <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="GOROOT" path="$PROJECT_DIR$/../../../Language/Go" />
+  <component name="Git.Settings">
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
+  </component>
+  <component name="GoLibraries">
+    <option name="indexEntireGoPath" value="false" />
+  </component>
+  <component name="ProjectId" id="1hala5d86eBT8VhWZnOHprtNSED" />
+  <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
+  <component name="ProjectViewState">
+    <option name="hideEmptyMiddlePackages" value="true" />
+    <option name="showLibraryContents" value="true" />
+  </component>
+  <component name="PropertiesComponent">
+    <property name="GO_FMT" value="true" />
+    <property name="RunOnceActivity.OpenProjectViewOnStart" value="true" />
+    <property name="WebServerToolWindowFactoryState" value="false" />
+    <property name="go.import.settings.migrated" value="true" />
+    <property name="go.sdk.automatically.set" value="true" />
+    <property name="go.tried.to.enable.integration.vgo.integrator" value="true" />
+    <property name="go.vendoring.notification.had.been.shown" value="true" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$" />
+  </component>
+  <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
+  <component name="TypeScriptGeneratedFilesManager">
+    <option name="version" value="3" />
+  </component>
+  <component name="Vcs.Log.Tabs.Properties">
+    <option name="TAB_STATES">
+      <map>
+        <entry key="1">
+          <value>
+            <State>
+              <option name="SHOW_ONLY_AFFECTED_CHANGES" value="true" />
+              <option name="FILTERS">
+                <map>
+                  <entry key="roots">
+                    <value>
+                      <list>
+                        <option value="$PROJECT_DIR$" />
+                      </list>
+                    </value>
+                  </entry>
+                </map>
+              </option>
+            </State>
+          </value>
+        </entry>
+        <entry key="MAIN">
+          <value>
+            <State>
+              <option name="FILTERS">
+                <map>
+                  <entry key="branch">
+                    <value>
+                      <list>
+                        <option value="origin/master" />
+                      </list>
+                    </value>
+                  </entry>
+                </map>
+              </option>
+            </State>
+          </value>
+        </entry>
+      </map>
+    </option>
+    <option name="RECENT_FILTERS">
+      <map>
+        <entry key="Branch">
+          <value>
+            <list>
+              <RecentGroup>
+                <option name="FILTER_VALUES">
+                  <option value="origin/master" />
+                </option>
+              </RecentGroup>
+            </list>
+          </value>
+        </entry>
+      </map>
+    </option>
+  </component>
+  <component name="VcsManagerConfiguration">
+    <MESSAGE value="init1" />
+    <option name="LAST_COMMIT_MESSAGE" value="init1" />
+  </component>
+  <component name="WindowStateProjectService">
+    <state x="223" y="67" key="#com.intellij.execution.impl.EditConfigurationsDialog" timestamp="1600257162986">
+      <screen x="0" y="0" width="1536" height="824" />
+    </state>
+    <state x="223" y="67" key="#com.intellij.execution.impl.EditConfigurationsDialog/0.0.1536.824@0.0.1536.824" timestamp="1600257162986" />
+    <state x="549" y="153" key="FileChooserDialogImpl" timestamp="1600257409453">
+      <screen x="0" y="0" width="1536" height="824" />
+    </state>
+    <state x="549" y="153" key="FileChooserDialogImpl/0.0.1536.824@0.0.1536.824" timestamp="1600257409453" />
+    <state x="614" y="327" key="VCS.ChangelistChooser" timestamp="1600257296144">
+      <screen x="0" y="0" width="1536" height="824" />
+    </state>
+    <state x="614" y="327" key="VCS.ChangelistChooser/0.0.1536.824@0.0.1536.824" timestamp="1600257296144" />
+    <state x="599" y="281" key="VCS.EditChangelistDialog" timestamp="1600257291486">
+      <screen x="0" y="0" width="1536" height="824" />
+    </state>
+    <state x="599" y="281" key="VCS.EditChangelistDialog/0.0.1536.824@0.0.1536.824" timestamp="1600257291486" />
+    <state x="361" y="145" key="Vcs.Push.Dialog.v2" timestamp="1600258162040">
+      <screen x="0" y="0" width="1536" height="824" />
+    </state>
+    <state x="361" y="145" key="Vcs.Push.Dialog.v2/0.0.1536.824@0.0.1536.824" timestamp="1600258162040" />
+    <state x="573" y="325" key="com.intellij.openapi.vcs.update.UpdateOrStatusOptionsDialogupdate-v2" timestamp="1600257881339">
+      <screen x="0" y="0" width="1536" height="824" />
+    </state>
+    <state x="573" y="325" key="com.intellij.openapi.vcs.update.UpdateOrStatusOptionsDialogupdate-v2/0.0.1536.824@0.0.1536.824" timestamp="1600257881339" />
+    <state x="456" y="265" key="git4idea.remote.GitConfigureRemotesDialog" timestamp="1600257434031">
+      <screen x="0" y="0" width="1536" height="824" />
+    </state>
+    <state x="456" y="265" key="git4idea.remote.GitConfigureRemotesDialog/0.0.1536.824@0.0.1536.824" timestamp="1600257434031" />
+    <state x="510" y="306" key="git4idea.ui.GitResetDialog" timestamp="1600258286403">
+      <screen x="0" y="0" width="1536" height="824" />
+    </state>
+    <state x="510" y="306" key="git4idea.ui.GitResetDialog/0.0.1536.824@0.0.1536.824" timestamp="1600258286403" />
+    <state x="510" y="310" key="git4idea.ui.GitStashDialog" timestamp="1600258044272">
+      <screen x="0" y="0" width="1536" height="824" />
+    </state>
+    <state x="510" y="310" key="git4idea.ui.GitStashDialog/0.0.1536.824@0.0.1536.824" timestamp="1600258044272" />
+  </component>
+</project>
