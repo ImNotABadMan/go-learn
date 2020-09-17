@@ -1,2 +1,8 @@
+/.idea/
+/.idea/*
 /github.com/
+/github.com/*
 /golang.org/
+/golang.org/*
+/rsc.io/
+/rsc.io/*

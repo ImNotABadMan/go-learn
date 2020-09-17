@@ -3,13 +3,16 @@ package main
 import (
 	"fmt"
 	"hello"
-	"log"
 	"math"
 	"os"
 	"runtime"
 	"strings"
 	"time"
 )
+import "first-moudle"
+import "log"
+
+var testInt int32
 
 const c1 = 0.111111111111111111111111
 
@@ -42,6 +45,69 @@ var calTime = func() func() {
 
 // test
 func main() {
+
+	testInt = 10
+	inTest := 20
+	fmt.Println("test" + string(testInt))
+	fmt.Println(inTest)
+	var message = first_moudle.Say("my test")
+	fmt.Println(message)
+
+	// 设置Log
+
+	log.SetPrefix("first_moudle: ")
+	log.SetFlags(0)
+
+	_, err := first_moudle.SetError("")
+	if err != nil {
+		//log.Fatal(err)
+	}
+
+	fmt.Println(first_moudle.SetError("test error not empty"))
+
+	for i := 0; i < 10; i++ {
+		fmt.Println(i)
+	}
+
+	// 切片
+	slice := []int32{1, 2, 3}
+	// 数组
+	for index, value := range slice {
+		fmt.Printf("%d:%d\t", index, value)
+	}
+
+	fmt.Println()
+	// 数组
+	arr := [...]int32{1, 2, 3, 4}
+
+	// 数组
+	for index, value := range arr {
+		fmt.Printf("%d:%d\t", index, value)
+	}
+
+	stu := first_moudle.StuSrtuct{
+		Id:   0,
+		Name: "Test",
+	}
+
+	stu.Id = 10
+
+	fmt.Println(stu)
+
+	first_moudle.StructShow()
+
+	first_moudle.ArrShow()
+
+	first_moudle.Gs = "st"
+
+	fmt.Println(first_moudle.Gs)
+
+	first_moudle.GetSlice()
+
+	_, _ = first_moudle.SetSlice([]string{"1", "2", "3", "4"})
+
+	first_moudle.GetSlice()
+
 	var str string
 	if len(os.Args) > 1 {
 		str = os.Args[1]
@@ -66,8 +132,8 @@ func main() {
 	fmt.Println(x1, x2)
 
 	// 参数变长函数
-	slice := []int{1, 2, 3}
-	test1(slice...)
+	slice1 := []int{1, 2, 3}
+	test1(slice1...)
 
 	ccbqd(1, "s", 23, 0.011)
 
