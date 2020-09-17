@@ -9,66 +9,31 @@ import (
 func main() {
 	//a1 := 2 * 21 / 43
 	var (
-		nameStr        string
-		str            string
-		extraStr       string
-		yh             string
-		zj             float64
-		zyh            float64
-		zExtra         float64
-		zjAll          float64   // 总原有订单价格
-		zjYhAll        float64   // 最终订单价格(优惠)
-		everyPayArr    []float64 // 最终每个人需要
-		everyPayStrArr []string  //  最终每个人需要
-		jiaoyan        float64   // 校验总和
+		nameStr  string
+		str      string
+		extraStr string
+		yh       string
+		zj       float64
+		zyh      float64
+		zExtra   float64
+		zjAll    float64 // 总原有订单价格
+		zjYhAll  float64 // 最终订单价格(优惠)
 	)
-	fmt.Println("输入名字顺序, -分开：")
-	fmt.Scanln(&nameStr)
 
-	fmt.Println("输入每个人金额,-分开")
-	fmt.Scanln(&str)
-
-	fmt.Println("输入额外金额, -分开")
-	fmt.Scanln(&extraStr)
-
-	fmt.Println("输入优惠, -分开")
-	fmt.Scanln(&yh)
-
-	strArr := strings.Split(str, "-")
-	yhArr := strings.Split(yh, "-")
-	extraArr := strings.Split(extraStr, "-")
-	nameStrArr := strings.Split(nameStr, "-")
-
-	// 名字切片
-	nameStrSlice := make([]string, len(nameStrArr))
-	for index, value := range nameStrArr {
-		nameStrSlice[index] = value
-	}
+	nameStrSlice := getStdStrSlice("输入名字顺序, -分开：", &nameStr, "-")
+	strArr := getStdStrSlice("输入每个人金额,-分开", &str, "-")
+	extraArr := getStdStrSlice("输入额外金额, -分开", &extraStr, "-")
+	yhArr := getStdStrSlice("输入额外金额, -分开", &yh, "-")
 
 	// 费用切片
-	var zjFlArr []float64
-	for _, value := range strArr {
-		fl, _ := strconv.ParseFloat(value, 64)
-		zjFlArr = append(zjFlArr, fl)
-		zj += fl
-	}
+	zjFlArr, zj := stringSliceToFloatSlice(strArr)
 
 	// 额外费用切片
-	var extraFlArr []float64
-	for _, value := range extraArr {
-		fl, _ := strconv.ParseFloat(value, 64)
-		extraFlArr = append(extraFlArr, fl)
-		zExtra += fl
-	}
+	_, zExtra = stringSliceToFloatSlice(extraArr)
 
 	// 优惠切片
-	var yhFlArr []float64
-	for _, value := range yhArr {
-		// string 转成float
-		yhFl, _ := strconv.ParseFloat(value, 64)
-		yhFlArr = append(yhFlArr, yhFl)
-		zyh += yhFl
-	}
+	_, zyh = stringSliceToFloatSlice(yhArr)
+
 	// 总原有订单价格
 	zjAll = zj + zExtra
 	// 最终订单价格
@@ -99,6 +64,42 @@ func main() {
 	fmt.Println("最终优惠订单金额: " + fmt.Sprintf("%.2f", zjYhAll))
 
 	// 第一种算法，最终优惠价格/原总金额 * 每个人原来价格
+	sf1(zjFlArr, zjYhAll, zj, nameStrSlice)
+
+	// 第二种算法，每个人原来的价格 - 订单最终优惠价格/订单原总金额
+	sf2(zjFlArr, zyh, zExtra, zj, nameStrSlice)
+
+	fmt.Scanln()
+
+}
+
+func getStdStrSlice(tip string, str *string, sep string) []string {
+	fmt.Println(tip)
+	fmt.Scanln(str)
+
+	if sep == "" {
+		sep = "-"
+	}
+
+	return strings.Split(*str, sep)
+}
+
+func stringSliceToFloatSlice(strArr []string) (flSlice []float64, sum float64) {
+	for _, value := range strArr {
+		fl, _ := strconv.ParseFloat(value, 64)
+		flSlice = append(flSlice, fl)
+		sum += fl
+	}
+
+	return flSlice, sum
+}
+
+func sf1(zjFlArr []float64, zjYhAll float64, zj float64, nameStrSlice []string) {
+	var (
+		everyPayArr    []float64 // 最终每个人需要
+		everyPayStrArr []string  //  最终每个人需要
+		jiaoyan        float64   // 校验总和
+	)
 	fmt.Println("第一种算法，订单最终优惠价格/订单原总金额(不包含额外费用) * 每个人原来价格：")
 	for index, value := range zjFlArr {
 		//每个人分担包装费用
@@ -119,18 +120,20 @@ func main() {
 			fmt.Sprintf("%.2f", bzfFl), " = ", fmt.Sprintf("%.2f", tmpFinally))
 	}
 
-	jiaoyan = 0
 	for _, value := range everyPayArr {
 		jiaoyan += value
 	}
 
 	fmt.Println("\t检验总和: " + strings.Join(everyPayStrArr, " + ") + " = " +
 		fmt.Sprintf("%.2f", jiaoyan))
+}
 
-	everyPayArr = []float64{}
-	everyPayStrArr = []string{}
-
-	// 第二种算法，每个人原来的价格 - 订单最终优惠价格/订单原总金额
+func sf2(zjFlArr []float64, zyh float64, zExtra float64, zj float64, nameStrSlice []string) {
+	var (
+		everyPayArr    []float64 // 最终每个人需要
+		everyPayStrArr []string  //  最终每个人需要
+		jiaoyan        float64   // 校验总和
+	)
 	fmt.Println("第二种算法，每个人原来的价格 - 每个人原来的价格/订单原总金额(不包含额外费用) * 优惠总额 " +
 		"+ 分担额外费用: ")
 	for index, value := range zjFlArr {
@@ -153,14 +156,10 @@ func main() {
 			fmt.Sprintf("%.2f", bzfFl), " = ", fmt.Sprintf("%.2f", tmpFinally))
 	}
 
-	jiaoyan = 0
 	for _, value := range everyPayArr {
 		jiaoyan += value
 	}
 
 	fmt.Println("\t检验总和: " + strings.Join(everyPayStrArr, " + ") + " = " +
 		fmt.Sprintf("%.2f", jiaoyan))
-
-	fmt.Scanln()
-
 }
