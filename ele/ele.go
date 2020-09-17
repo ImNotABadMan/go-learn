@@ -7,7 +7,6 @@ import (
 )
 
 func main() {
-	//a1 := 2 * 21 / 43
 	var (
 		nameStr  string
 		str      string
@@ -27,10 +26,8 @@ func main() {
 
 	// 费用切片
 	zjFlArr, zj := stringSliceToFloatSlice(strArr)
-
 	// 额外费用切片
 	_, zExtra = stringSliceToFloatSlice(extraArr)
-
 	// 优惠切片
 	_, zyh = stringSliceToFloatSlice(yhArr)
 
@@ -69,13 +66,19 @@ func main() {
 	// 第二种算法，每个人原来的价格 - 订单最终优惠价格/订单原总金额
 	sf2(zjFlArr, zyh, zExtra, zj, nameStrSlice)
 
-	fmt.Scanln()
+	_, err := fmt.Scanln()
+	if err != nil {
+		panic(err)
+	}
 
 }
 
 func getStdStrSlice(tip string, str *string, sep string) []string {
 	fmt.Println(tip)
-	fmt.Scanln(str)
+	_, err := fmt.Scanln(str)
+	if err != nil {
+		panic(err)
+	}
 
 	if sep == "" {
 		sep = "-"
