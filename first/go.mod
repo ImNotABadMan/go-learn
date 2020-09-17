@@ -10,3 +10,11 @@ replace first-moudle => ../first-moudle
 
 // 依赖 包 版本
 require first-moudle v1.0.0
+
+require (
+	hello v1.0.0
+)
+
+replace (
+	hello => ../hello
+)

@@ -171,6 +171,8 @@ func main() {
 
 	testArr()
 
+	testSlice()
+
 }
 
 // 函数
@@ -299,5 +301,55 @@ func testArr() {
 	//	strArr[0] = "test0"
 	//	fmt.Println(strArr);
 	//}(arr5)
+
+}
+
+// 切片
+func testSlice() {
+	fmt.Println("切片：")
+	sliceArr := []int{}
+	fmt.Println(cap(sliceArr))
+	// 会报错, 长度超出需要用append
+	//sliceArr[0] = 100
+	sliceArr = append(sliceArr, 1, 2, 3, 4)
+
+	fmt.Println(cap(sliceArr))
+
+	slice1 := make([]string, 10)
+	fmt.Println(cap(slice1))
+
+	slice1 = []string{"1s", "2s", "4s", "5s", "6s"}[0:3]
+	fmt.Println(slice1)
+	fmt.Println(cap(slice1))
+
+	var arr = [4]int{}
+
+	slice2 := arr[0:2]
+	slice3 := arr[0:2]
+	slice4 := slice2[0:4]
+
+	fmt.Println("slice2 : ")
+	fmt.Println(arr)
+	fmt.Println(slice2)
+	fmt.Println(len(slice2))
+	fmt.Println(cap(slice2))
+
+	fmt.Println("slice3 : ")
+
+	slice2[0] = 4
+	fmt.Println(slice2)
+	fmt.Println(slice3)
+
+	arr[0] = 5
+	fmt.Println(slice2)
+	fmt.Println(slice3)
+
+	fmt.Println("Slice4: ")
+
+	fmt.Println(slice4)
+
+	slice6 := []int{1, 2, 3, 4}
+	fmt.Println(slice6)
+	fmt.Println(cap(slice6))
 
 }
