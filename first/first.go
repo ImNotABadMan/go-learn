@@ -103,6 +103,8 @@ func main() {
 	where()
 	calTimeFunc()
 
+	testArr()
+
 }
 
 // 函数
@@ -203,4 +205,33 @@ func factory() func() inStruct {
 		}
 		return fac
 	}
+}
+
+// 数组是值类型
+
+func testArr() {
+	arr := [...]int{1, 2, 3, 4}
+	fmt.Println("arr : ", arr)
+	arr1 := arr
+	arr1[0] = 2
+
+	fmt.Println("arr : ", arr)
+	fmt.Println("arr1: ", arr1)
+
+	arr2 := &arr
+	arr2[0] = 2
+
+	fmt.Println("arr : ", arr)
+	fmt.Println("arr2: ", arr2)
+
+	// 复制index:value
+	arr5 := [...]string{1: "test1", 4: "test4"}
+	fmt.Println(arr5)
+
+	// 要对应数据长度
+	//func (strArr [...]string) {
+	//	strArr[0] = "test0"
+	//	fmt.Println(strArr);
+	//}(arr5)
+
 }
