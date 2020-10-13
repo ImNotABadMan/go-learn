@@ -17,7 +17,8 @@ func getLaravel(w http.ResponseWriter, req *http.Request) {
 
 func main() {
 	http.HandleFunc("/", getLaravel)
-	err := http.ListenAndServe(":8080", nil)
+	err := http.ListenAndServe(":8222", nil)
+	fmt.Println("Listen 8222 ready...")
 	if err != nil {
 		panic(err)
 	}

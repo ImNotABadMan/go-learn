@@ -173,6 +173,8 @@ func main() {
 
 	testSlice()
 
+	testNew()
+
 }
 
 // 函数
@@ -348,8 +350,22 @@ func testSlice() {
 
 	fmt.Println(slice4)
 
+	fmt.Println("Slice6: ")
 	slice6 := []int{1, 2, 3, 4}
 	fmt.Println(slice6)
 	fmt.Println(cap(slice6))
 
+	slice6 = append(slice6, 5)
+	fmt.Println(slice6)
+	fmt.Println(cap(slice6))
+
+}
+
+func testNew() {
+	test := new(int)
+	fmt.Println(test)
+
+	slice1 := new([]int)
+	*slice1 = append(*slice1, 1)
+	fmt.Println(slice1, *slice1)
 }
