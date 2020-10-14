@@ -370,3 +370,12 @@ func testNew() {
 	*slice1 = append(*slice1, 1)
 	fmt.Println(slice1, *slice1)
 }
+ 
+
+
+
+
+ 
+
+        
+
