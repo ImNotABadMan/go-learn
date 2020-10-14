@@ -264,6 +264,7 @@ func testBiBao() func(int) int {
 }
 
 // 工厂模式
+// 单例
 func factory() func() inStruct {
 	var fac inStruct
 	return func() inStruct {
