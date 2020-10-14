@@ -36,6 +36,14 @@ func logger(log chan string) {
 }
 
 func handler(client net.Conn, log chan string) {
-	log <- client.RemoteAddr().String() + "connect,log log"
+	log <- client.RemoteAddr().String() + " connect,log log"
 	fmt.Println(client.RemoteAddr().String(), " connect to server")
+
+	_, err := client.Write([]byte(client.RemoteAddr().String() + " connect,log log"))
+
+	client.Close()
+
+	if err != nil {
+		panic(err)
+	}
 }

@@ -22,7 +22,7 @@ func main() {
 	nameStrSlice := getStdStrSlice("输入名字顺序, -分开：", &nameStr, "-")
 	strArr := getStdStrSlice("输入每个人金额,-分开", &str, "-")
 	extraArr := getStdStrSlice("输入额外金额, -分开", &extraStr, "-")
-	yhArr := getStdStrSlice("输入额外金额, -分开", &yh, "-")
+	yhArr := getStdStrSlice("输入优惠金额, -分开", &yh, "-")
 
 	// 费用切片
 	zjFlArr, zj := stringSliceToFloatSlice(strArr)
@@ -117,7 +117,7 @@ func sf1(zjFlArr []float64, zjYhAll float64, zj float64, nameStrSlice []string) 
 
 		fmt.Println("\t", nameStrSlice[index])
 		fmt.Println("\t    分担额外费用：", fmt.Sprintf("%.2f", bzfFl))
-		fmt.Println("\t    使用优惠费用：", value, " * ", zjYhAll, " / ", zj,
+		fmt.Println("\t    用优惠后费用：", value, " * ", zjYhAll, " / ", zj,
 			" = ", fmt.Sprintf("%.2f", tmp))
 		fmt.Println("\t    最终需要费用：", fmt.Sprintf("%.2f", tmp), " + ",
 			fmt.Sprintf("%.2f", bzfFl), " = ", fmt.Sprintf("%.2f", tmpFinally))
@@ -142,7 +142,9 @@ func sf2(zjFlArr []float64, zyh float64, zExtra float64, zj float64, nameStrSlic
 	for index, value := range zjFlArr {
 		// 每个人分担包装费用
 		bzfFl := value / zj * zExtra
-		// 每个人优惠费用
+		// 每个人的优惠金额
+		perYh := value / zj * zyh
+		// 每个人优惠后费用
 		tmp := value - value/zj*zyh
 		// 最终费用
 		tmpFinally := tmp + bzfFl
@@ -152,7 +154,10 @@ func sf2(zjFlArr []float64, zyh float64, zExtra float64, zj float64, nameStrSlic
 		fmt.Println("\t    分担额外费用：", value, "/", zj, "*", zExtra,
 			" = ", fmt.Sprintf("%.2f", bzfFl))
 
-		fmt.Println("\t    使用优惠费用：", value, " - ", value, " / ", zj, " * ", zyh,
+		fmt.Println("\t    使用优惠金额：", value, " / ", zj, " * ", zyh,
+			" = ", fmt.Sprintf("%.2f", perYh))
+
+		fmt.Println("\t    用优惠后费用：", value, " - ", perYh,
 			" = ", fmt.Sprintf("%.2f", tmp))
 
 		fmt.Println("\t    最终需要费用：", fmt.Sprintf("%.2f", tmp), " + ",
