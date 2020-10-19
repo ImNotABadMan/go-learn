@@ -1,11 +1,21 @@
 package main
 
-import "fmt"
+import (
+	"datatypes/struct_demo/jicheng"
+	"datatypes/struct_demo/struct_method"
+	"fmt"
+)
 
-func main()  {
+func main() {
+	firstStruct()
+	testMethod()
+	testJiCheng()
+}
+
+func firstStruct() {
 	// 定义结构体
 	type demo struct {
-		id int64
+		id   int64
 		name string
 	}
 
@@ -34,4 +44,19 @@ func main()  {
 		name: "test",
 	}
 	fmt.Println(test4)
+
+}
+
+func testMethod() {
+	fmt.Println("Test Method:")
+
+	zhiZhenStruct := new(struct_method.TestStructMethod)
+
+	fmt.Println(zhiZhenStruct.NewTest())
+}
+
+func testJiCheng() {
+	fmt.Println("继承：")
+	jc := jicheng.JiCheng{}
+	jc.Add("testJiCheng 's name")
 }
