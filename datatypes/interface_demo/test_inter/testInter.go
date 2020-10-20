@@ -2,7 +2,7 @@ package test_inter
 
 import "fmt"
 
-type baseInter interface {
+type BaseInter interface {
 	Show() string
 }
 
@@ -11,6 +11,16 @@ type BaseStruct struct {
 }
 
 func (base *BaseStruct) Show() string {
-	fmt.Println("test base interface")
+	if base == nil {
+		return "<nil>"
+	}
+	fmt.Println("test base interface", base.name)
 	return "test"
+}
+
+type MyInt int
+
+func (this MyInt) Show() string {
+	fmt.Println("test MyInt Interface", this)
+	return "int test"
 }
