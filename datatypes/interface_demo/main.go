@@ -9,6 +9,10 @@ func main() {
 	testInterface()
 	testNil()
 	testAnyInterface()
+	testType(2)
+	testType("str")
+	testString()
+	testTag()
 }
 
 func testInterface() {
@@ -54,4 +58,29 @@ func testAnyInterface() {
 	base := test_inter.BaseStruct{}
 
 	fmt.Println(base.Show())
+}
+
+func testType(inVar interface{}) {
+	switch t := inVar.(type) {
+	case string:
+		fmt.Println("is string", t)
+	case int:
+		fmt.Println("is int", t)
+	default:
+		fmt.Println("unknown")
+	}
+}
+
+func testString() {
+	strStru := test_inter.MyString{}
+	fmt.Println("接收者：指向struct类型的指针实现了接口，并未在值类型的struct实现接口")
+	fmt.Println(&strStru, strStru)
+}
+
+func testTag() {
+	stu := new(test_inter.MyString)
+	stu.SetName("main test tag name")
+	fmt.Println("测试tag")
+	stu.ShowTag()
+	fmt.Println(stu)
 }
