@@ -21,7 +21,8 @@ func testJisuan() {
 	ch <- "6"
 
 	// 协程的队列顺序是先进后出
-	fmt.Println("协程的队列顺序是先进后出")
+	fmt.Println("协程的队列顺序是系统调度")
+	fmt.Println("消息的顺序是先进先出")
 	go jisuan.Jisuan1(ch)
 
 	go jisuan.Jisuan2(ch)
