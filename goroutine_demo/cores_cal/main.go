@@ -12,7 +12,7 @@ func main() {
 	fmt.Println("利用go协程进行核和运算")
 
 	params := flag.Int("slice-len", 100, "切片的长度")
-	part := flag.Int("parts", 5, "切片的分片数")
+	//part := flag.Int("parts", 5, "切片的分片数")
 	cores := flag.Int("cores", 2, "计算核心数")
 	flag.Parse()
 
@@ -33,7 +33,7 @@ func main() {
 
 	var start = time.Now()
 
-	go goCal(*part, sliceGo, resCh)
+	//go goCal(*part, sliceGo, resCh)
 	go syncCal(sliceSync, resCh)
 
 	for {
