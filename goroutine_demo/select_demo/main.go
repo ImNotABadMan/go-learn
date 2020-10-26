@@ -19,5 +19,4 @@ func main() {
 	selectFunc(strCh, quit)
 	strCh <- "test"
 	selectFunc(strCh, quit)
-
 }
