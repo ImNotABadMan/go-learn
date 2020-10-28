@@ -7,7 +7,7 @@ type Request struct {
 }
 
 type Fetcher interface {
-	Fetch()
+	Fetch(url string)
 }
 
 func (request *Request) Add(subRequest *Request) {
@@ -15,5 +15,9 @@ func (request *Request) Add(subRequest *Request) {
 }
 
 func fetch() {
+
+}
+
+func Crawl(request Request, depth int) {
 
 }
