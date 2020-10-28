@@ -19,5 +19,5 @@ func fetch() {
 }
 
 func Crawl(request Request, depth int) {
-
+	// 调用fetch抓取网链接
 }
