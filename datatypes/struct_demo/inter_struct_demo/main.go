@@ -25,4 +25,10 @@ func main() {
 	// 接口方法是结构体实现方法的带指针的接收者 就要把结构体的指针赋值给接口类型，接口才能正确执行方法
 	errorC = *myErr
 	fmt.Println(errorC)
+
+	testPanic(errorC)
+}
+
+func testPanic(err error)  {
+	panic(err)
 }
