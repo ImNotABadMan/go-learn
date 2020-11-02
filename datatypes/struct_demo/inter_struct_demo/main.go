@@ -29,6 +29,6 @@ func main() {
 	testPanic(errorC)
 }
 
-func testPanic(err error)  {
+func testPanic(err error) {
 	panic(err)
 }

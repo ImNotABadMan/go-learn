@@ -73,13 +73,12 @@ func SetSlice(sliceStr []string) ([]string, error) {
 
 	sliceArr = append(sliceStr, "add 1")
 
-
 	return sliceArr, nil
 }
 
 func GetSlice() {
 
-	for _,v := range sliceArr {
+	for _, v := range sliceArr {
 		fmt.Println("Slice ", v)
 	}
 

@@ -5,7 +5,7 @@ import (
 	"fmt"
 )
 
-func main()  {
+func main() {
 	fmt.Println("start main")
 
 	// 放在panic前面，defer才会压入代码栈中，go 才会生成deter先进后出的队列执行
@@ -24,7 +24,7 @@ func main()  {
 	fmt.Println("end main")
 }
 
-func testPanic()  {
+func testPanic() {
 
 	err := errors.New("custom error to panic")
 
