@@ -31,10 +31,12 @@ func testChange() {
 
 func change(str *string, newStr string, lock *sync.Mutex, f func(string2 string)) {
 	lock.Lock()
+	defer lock.Unlock()
+	// 再加锁，死锁
+	//lock.Lock()
 	*str = newStr
 	fmt.Println("change:", *str)
 	f(*str)
-	lock.Unlock()
 }
 
 //
