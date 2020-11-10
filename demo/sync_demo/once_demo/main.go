@@ -12,7 +12,7 @@ func main() {
 	waitGroup := sync.WaitGroup{}
 	waitGroup.Add(10)
 
-	countCh := make(chan int, 10)
+	countCh := make(chan int)
 	lock := sync.Mutex{}
 
 	for count, index := 1, 0; index < 1000; index++ {
@@ -30,10 +30,20 @@ func main() {
 				})
 			}
 		}(index)
-	}
-	waitGroup.Wait()
 
-	for index := 0; index < 10; index++ {
-		fmt.Println("Gift", <-countCh)
 	}
+
+	go func() {
+		// 有协程进行接收通道，通道可以不需要缓存，没有协程可以立刻接收通道的，通道需要缓冲区，防止阻塞
+		for index := 0; index < 10; index++ {
+			fmt.Println("Gift", <-countCh)
+		}
+	}()
+
+	waitGroup.Wait()
+	// 这里通道需要缓冲区
+	//countCh := make(chan int, 10)
+	//for index := 0; index < 10; index++ {
+	//	fmt.Println("Gift", <- countCh)
+	//}
 }

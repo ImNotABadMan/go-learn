@@ -79,7 +79,7 @@ func testString() {
 
 func testTag() {
 	stu := new(test_inter.MyString)
-	stu.SetName("main test tag name")
+	stu.SetName("io_demo test tag name")
 	fmt.Println("测试tag")
 	stu.ShowTag()
 	fmt.Println(stu)

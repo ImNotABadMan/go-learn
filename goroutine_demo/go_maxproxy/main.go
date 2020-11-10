@@ -35,7 +35,7 @@ func ShortWait() {
 }
 
 func mainWait() {
-	fmt.Println("main wait start")
+	fmt.Println("io_demo wait start")
 	time.Sleep(time.Second * 4)
-	fmt.Println("main wait end")
+	fmt.Println("io_demo wait end")
 }

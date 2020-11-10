@@ -35,8 +35,8 @@ func Jisuan2(ch chan string) string {
 //goroutine 7 [running]:
 //goroutine_demo/channel_demo/jisuan.Jisuan2(0xc00004e180, 0x1, 0x1)
 ///home/ubuntu/go/code/src/goroutine_demo/channel_demo/jisuan/jisuan.go:25 +0xb4
-//created by main.testJisuan
-///home/ubuntu/go/code/src/goroutine_demo/channel_demo/main.go:27 +0x173
+//created by io_demo.testJisuan
+///home/ubuntu/go/code/src/goroutine_demo/channel_demo/io_demo.go:27 +0x173
 //exit status 2
 //
 //// 2. Jisuan1执行了一半，还未执行close，Jisuan2发送到信道成功

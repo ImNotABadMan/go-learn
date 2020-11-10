@@ -6,7 +6,7 @@ import (
 )
 
 func main() {
-	fmt.Println("start main")
+	fmt.Println("start io_demo")
 
 	// 放在panic前面，defer才会压入代码栈中，go 才会生成deter先进后出的队列执行
 	defer func() {
@@ -21,7 +21,7 @@ func main() {
 
 	testPanic()
 
-	fmt.Println("end main")
+	fmt.Println("end io_demo")
 }
 
 func testPanic() {
