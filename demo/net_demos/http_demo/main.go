@@ -17,7 +17,7 @@ func (handler *ServerHandler) ServeHTTP(writer http.ResponseWriter, request *htt
 }
 
 func main() {
-	content, _ := http.Get("http://192.168.10.113")
+	content, _ := http.Get("http://127.0.0.1")
 	buf := bytes.Buffer{}
 
 	bodyLen, _ := buf.ReadFrom(content.Body)
@@ -26,7 +26,7 @@ func main() {
 	fmt.Println(len(buf.String()))
 	fmt.Println(content.Header)
 
-	listen, errListen := net.Listen("tcp", "192.168.10.113:9000")
+	listen, errListen := net.Listen("tcp", ":9012")
 	if errListen != nil {
 		fmt.Println(errListen)
 	}
