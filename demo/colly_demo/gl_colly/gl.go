@@ -7,7 +7,8 @@ import (
 	"net/http"
 )
 
-var endPoint = "http://vm.globaloutlet-backend.com:8011"
+//var endPoint = "http://vm.globaloutlet-backend.com:8011"
+var endPoint = "http://v2.globaloutlet-backend.com:8011"
 
 var token string
 
