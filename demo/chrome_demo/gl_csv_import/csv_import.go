@@ -59,7 +59,9 @@ func OpenChrome() {
 		chromedp.WaitVisible(`#email`, chromedp.ByID),
 		chromedp.WaitVisible(`#password`, chromedp.ByID),
 		chromedp.SendKeys("#email", "binz", chromedp.ByID),
+		chromedp.Sleep(time.Millisecond * 600),
 		chromedp.SendKeys("#password", "binz123", chromedp.ByID),
+		chromedp.Sleep(time.Millisecond * 600),
 		chromedp.Value("#email", &email, chromedp.ByID),
 		chromedp.Value("#password", &password, chromedp.ByID),
 		chromedp.WaitVisible("#login-form .btn"),
@@ -86,6 +88,8 @@ func OpenChrome() {
 		chromedp.ActionFunc(logAction(">>>>>>>>>>>>>>>>>>>> 新增产品 IS VISIBLE")),
 		chromedp.Click("//*[@id=\"actionChoose\"]/div[1]"),
 		chromedp.ActionFunc(logAction(">>>>>>>>>>>>>>>>>>>> 新增产品 IS Click")),
+		chromedp.Sleep(time.Millisecond * 600),
+
 		chromedp.WaitVisible("//*[@id=\"import\"]/div[1]"),
 		chromedp.ActionFunc(logAction(">>>>>>>>>>>>>>>>>>>> 点击Gl IS VISIBLE")),
 		chromedp.Click("//*[@id=\"import\"]/div[1]"),
@@ -101,11 +105,13 @@ func OpenChrome() {
 		chromedp.ActionFunc(logAction(">>>>>>>>>>>>>>>>>>>> gl file IS VISIBLE")),
 		chromedp.SendKeys("//*[@id=\"csv\"]", csvPath),
 		chromedp.ActionFunc(logAction(">>>>>>>>>>>>>>>>>>>> gl file IS Ready")),
+		chromedp.Sleep(time.Millisecond * 600),
 
 		chromedp.WaitVisible("//*[@id=\"currency\"]"),
 		chromedp.ActionFunc(logAction(">>>>>>>>>>>>>>>>>>>> gl currency IS VISIBLE")),
 		chromedp.SendKeys("//*[@id=\"currency\"]", kb.ArrowDown),
 		chromedp.ActionFunc(logAction(">>>>>>>>>>>>>>>>>>>> gl currency IS Ready")),
+		chromedp.Sleep(time.Millisecond * 600),
 
 		chromedp.WaitVisible("//*[@id=\"uploadForm\"]/div[3]/input"),
 		chromedp.ActionFunc(logAction(">>>>>>>>>>>>>>>>>>>> Button Validation IS VISIBLE")),
