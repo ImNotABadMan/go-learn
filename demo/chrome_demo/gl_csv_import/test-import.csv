@@ -1,0 +1,367 @@
+*product_code,*product_code_type,*name,*categoryID,*cost,*Price,in_stock,handling,brand,noParcel,MPN,UPC,vintage,isbn,sort_order,shipping_freight,list_price,brief_description,desc_title_0,desc_body_0,desc_domain_0,desc_title_1,desc_body_1,desc_domain_1,desc_title_2,desc_body_2,desc_domain_2,desc_title_3,desc_body_3,desc_domain_3,*scClassID,*maxiInParcel,drop_shipping_rate,item_location,vparcel,cgroup,supplier,supplier_name,supplier_type,consignment,*weight,ex_title,short_name,meta_description,meta_keywords,tags,purchase_agent,listing_agent,review_agent,lead_time,google_code,img_url_0,img_url_1,img_url_2,C4,C5,C6,default_clean_photo_url,is_dropshipping,length,width,height,part_products,*warehouseID,cost_rmb,img_from
+test-2020-12-10_10-1,2,Maxkon WTEst,2,149.33,299.95,0,0.87,,1,,,,,0,0,0,,Product,"""<p>With this WIFI weather station, you can get the latest information about the weather. It runs on both battery and solar power and can be operated wirelessly. Its integrated sensor array can deliver temperature and humidity (indoor and outdoor), barometric pressure, rainfall, wind speed and direction as well as UV and light index. The WIFI connectivity allows you to monitor the unit remotely and share the weather data to Weathercloud or Weather Underground. This system is easy to set up which can be hung on the wall or stand on a flat surface. Let this weather station become your personal meteorologist.</p>
+""",2,Features,"""<ul>
+	<li>Indoor temperature and humidity</li>
+	<li>Wireless outdoor temperature and humidity</li>
+	<li>Wireless remote control</li>
+	<li>Barometric pressure</li>
+	<li>Dew point</li>
+	<li>Windchill</li>
+	<li>Wind speed</li>
+	<li>Wind direction</li>
+	<li>Weather forecast</li>
+	<li>Moon phase</li>
+	<li>Solar power</li>
+	<li>Rainfall data (inch or mm): 1 hour, 24 hours, week, month, and total</li>
+	<li>UV</li>
+	<li>Light</li>
+	<li>Time, time/week and calendar display</li>
+	<li>Time alarm</li>
+	<li>Low power indicator</li>
+	<li>Wall hanging or freestanding</li>
+	<li>WIFI connection</li>
+</ul>""",2,Specification,"""<table align=""left"" border=""1"" cellpadding=""1"" cellspacing=""1"" style=""width:500px"">
+	<tbody>
+		<tr>
+			<td style=""width:276px"">
+			<p>Outdoor temperature range</p>
+			</td>
+			<td style=""width:276px"">
+			<p>-40&deg;C to +60&deg;C</p>
+			</td>
+		</tr>
+		<tr>
+			<td style=""width:276px"">
+			<p>Indoor temperature range</p>
+			</td>
+			<td style=""width:276px"">
+			<p>0&deg;C to +60&deg;C</p>
+			</td>
+		</tr>
+		<tr>
+			<td style=""width:276px"">
+			<p>Temperature accuracy</p>
+			</td>
+			<td style=""width:276px"">
+			<p>&plusmn;1&deg;C</p>
+			</td>
+		</tr>
+		<tr>
+			<td style=""width:276px"">
+			<p>Humidity range</p>
+			</td>
+			<td style=""width:276px"">
+			<p>10% to 99% (1% resolution)</p>
+			</td>
+		</tr>
+		<tr>
+			<td style=""width:276px"">
+			<p>Humidity accuracy</p>
+			</td>
+			<td style=""width:276px"">
+			<p>&plusmn;5%</p>
+			</td>
+		</tr>
+		<tr>
+			<td style=""width:276px"">
+			<p>Barometric pressure range</p>
+			</td>
+			<td style=""width:276px"">
+			<p>300 to 1100hpa</p>
+			</td>
+		</tr>
+		<tr>
+			<td style=""width:276px"">
+			<p>Barometric accuracy</p>
+			</td>
+			<td style=""width:276px"">
+			<p>&plusmn;3hpa</p>
+			</td>
+		</tr>
+		<tr>
+			<td style=""width:276px"">
+			<p>&nbsp;</p>
+
+			<p>Rain volume display</p>
+			</td>
+			<td style=""width:276px"">
+			<p>0-9999mm</p>
+
+			<ul>
+				<li>Resolution: 0.3mm (if rain volume &lt; 1000mm)</li>
+				<li>1mm (if rain volume &gt; 1000mm)</li>
+			</ul>
+			</td>
+		</tr>
+		<tr>
+			<td style=""width:276px"">
+			<p>Rain accuracy</p>
+			</td>
+			<td style=""width:276px"">
+			<p>&lt; 15mm: +/- 1mm</p>
+
+			<p>15mm to 9999mm: +/- 7%</p>
+			</td>
+		</tr>
+		<tr>
+			<td style=""width:276px"">
+			<p>Wind speed accuracy</p>
+			</td>
+			<td style=""width:276px"">
+			<ul>
+				<li>2m/s ~ 10m/s (+/-3m/s)</li>
+				<li>10m/s ~ 56m/s (+/-10%)</li>
+			</ul>
+			</td>
+		</tr>
+		<tr>
+			<td style=""width:276px"">
+			<p>Wind direction accuracy</p>
+			</td>
+			<td style=""width:276px"">
+			<p>8 points</p>
+			</td>
+		</tr>
+		<tr>
+			<td style=""width:276px"">
+			<p>Wind speed</p>
+			</td>
+			<td style=""width:276px"">
+			<p>0-50m/s</p>
+			</td>
+		</tr>
+		<tr>
+			<td style=""width:276px"">
+			<p>Light</p>
+			</td>
+			<td style=""width:276px"">
+			<p>0-200,000 Lux, accuracy: &plusmn;15%</p>
+			</td>
+		</tr>
+		<tr>
+			<td style=""width:276px"">
+			<p>UV</p>
+			</td>
+			<td style=""width:276px"">
+			<p>From UVB to UVA, 1 to 15+ index</p>
+
+			<p>Scale accuracy: &plusmn;1 levels</p>
+			</td>
+		</tr>
+		<tr>
+			<td style=""width:276px"">
+			<p>Transmission interval</p>
+			</td>
+			<td style=""width:276px"">
+			<p>60s</p>
+			</td>
+		</tr>
+		<tr>
+			<td style=""width:276px"">
+			<p>WIFI standard</p>
+			</td>
+			<td style=""width:276px"">
+			<p>802.11b/g/n</p>
+			</td>
+		</tr>
+		<tr>
+			<td style=""width:276px"">
+			<p>WIFI frequency</p>
+			</td>
+			<td style=""width:276px"">
+			<p>2.4GHZ</p>
+			</td>
+		</tr>
+		<tr>
+			<td style=""width:276px"">
+			<p>Line of sight of WIFI transmission</p>
+			</td>
+			<td style=""width:276px"">
+			<p>20m</p>
+			</td>
+		</tr>
+		<tr>
+			<td style=""width:276px"">
+			<p>Power consumption</p>
+			</td>
+			<td style=""width:276px"">
+			<p>Receiver: 3 x AAA alkaline batteries (not included)</p>
+
+			<p>Transmitter: 3 x AA alkaline batteries&nbsp; (not included)</p>
+
+			<p>Power adaptor: 5V/500mA</p>
+			</td>
+		</tr>
+		<tr>
+			<td style=""width:276px"">
+			<p>Battery life</p>
+			</td>
+			<td style=""width:276px"">
+			<p>Minimum 12 months for the transmitter</p>
+			</td>
+		</tr>
+	</tbody>
+</table>""",2,Warranty,"""<p>This product comes with a 1 Year Manufacturer's Warranty, please <a href=""https://www.crazysales.com.au/article/faqdetails/12"">click here</a> for details.</p>
+<p>For warranty and returns assistance please <a href=""https://www.crazysales.com.au/contact-us"">contact us</a>. </p>
+<p>Statutory conditions and warranties also apply.</p>""",2,1,3,0,CH44A01,0,,1,"""Unit Connection Technology Co.,Ltd""",CN,0,2.4,Maxkon WIFI Weather Station Solar Powered for UV Light Temperature Humidity Wind Speed,Maxkon WIFI Weather Station - FT-0300,"""Get more accurate weather information with this WIFI weather station. It is powered by solar energy and can display temperature, humidity, wind speed, ultraviolet light and light index. ""","""Weather station, weather instruments, home weather station, wireless weather station, wifi weather station, solar power weather station""",,1300,1304,1300,90, ,https://www.crazysales.com.au/products_pictures/212/212041_1641307_HD.jpg,http://www.crazysales.com.au/products_pictures/212/212041_1641281_HD.jpg,http://www.crazysales.com.au/products_pictures/212/212041_1641283_HD.jpg,,,,http://www.crazysales.com.au/products_pictures/212/212041_1641303_HD.jpg,0,44.5,28.5,17.5,,100001,10,
+,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,
+test-2020-12-10_10-10,2,Maxkon Solar Powered Wireless Weather Station Rain Gauge Temperature Humidity Wind,2,92,195.95,0,0.86,,1,,,,,0,0,0,,Product,"""<p>This wireless weather station is constructed from high-grade materials, which is built to last whether in your house, garden or backyard. This home weather station can report full weather information, including barometric pressure, wind speed, wind direction, the volume of rain as well as indoor and outdoor temperature and humidity. This system can be operated by battery or solar energy. Mount it on the wall or place it on a flat area. For data accuracy, remember to keep the unit away from any source of heat and obstructions, such as buildings, sidewalks and macadam.</p>
+
+<p><img alt=""Maxkon Solar Powered Wireless Weather Station Rain Gauge Temperature Humidity Wind"" src=""https://img.crazysales.com.au/products_pictures/2120/212039_1641475_extra.jpg"" /> <img alt=""Maxkon Solar Powered Wireless Weather Station Rain Gauge Temperature Humidity Wind"" src=""https://img.crazysales.com.au/products_pictures/2120/212039_1641477_extra.jpg"" /> <img alt=""Maxkon Solar Powered Wireless Weather Station Rain Gauge Temperature Humidity Wind"" src=""https://img.crazysales.com.au/products_pictures/2120/212039_1641479_extra.jpg"" /> <img alt=""Maxkon Solar Powered Wireless Weather Station Rain Gauge Temperature Humidity Wind"" src=""https://img.crazysales.com.au/products_pictures/2120/212039_1641481_extra.jpg"" /> <img alt=""Maxkon Solar Powered Wireless Weather Station Rain Gauge Temperature Humidity Wind"" src=""https://img.crazysales.com.au/products_pictures/2120/212039_1641483_extra.jpg"" /> <img alt=""Maxkon Solar Powered Wireless Weather Station Rain Gauge Temperature Humidity Wind"" src=""https://img.crazysales.com.au/products_pictures/2120/212039_1641485_extra.jpg"" /> <img alt=""Maxkon Solar Powered Wireless Weather Station Rain Gauge Temperature Humidity Wind"" src=""https://img.crazysales.com.au/products_pictures/2120/212039_1641487_extra.jpg"" /> <img alt=""Maxkon Solar Powered Wireless Weather Station Rain Gauge Temperature Humidity Wind"" src=""https://img.crazysales.com.au/products_pictures/2120/212039_1641489_extra.jpg"" /> <img alt=""Maxkon Solar Powered Wireless Weather Station Rain Gauge Temperature Humidity Wind"" src=""https://img.crazysales.com.au/products_pictures/2120/212039_1641491_extra.jpg"" /> <img alt=""Maxkon Solar Powered Wireless Weather Station Rain Gauge Temperature Humidity Wind"" src=""https://img.crazysales.com.au/products_pictures/2120/212039_1641493_extra.jpg"" /> <img alt=""Maxkon Solar Powered Wireless Weather Station Rain Gauge Temperature Humidity Wind"" src=""https://img.crazysales.com.au/products_pictures/2120/212039_1641495_extra.jpg"" /> <img alt=""Maxkon Solar Powered Wireless Weather Station Rain Gauge Temperature Humidity Wind"" src=""https://img.crazysales.com.au/products_pictures/2120/212039_1641497_extra.jpg"" /> <img alt=""Maxkon Solar Powered Wireless Weather Station Rain Gauge Temperature Humidity Wind"" src=""https://img.crazysales.com.au/products_pictures/2120/212039_1641499_extra.jpg"" /> <img alt=""Maxkon Solar Powered Wireless Weather Station Rain Gauge Temperature Humidity Wind"" src=""https://img.crazysales.com.au/products_pictures/2120/212039_1641501_extra.jpg"" /> <img alt=""Maxkon Solar Powered Wireless Weather Station Rain Gauge Temperature Humidity Wind"" src=""https://img.crazysales.com.au/products_pictures/2120/212039_1641503_extra.jpg"" /> <img alt=""Maxkon Solar Powered Wireless Weather Station Rain Gauge Temperature Humidity Wind"" src=""https://img.crazysales.com.au/products_pictures/2120/212039_1641505_extra.jpg"" /> <img alt=""Maxkon Solar Powered Wireless Weather Station Rain Gauge Temperature Humidity Wind"" src=""https://img.crazysales.com.au/products_pictures/2120/212039_1641507_extra.jpg"" /></p>""",2,Features,"""<ul>
+	<li>Indoor temperature and humidity</li>
+	<li>Wireless outdoor temperature and humidity</li>
+	<li>Barometric pressure</li>
+	<li>Dew point</li>
+	<li>Windchill</li>
+	<li>Wind speed</li>
+	<li>Wind direction</li>
+	<li>Weather forecast</li>
+	<li>Moon phase</li>
+	<li>Solar power</li>
+	<li>Rainfall data (inch or mm): 1 hour, 24 hours, week, month, and total</li>
+	<li>Time, time/week and calendar display</li>
+	<li>Time alarm</li>
+	<li>Low power indicator</li>
+	<li>Wall hanging or freestanding</li>
+</ul>""",2,Specification,"""<table align=""left"" border=""1"" cellpadding=""1"" cellspacing=""1"" style=""width:500px"">
+	<tbody>
+		<tr>
+			<td style=""width:276px"">
+			<p>Outdoor temperature range</p>
+			</td>
+			<td style=""width:276px"">
+			<p>-40&deg;C to +60&deg;C</p>
+			</td>
+		</tr>
+		<tr>
+			<td style=""width:276px"">
+			<p>Indoor temperature range</p>
+			</td>
+			<td style=""width:276px"">
+			<p>0&deg;C to +60&deg;C</p>
+			</td>
+		</tr>
+		<tr>
+			<td style=""width:276px"">
+			<p>Temperature accuracy</p>
+			</td>
+			<td style=""width:276px"">
+			<p>&plusmn;1&deg;C</p>
+			</td>
+		</tr>
+		<tr>
+			<td style=""width:276px"">
+			<p>Humidity range</p>
+			</td>
+			<td style=""width:276px"">
+			<p>10% to 99% (1% resolution)</p>
+			</td>
+		</tr>
+		<tr>
+			<td style=""width:276px"">
+			<p>Humidity accuracy</p>
+			</td>
+			<td style=""width:276px"">
+			<p>&plusmn;5%</p>
+			</td>
+		</tr>
+		<tr>
+			<td style=""width:276px"">
+			<p>Barometric pressure range</p>
+			</td>
+			<td style=""width:276px"">
+			<p>300 to 1100hpa</p>
+			</td>
+		</tr>
+		<tr>
+			<td style=""width:276px"">
+			<p>Barometric accuracy</p>
+			</td>
+			<td style=""width:276px"">
+			<p>&plusmn;3hpa</p>
+			</td>
+		</tr>
+		<tr>
+			<td style=""width:276px"">
+			<p>&nbsp;</p>
+
+			<p>Rain volume display</p>
+			</td>
+			<td style=""width:276px"">
+			<p>0-9999mm</p>
+
+			<ul>
+				<li>Resolution: 0.3mm (if rain volume &lt; 1000mm)</li>
+				<li>1mm (if rain volume &gt; 1000mm)</li>
+			</ul>
+			</td>
+		</tr>
+		<tr>
+			<td style=""width:276px"">
+			<p>Rain accuracy</p>
+			</td>
+			<td style=""width:276px"">
+			<p>&lt; 15mm: +/- 1mm</p>
+
+			<p>15mm to 9999mm: +/- 7%</p>
+			</td>
+		</tr>
+		<tr>
+			<td style=""width:276px"">
+			<p>Wind speed accuracy</p>
+			</td>
+			<td style=""width:276px"">
+			<ul>
+				<li>2m/s ~ 10m/s (+/-3m/s)</li>
+				<li>10m/s ~ 56m/s (+/-10%)</li>
+			</ul>
+			</td>
+		</tr>
+		<tr>
+			<td style=""width:276px"">
+			<p>Wind direction accuracy</p>
+			</td>
+			<td style=""width:276px"">
+			<p>8 points</p>
+			</td>
+		</tr>
+		<tr>
+			<td style=""width:276px"">
+			<p>Wind speed</p>
+			</td>
+			<td style=""width:276px"">
+			<p>0-50m/s</p>
+			</td>
+		</tr>
+		<tr>
+			<td style=""width:276px"">
+			<p>Transmission interval</p>
+			</td>
+			<td style=""width:276px"">
+			<p>60s</p>
+			</td>
+		</tr>
+		<tr>
+			<td style=""width:276px"">
+			<p>Power consumption</p>
+			</td>
+			<td style=""width:276px"">
+			<p>Receiver: 3 x AAA alkaline batteries&nbsp; (not included) or 5V/500mA power adaptor</p>
+
+			<p>Transmitter: 3 x AA alkaline batteries&nbsp; (not included)</p>
+
+			<p>Power adaptor: 5V/500mA</p>
+			</td>
+		</tr>
+		<tr>
+			<td style=""width:276px"">
+			<p>Battery life</p>
+			</td>
+			<td style=""width:276px"">
+			<p>Minimum 12 months for the transmitter</p>
+			</td>
+		</tr>
+	</tbody>
+</table>""",2,Warranty,"""<p>This product comes with a 1 Year Manufacturer's Warranty, please <a href=""https://www.crazysales.com.au/article/faqdetails/12"">click here</a> for details.</p>
+<p>For warranty and returns assistance please <a href=""https://www.crazysales.com.au/contact-us"">contact us</a>. </p>
+<p>Statutory conditions and warranties also apply.</p>""",2,1,3,0,CH25A02,0,,1,"""Unit Connection Technology Co.,Ltd""",CN,0,2.3,Maxkon Solar Powered Wireless Weather Station Rain Gauge Temperature Humidity Wind,Solar Powered Wireless Weather Station - FT-0835,"""Perfect for home or commecial use, this solar-powered weather station shows indoor and outdoor temperature, humidity, the volume of rain, wind speed and wind direction.""","""Weather station, weather instruments, home weather station, wireless weather station, wifi weather station, solar power weather station""",,1300,1304,1300,90, ,http://www.crazysales.com.au/products_pictures/212/212039_1641279_HD.jpg,http://www.crazysales.com.au/products_pictures/212/212039_1641257_HD.jpg,http://www.crazysales.com.au/products_pictures/212/212039_1641259_HD.jpg,,,,http://www.crazysales.com.au/products_pictures/212/212039_1641275_HD.jpg,0,44.5,28.5,17.5,,100001,10,
