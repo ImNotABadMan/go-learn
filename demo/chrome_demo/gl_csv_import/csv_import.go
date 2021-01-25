@@ -9,6 +9,7 @@ import (
 	"io/ioutil"
 	"log"
 	"os"
+	"os/exec"
 	"path/filepath"
 	"time"
 )
@@ -18,6 +19,23 @@ func logAction(logStr string) func(context.Context) error {
 		log.Printf(logStr)
 		return nil
 	}
+}
+
+func ReStartCsvQueue() {
+	// linux
+	fmt.Println("/home/ubuntu/jenkins/gl/kill.sh")
+	killCmd := exec.Command("/home/ubuntu/jenkins/gl/kill.sh")
+	if err := killCmd.Run(); err != nil {
+		fmt.Println(err)
+	}
+	fmt.Println(killCmd.Stdout)
+
+	fmt.Println("/home/ubuntu/jenkins/gl/test.sh")
+	cmd := exec.Command("/home/ubuntu/jenkins/gl/test.sh")
+	if err := cmd.Run(); err != nil {
+		fmt.Println(err)
+	}
+	fmt.Println(cmd.Stdout)
 }
 
 func OpenChrome(inEmail string, inPassword string) {
@@ -69,6 +87,7 @@ func OpenChrome(inEmail string, inPassword string) {
 	fmt.Println("Csv Path: ", csvPath)
 
 	taskGlImport := taskGlImport(csvPath)
+	taskClickGlImport := taskClickGlImport()
 
 	err = chromedp.Run(taskCtx,
 		chromedp.Navigate("http://v2.globaloutlet-backend.com:8011/login"),
@@ -76,6 +95,7 @@ func OpenChrome(inEmail string, inPassword string) {
 		taskOpenMenuCsv,
 		taskEntryCsv,
 		taskGlImport,
+		taskClickGlImport,
 		chromedp.WaitVisible("body"),
 	)
 
@@ -171,5 +191,16 @@ func taskGlImport(csvPath string) chromedp.Tasks {
 		chromedp.ActionFunc(logAction(">>>>>>>>>>>>>>>>>>>> Button Validation IS VISIBLE")),
 		chromedp.Click("//*[@id=\"uploadForm\"]/div[3]/input"),
 		chromedp.ActionFunc(logAction(">>>>>>>>>>>>>>>>>>>> Button Validation IS Click")),
+	}
+}
+
+func taskClickGlImport() chromedp.Tasks {
+	return chromedp.Tasks{
+		chromedp.WaitVisible("//*[@id=\"importConfirmModal\"]/div/div/div[4]/input"),
+		chromedp.ActionFunc(logAction(">>>>>>>>>>>>>>>>>>>> Button Import IS VISIBLE")),
+		chromedp.Sleep(time.Second * 2),
+		chromedp.Click("//*[@id=\"importConfirmModal\"]/div/div/div[4]/input"),
+		//chromedp.Click("//*[@id=\"importConfirmModal\"]/div/div/div[4]/button[1]"),
+		chromedp.ActionFunc(logAction(">>>>>>>>>>>>>>>>>>>> Button Import IS Click")),
 	}
 }
