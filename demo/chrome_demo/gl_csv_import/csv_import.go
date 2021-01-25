@@ -57,7 +57,7 @@ func OpenChrome(inEmail string, inPassword string) {
 		chromedp.Flag("disable-ipc-flooding-protection", false),
 		chromedp.Flag("disable-client-side-phishing-detection", false),
 		chromedp.Flag("disable-background-timer-throttling", false),
-		chromedp.WindowSize(1600, 900),
+		chromedp.WindowSize(1200, 800),
 		chromedp.Flag("headless", false),
 		// Like in Puppeteer.
 		chromedp.Flag("hide-scrollbars", false),
@@ -90,7 +90,7 @@ func OpenChrome(inEmail string, inPassword string) {
 	taskClickGlImport := taskClickGlImport()
 
 	err = chromedp.Run(taskCtx,
-		chromedp.Navigate("http://v2.globaloutlet-backend.com:8011/login"),
+		chromedp.Navigate("http://vm.globaloutlet-backend.com:8011/login"),
 		taskLogin,
 		taskOpenMenuCsv,
 		taskEntryCsv,
