@@ -90,7 +90,7 @@ func OpenChrome(inEmail string, inPassword string) {
 	taskClickGlImport := taskClickGlImport()
 
 	err = chromedp.Run(taskCtx,
-		chromedp.Navigate("http://vm.globaloutlet-backend.com:8011/login"),
+		chromedp.Navigate("http://v2.globaloutlet-backend.com:8011/login"),
 		taskLogin,
 		taskOpenMenuCsv,
 		taskEntryCsv,
