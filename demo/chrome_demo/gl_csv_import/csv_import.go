@@ -204,3 +204,23 @@ func taskClickGlImport() chromedp.Tasks {
 		chromedp.ActionFunc(logAction(">>>>>>>>>>>>>>>>>>>> Button Import IS Click")),
 	}
 }
+
+//#### 1
+// docker run --name=pms_mysql \
+//  --network=ubuntu_static_22 \
+//  --entrypoint /bin/bash \
+//  --ip=172.22.0.2 \
+//  -p 3301:3306 -u root \
+//  -e MYSQL_ROOT_PASSWORD=123 \
+//  -e MYSQL_ROOT_HOST=172.22.0.2 \
+//  -e MYSQL_DATABASE=globaloutletcom \
+//  -e MYSQL_USER=root \
+//  -e MYSQL_PASSWOR=123 \
+//  -d mysql:5.7 \
+//  -c 'exec echo sql_mode="STRICT_TRANS_TABLES,ERROR_FOR_DIVISION_BY_ZERO,NO_AUTO_CREATE_USER,NO_ENGINE_SUBSTITUTION" | tee -a /etc/mysql/mysql.conf.d/mysqld.cnf ; cat /etc/mysql/mysql.conf.d/mysqld.cnf;cat entrypoint.sh; docker-entrypoint.sh mysqld;'
+
+//#### 2
+//docker exec -i pms_mysql sh -c 'exec mysql -uroot -p"$MYSQL_ROOT_PASSWORD" --database=globaloutletcom' < /home/ubuntu/dockers/volumes/pms_mysql/gl_innodb_bak.sql
+
+//#### 3
+//docker exec -i pms_mysql sh -c 'exec mysql -uroot -p"$MYSQL_ROOT_PASSWORD" --database=globaloutletcom -e "GRANT ALL PRIVILEGES ON *.* TO "root"@"%" IDENTIFIED BY "123";FLUSH PRIVILEGES;"'
