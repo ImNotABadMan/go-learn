@@ -25,7 +25,7 @@ func Customer() {
 	}
 
 	// 声明队列
-	queue, err := ch.QueueDeclare("hello", true, true, false, false, nil)
+	queue, err := ch.QueueDeclare("hello", true, false, false, false, nil)
 	if err != nil {
 		mqLog.Log("queue", err)
 	}
@@ -46,7 +46,7 @@ func Customer() {
 			//mqLog.Log("ack", err)
 			log.Println("ack", err)
 		}
-		time.Sleep(time.Millisecond * 900)
+		time.Sleep(time.Second * 1)
 	}
 
 	fmt.Println("Customer end")

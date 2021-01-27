@@ -4,8 +4,10 @@ import (
 	mqLog "data/rabbit_mq_queue/cp/mqL"
 	"fmt"
 	"github.com/streadway/amqp"
+	"math/rand"
 	"os"
 	"os/signal"
+	"strconv"
 	"syscall"
 	"time"
 )
@@ -28,15 +30,19 @@ func Publish() {
 	defer ch.Close()
 
 	// 指明发送队列
-	queue, err := ch.QueueDeclare("hello", true, true, false, false, nil)
+	// auto delete ,发完就删除
+	queue, err := ch.QueueDeclare("hello", true, false, false, false, nil)
 	if err != nil {
 		mqLog.Log("declare queue", err)
 	}
 
+	rand.Seed(time.Millisecond.Microseconds())
+	id := rand.Int63()
+
 	// 定义消息体
 	publishMessage := amqp.Publishing{
 		ContentType: "text/plain",
-		Body:        []byte("This is first rabbitmq message from hello queue. " + time.Now().Format(time.RFC3339)),
+		Body:        []byte("userID: " + strconv.FormatInt(id, 10) + "; This is first rabbitmq message from hello queue. " + time.Now().Format(time.RFC3339)),
 	}
 
 	signalCh := make(chan os.Signal, 1)
@@ -53,8 +59,9 @@ func Publish() {
 			doneCh <- false
 			close(signalCh)
 		default:
+			id = rand.Int63()
 			publishMessage.Body =
-				[]byte("This is first rabbitmq message from hello queue. " + time.Now().Format(time.RFC3339))
+				[]byte("userID " + strconv.FormatInt(id, 10) + ";This is first rabbitmq message from hello queue. " + time.Now().Format(time.RFC3339))
 
 			err = ch.Publish("", queue.Name, false, false, publishMessage)
 
@@ -62,7 +69,7 @@ func Publish() {
 				mqLog.Log("publish", err)
 			}
 			doneCh <- true
-			time.Sleep(time.Second * 3)
+			time.Sleep(time.Millisecond * 500)
 		}
 	}
 
