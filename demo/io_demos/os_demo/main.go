@@ -41,7 +41,9 @@ func main() {
 	fmt.Println("--x", 0<<2|0<<1|1)
 	fmt.Println("---", 0<<2|0<<1|0)
 	bin := strconv.FormatInt(6, 2)
+	netmask := strconv.FormatInt(240, 2)
 	fmt.Println(bin)
+	fmt.Println(netmask, "-len-", len(netmask))
 
 	fmt.Printf("%3d\n", 1)
 
