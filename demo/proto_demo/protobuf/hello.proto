@@ -1,0 +1,10 @@
+syntax="proto3";
+
+option go_package=".;protobuf";
+
+
+message Hello {
+  string Name = 1;
+  string Text = 2;
+}
+

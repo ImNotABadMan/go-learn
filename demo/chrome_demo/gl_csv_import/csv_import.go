@@ -57,7 +57,8 @@ func OpenChrome(inEmail string, inPassword string) {
 		chromedp.Flag("disable-ipc-flooding-protection", false),
 		chromedp.Flag("disable-client-side-phishing-detection", false),
 		chromedp.Flag("disable-background-timer-throttling", false),
-		chromedp.WindowSize(1200, 800),
+		//chromedp.WindowSize(1200, 800),
+		chromedp.WindowSize(1500, 900),
 		chromedp.Flag("headless", false),
 		// Like in Puppeteer.
 		chromedp.Flag("hide-scrollbars", false),
