@@ -4,8 +4,8 @@ option go_package=".;from_php";
 
 message Hello {
   string Name=1;
-//  string Text=3;
-  string Des=2;
+//  string Text=3; // php 有，解析得到的数据，变成了唯一编码做键，但go代码没方法得到此值
+  string Des=2; // php 缺少此字段，解析得到的数据，由go代码处理，返回nil
 }
 
 // protoc -I=. --go_out=. --go_opt=paths=source_relative hello_php.proto
