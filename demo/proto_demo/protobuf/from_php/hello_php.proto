@@ -1,0 +1,11 @@
+syntax="proto3";
+
+option go_package=".;from_php";
+
+message Hello {
+  string Name=1;
+  string Text=3;
+  string Des=2;
+}
+
+// protoc -I=. --go_out=. --go_opt=paths=source_relative hello_php.proto
