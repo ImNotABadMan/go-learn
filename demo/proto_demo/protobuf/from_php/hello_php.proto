@@ -4,7 +4,7 @@ option go_package=".;from_php";
 
 message Hello {
   string Name=1;
-  string Text=3;
+//  string Text=3;
   string Des=2;
 }
 

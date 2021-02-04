@@ -28,7 +28,8 @@ func main() {
 
 	fmt.Println(body)
 	fmt.Println(helloFromPHP.GetName())
-	fmt.Println(helloFromPHP.GetText())
+	fmt.Println(helloFromPHP)
+	//fmt.Println(helloFromPHP.GetText())
 	fmt.Println(helloFromPHP.GetDes())
 	fmt.Println(helloFromPHP.String())
 }
