@@ -12,7 +12,7 @@ import (
 func main() {
 	//sig := make(chan os.Signal)
 	//signal.Notify(sig, syscall.SIGINT)
-	log.Println("start Server")
+	log.Println("start Server :9999")
 	http.HandleFunc("/hello", handle)
 
 	err := http.ListenAndServe(":9999", nil)
