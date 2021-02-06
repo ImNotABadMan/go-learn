@@ -1,0 +1,16 @@
+syntax="proto3";
+
+option go_package=".;main";
+
+service People {
+  rpc SayHello(Hello) returns (Hello) {}
+}
+
+
+message Hello {
+  string Name = 1;
+  string Text = 2;
+}
+
+
+
