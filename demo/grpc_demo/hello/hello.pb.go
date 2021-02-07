@@ -4,14 +4,10 @@
 // 	protoc        v3.14.0
 // source: hello.proto
 
-package main
+package hello
 
 import (
-	context "context"
 	proto "github.com/golang/protobuf/proto"
-	grpc "google.golang.org/grpc"
-	codes "google.golang.org/grpc/codes"
-	status "google.golang.org/grpc/status"
 	protoreflect "google.golang.org/protobuf/reflect/protoreflect"
 	protoimpl "google.golang.org/protobuf/runtime/protoimpl"
 	reflect "reflect"
@@ -90,11 +86,13 @@ var file_hello_proto_rawDesc = []byte{
 	0x0a, 0x0b, 0x68, 0x65, 0x6c, 0x6c, 0x6f, 0x2e, 0x70, 0x72, 0x6f, 0x74, 0x6f, 0x22, 0x2f, 0x0a,
 	0x05, 0x48, 0x65, 0x6c, 0x6c, 0x6f, 0x12, 0x12, 0x0a, 0x04, 0x4e, 0x61, 0x6d, 0x65, 0x18, 0x01,
 	0x20, 0x01, 0x28, 0x09, 0x52, 0x04, 0x4e, 0x61, 0x6d, 0x65, 0x12, 0x12, 0x0a, 0x04, 0x54, 0x65,
-	0x78, 0x74, 0x18, 0x02, 0x20, 0x01, 0x28, 0x09, 0x52, 0x04, 0x54, 0x65, 0x78, 0x74, 0x32, 0x26,
+	0x78, 0x74, 0x18, 0x02, 0x20, 0x01, 0x28, 0x09, 0x52, 0x04, 0x54, 0x65, 0x78, 0x74, 0x32, 0x49,
 	0x0a, 0x06, 0x50, 0x65, 0x6f, 0x70, 0x6c, 0x65, 0x12, 0x1c, 0x0a, 0x08, 0x53, 0x61, 0x79, 0x48,
 	0x65, 0x6c, 0x6c, 0x6f, 0x12, 0x06, 0x2e, 0x48, 0x65, 0x6c, 0x6c, 0x6f, 0x1a, 0x06, 0x2e, 0x48,
-	0x65, 0x6c, 0x6c, 0x6f, 0x22, 0x00, 0x42, 0x08, 0x5a, 0x06, 0x2e, 0x3b, 0x6d, 0x61, 0x69, 0x6e,
-	0x62, 0x06, 0x70, 0x72, 0x6f, 0x74, 0x6f, 0x33,
+	0x65, 0x6c, 0x6c, 0x6f, 0x22, 0x00, 0x12, 0x21, 0x0a, 0x0d, 0x53, 0x61, 0x79, 0x48, 0x65, 0x6c,
+	0x6c, 0x6f, 0x41, 0x67, 0x61, 0x69, 0x6e, 0x12, 0x06, 0x2e, 0x48, 0x65, 0x6c, 0x6c, 0x6f, 0x1a,
+	0x06, 0x2e, 0x48, 0x65, 0x6c, 0x6c, 0x6f, 0x22, 0x00, 0x42, 0x09, 0x5a, 0x07, 0x2e, 0x2f, 0x68,
+	0x65, 0x6c, 0x6c, 0x6f, 0x62, 0x06, 0x70, 0x72, 0x6f, 0x74, 0x6f, 0x33,
 }
 
 var (
@@ -115,9 +113,11 @@ var file_hello_proto_goTypes = []interface{}{
 }
 var file_hello_proto_depIdxs = []int32{
 	0, // 0: People.SayHello:input_type -> Hello
-	0, // 1: People.SayHello:output_type -> Hello
-	1, // [1:2] is the sub-list for method output_type
-	0, // [0:1] is the sub-list for method input_type
+	0, // 1: People.SayHelloAgain:input_type -> Hello
+	0, // 2: People.SayHello:output_type -> Hello
+	0, // 3: People.SayHelloAgain:output_type -> Hello
+	2, // [2:4] is the sub-list for method output_type
+	0, // [0:2] is the sub-list for method input_type
 	0, // [0:0] is the sub-list for extension type_name
 	0, // [0:0] is the sub-list for extension extendee
 	0, // [0:0] is the sub-list for field type_name
@@ -160,84 +160,4 @@ func file_hello_proto_init() {
 	file_hello_proto_rawDesc = nil
 	file_hello_proto_goTypes = nil
 	file_hello_proto_depIdxs = nil
-}
-
-// Reference imports to suppress errors if they are not otherwise used.
-var _ context.Context
-var _ grpc.ClientConnInterface
-
-// This is a compile-time assertion to ensure that this generated file
-// is compatible with the grpc package it is being compiled against.
-const _ = grpc.SupportPackageIsVersion6
-
-// PeopleClient is the client API for People service.
-//
-// For semantics around ctx use and closing/ending streaming RPCs, please refer to https://godoc.org/google.golang.org/grpc#ClientConn.NewStream.
-type PeopleClient interface {
-	SayHello(ctx context.Context, in *Hello, opts ...grpc.CallOption) (*Hello, error)
-}
-
-type peopleClient struct {
-	cc grpc.ClientConnInterface
-}
-
-func NewPeopleClient(cc grpc.ClientConnInterface) PeopleClient {
-	return &peopleClient{cc}
-}
-
-func (c *peopleClient) SayHello(ctx context.Context, in *Hello, opts ...grpc.CallOption) (*Hello, error) {
-	out := new(Hello)
-	err := c.cc.Invoke(ctx, "/People/SayHello", in, out, opts...)
-	if err != nil {
-		return nil, err
-	}
-	return out, nil
-}
-
-// PeopleServer is the server API for People service.
-type PeopleServer interface {
-	SayHello(context.Context, *Hello) (*Hello, error)
-}
-
-// UnimplementedPeopleServer can be embedded to have forward compatible implementations.
-type UnimplementedPeopleServer struct {
-}
-
-func (*UnimplementedPeopleServer) SayHello(context.Context, *Hello) (*Hello, error) {
-	return nil, status.Errorf(codes.Unimplemented, "method SayHello not implemented")
-}
-
-func RegisterPeopleServer(s *grpc.Server, srv PeopleServer) {
-	s.RegisterService(&_People_serviceDesc, srv)
-}
-
-func _People_SayHello_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
-	in := new(Hello)
-	if err := dec(in); err != nil {
-		return nil, err
-	}
-	if interceptor == nil {
-		return srv.(PeopleServer).SayHello(ctx, in)
-	}
-	info := &grpc.UnaryServerInfo{
-		Server:     srv,
-		FullMethod: "/People/SayHello",
-	}
-	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
-		return srv.(PeopleServer).SayHello(ctx, req.(*Hello))
-	}
-	return interceptor(ctx, in, info, handler)
-}
-
-var _People_serviceDesc = grpc.ServiceDesc{
-	ServiceName: "People",
-	HandlerType: (*PeopleServer)(nil),
-	Methods: []grpc.MethodDesc{
-		{
-			MethodName: "SayHello",
-			Handler:    _People_SayHello_Handler,
-		},
-	},
-	Streams:  []grpc.StreamDesc{},
-	Metadata: "hello.proto",
 }

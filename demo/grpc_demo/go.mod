@@ -3,6 +3,10 @@ module demo/grpc_demo
 go 1.15
 
 require (
-	google.golang.org/grpc v1.35.0
-	github.com/golang/protobuf v1.4.3
+	demo/grpc_demo/hello v1.0.0
 )
+
+replace (
+	demo/grpc_demo/hello => ./hello
+)
+
