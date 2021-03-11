@@ -3,6 +3,7 @@ package gl_csv_import
 import (
 	"bytes"
 	"context"
+	"encoding/json"
 	"fmt"
 	"github.com/chromedp/chromedp"
 	"github.com/chromedp/chromedp/kb"
@@ -13,6 +14,23 @@ import (
 	"path/filepath"
 	"time"
 )
+
+type Path struct {
+	path string
+}
+
+func getCsvPath(pathStr string) Path {
+	var path Path
+	b, err := ioutil.ReadFile(pathStr)
+	if err != nil {
+		log.Fatal(err)
+	}
+	buffer := bytes.NewBuffer(b)
+	decoder := json.NewDecoder(buffer)
+	decoder.Decode(&path)
+
+	return path
+}
 
 func logAction(logStr string) func(context.Context) error {
 	return func(context.Context) error {
@@ -38,7 +56,7 @@ func ReStartCsvQueue() {
 	fmt.Println(cmd.Stdout)
 }
 
-func OpenChrome(inEmail string, inPassword string) {
+func OpenChrome(inEmail string, inPassword string, configPath string) {
 	defer func() {
 
 	}()
@@ -84,7 +102,11 @@ func OpenChrome(inEmail string, inPassword string) {
 	taskEntryCsv := taskEntryCsv()
 
 	wdPath, _ := os.Getwd()
-	csvPath := wdPath + "/gl_csv_import/test-import.csv"
+	//csvFullPath := wdPath + "/gl_csv_import/test-import.csv"
+	configFullPath := wdPath + configPath
+	pathStruct := getCsvPath(configFullPath)
+	csvPath := pathStruct.path
+
 	fmt.Println("Csv Path: ", csvPath)
 
 	taskGlImport := taskGlImport(csvPath)
