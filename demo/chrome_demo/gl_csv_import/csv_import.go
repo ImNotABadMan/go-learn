@@ -27,7 +27,9 @@ func getCsvPath(pathStr string) Path {
 	}
 	buffer := bytes.NewBuffer(b)
 	decoder := json.NewDecoder(buffer)
-	decoder.Decode(&path)
+	if err := decoder.Decode(&path); err != nil {
+		log.Fatal(err)
+	}
 
 	return path
 }
