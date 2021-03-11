@@ -107,11 +107,11 @@ func OpenChrome(inEmail string, inPassword string, configPath string) {
 	taskOpenMenuCsv := taskOpenMenuCsv()
 	taskEntryCsv := taskEntryCsv()
 
-	//wdPath, _ := os.Getwd()
+	wdPath, _ := os.Getwd()
 	//csvFullPath := wdPath + "/gl_csv_import/test-import.csv"
 	//configFullPath := wdPath + configPath
 	pathStruct := GetCsvPath(configPath)
-	csvPath := pathStruct.PathStr
+	csvPath := wdPath + pathStruct.PathStr
 
 	fmt.Println("Csv Path: ", csvPath)
 
