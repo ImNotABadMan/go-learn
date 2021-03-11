@@ -2,6 +2,8 @@ package main
 
 import (
 	"demo/chrome_demo/gl_csv_import"
+	"fmt"
+	"os"
 	"sync"
 )
 
@@ -10,6 +12,9 @@ func main() {
 	//gl_csv_import.OpenChrome()
 
 	//gl_csv_import.ReStartCsvQueue()
+	path := gl_csv_import.GetCsvPath("/gl_csv_import/csv.json")
+	fmt.Println(path)
+	os.Exit(0)
 
 	var ws = sync.WaitGroup{}
 	ws.Add(2)

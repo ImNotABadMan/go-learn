@@ -16,21 +16,25 @@ import (
 )
 
 type Path struct {
-	path string
+	PathStr string `json:"path"`
 }
 
-func getCsvPath(pathStr string) Path {
+func GetCsvPath(pathStr string) Path {
 	var path Path
-	b, err := ioutil.ReadFile(pathStr)
+	wdPath, _ := os.Getwd()
+	configFullPath := wdPath + pathStr
+
+	b, err := ioutil.ReadFile(configFullPath)
 	if err != nil {
 		log.Fatal(err)
 	}
-	buffer := bytes.NewBuffer(b)
-	decoder := json.NewDecoder(buffer)
+	buffer := bytes.Buffer{}
+	buffer.Write(b)
+
+	decoder := json.NewDecoder(&buffer)
 	if err := decoder.Decode(&path); err != nil {
 		log.Fatal(err)
 	}
-
 	return path
 }
 
@@ -103,11 +107,11 @@ func OpenChrome(inEmail string, inPassword string, configPath string) {
 	taskOpenMenuCsv := taskOpenMenuCsv()
 	taskEntryCsv := taskEntryCsv()
 
-	wdPath, _ := os.Getwd()
+	//wdPath, _ := os.Getwd()
 	//csvFullPath := wdPath + "/gl_csv_import/test-import.csv"
-	configFullPath := wdPath + configPath
-	pathStruct := getCsvPath(configFullPath)
-	csvPath := pathStruct.path
+	//configFullPath := wdPath + configPath
+	pathStruct := GetCsvPath(configPath)
+	csvPath := pathStruct.PathStr
 
 	fmt.Println("Csv Path: ", csvPath)
 
