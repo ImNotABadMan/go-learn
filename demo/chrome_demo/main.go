@@ -16,12 +16,12 @@ func main() {
 
 	// 多个浏览器
 	go func() {
-		gl_csv_import.OpenChrome("binz", "binz123")
+		gl_csv_import.OpenChrome("binz", "binz123", "/gl_csv_import/csv.json")
 		ws.Done()
 	}()
 
 	go func() {
-		gl_csv_import.OpenChrome("crazyman", "test123")
+		gl_csv_import.OpenChrome("crazyman", "test123", "/gl_csv_import/csv.json")
 		ws.Done()
 	}()
 
