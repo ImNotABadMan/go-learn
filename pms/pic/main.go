@@ -108,7 +108,7 @@ func download(httpCli *http.Client, filePath string) {
 	defer file.Close()
 
 	_, err = io.Copy(file, res.Body)
-	// 需要关闭 res.body
+	// 需要关闭 res.body，才能释放文件描述符（句柄），
 	defer res.Body.Close()
 
 	if err != nil {
