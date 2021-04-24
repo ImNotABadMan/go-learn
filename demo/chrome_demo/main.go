@@ -10,7 +10,6 @@ func main() {
 	//gl_csv_import.OpenChrome()
 
 	//gl_csv_import.ReStartCsvQueue()
-
 	var ws = sync.WaitGroup{}
 	ws.Add(7)
 
