@@ -7,6 +7,7 @@ import (
 	"gorm.io/gorm"
 	"gorm.io/gorm/schema"
 	"log"
+	"math/rand"
 	"pms/pub_fetures/create"
 	"pms/pub_fetures/tables"
 	"strconv"
@@ -36,26 +37,39 @@ func Connect() *gorm.DB {
 }
 
 func createTask(db *gorm.DB) {
-	create.InsertTask(db, 73532, 73532)
+	products := create.GetProducts(db, 73532, 73532)
+	sites := create.GetSites(db)
+	categories := create.GetSiteCategory(db)
+	//fmt.Println(categories)
+	//fmt.Println(sites)
 
+	for _, product := range products {
+		siteID := sites[rand.Intn(len(sites))].Id
+		fmt.Println("Product: ", product.Product_code)
+		if create.GetSiteProducts(db, product.ProductID, siteID) {
+			log.Println("此产品在站点上已经刊登", siteID, " -- ", product.ProductID)
+			continue
+		}
+		create.InsertTask(db, product, categories, siteID)
+	}
 }
 
 func sendToKafka(db *gorm.DB) {
-	var task tables.Task
-	var taskProducts tables.TaskProduct
+	var task tables.Publication_task
+	var taskProducts tables.Publication_products
 
 	syncGroup := sync.WaitGroup{}
 	syncGroup.Add(2)
 	//cond := sync.NewCond(&sync.RWMutex{})
 
-	go func(taskIn tables.Task) {
+	go func(taskIn tables.Publication_task) {
 		//cond.Signal()
 		taskIn = create.GetTasks(db)
 		fmt.Println("task:", task)
 		syncGroup.Done()
 	}(task)
 
-	go func(taskProducts tables.TaskProduct) {
+	go func(taskProducts tables.Publication_products) {
 		//cond.Wait()
 		taskProducts = create.GetTaskProducts(db)
 		fmt.Println(taskProducts)

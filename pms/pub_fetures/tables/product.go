@@ -6,8 +6,8 @@ import (
 
 type Products struct {
 	//gorm.Model
-	ProductID          uint `gorm:"primaryKey;column:productID"`
-	CategoryID         int  `gorm:"column:categoryID"`
+	ProductID          int `gorm:"primaryKey;column:productID"`
+	CategoryID         int `gorm:"column:categoryID"`
 	Name               string
 	Name_cn            string
 	Product_code       string
@@ -73,7 +73,7 @@ type Product_price struct {
 	ProductID      int `gorm:"column:productID"`
 	Price          float64
 	Original_price float64
-	CurrencyID     int
+	CurrencyID     int `gorm:"column:currency_id"`
 	Created_at     time.Time
 	Updated_at     time.Time
 }
