@@ -5,6 +5,7 @@ import (
 	"github.com/techoner/gophp"
 	"gorm.io/driver/mysql"
 	"gorm.io/gorm"
+	"gorm.io/gorm/schema"
 	"log"
 	"pms/pub_fetures/create"
 	"pms/pub_fetures/tables"
@@ -13,9 +14,36 @@ import (
 )
 
 func main() {
+	db := Connect()
+	createTask(db)
+	sendToKafka(db)
+}
+
+func Connect() *gorm.DB {
+	//dsn := "root:123@tcp(127.0.0.1:3306)/pms?charset=utf8&parseTime=True&loc=Local"
+	dsn := "root:crazy888@tcp(192.168.10.108:3306)/globaloutletcom?charset=utf8&parseTime=True&loc=Local"
+	db, err := gorm.Open(mysql.Open(dsn), &gorm.Config{
+		NamingStrategy: schema.NamingStrategy{
+			TablePrefix:   "ss_",
+			SingularTable: true,
+			NoLowerCase:   false,
+		},
+	})
+	if err != nil {
+		log.Fatal(err)
+	}
+	return db
+}
+
+func createTask(db *gorm.DB) {
+	create.InsertTask(db, 73532, 73532)
+
+}
+
+func sendToKafka(db *gorm.DB) {
 	var task tables.Task
 	var taskProducts tables.TaskProduct
-	db := Connect()
+
 	syncGroup := sync.WaitGroup{}
 	syncGroup.Add(2)
 	//cond := sync.NewCond(&sync.RWMutex{})
@@ -23,7 +51,7 @@ func main() {
 	go func(taskIn tables.Task) {
 		//cond.Signal()
 		taskIn = create.GetTasks(db)
-		fmt.Println(task)
+		fmt.Println("task:", task)
 		syncGroup.Done()
 	}(task)
 
@@ -49,14 +77,4 @@ func main() {
 	phpSerialize, _ := gophp.Serialize(phpMap)
 
 	fmt.Println(string(phpSerialize))
-}
-
-func Connect() *gorm.DB {
-	dsn := "root:123@tcp(127.0.0.1:3306)/pms?charset=utf8&parseTime=True&loc=Local"
-	//dsn := "root:crazy888@tcp(192.168.10.108:3306)/globaloutletcom?charset=utf8&parseTime=True&loc=Local"
-	db, err := gorm.Open(mysql.Open(dsn), &gorm.Config{})
-	if err != nil {
-		log.Fatal(err)
-	}
-	return db
 }
