@@ -16,8 +16,9 @@ import (
 
 func main() {
 	db := Connect()
-	createTask(db)
-	sendToKafka(db)
+	//createTask(db)
+	task, taskProducts := getTask(db)
+	sendToKafka(task, taskProducts)
 }
 
 func Connect() *gorm.DB {
@@ -54,7 +55,7 @@ func createTask(db *gorm.DB) {
 	}
 }
 
-func sendToKafka(db *gorm.DB) {
+func getTask(db *gorm.DB) (tables.Publication_task, tables.Publication_products) {
 	var task tables.Publication_task
 	var taskProducts tables.Publication_products
 
@@ -62,24 +63,28 @@ func sendToKafka(db *gorm.DB) {
 	syncGroup.Add(2)
 	//cond := sync.NewCond(&sync.RWMutex{})
 
-	go func(taskIn tables.Publication_task) {
+	go func(taskIn *tables.Publication_task) {
 		//cond.Signal()
-		taskIn = create.GetTasks(db)
-		fmt.Println("task:", task)
+		*taskIn = create.GetTasks(db, 149)
+		fmt.Println("task:", taskIn)
 		syncGroup.Done()
-	}(task)
+	}(&task)
 
-	go func(taskProducts tables.Publication_products) {
+	go func(taskProducts *tables.Publication_products) {
 		//cond.Wait()
-		taskProducts = create.GetTaskProducts(db)
-		fmt.Println(taskProducts)
+		*taskProducts = create.GetTaskProducts(db)
+		//fmt.Println(taskProducts)
 		fmt.Println("Name:", taskProducts.Name)
 		fmt.Println("Third_product_id:", taskProducts.Third_product_id)
 		syncGroup.Done()
-	}(taskProducts)
+	}(&taskProducts)
 	syncGroup.Wait()
 
-	// 使用php 序列化发送到kafka中
+	return task, taskProducts
+}
+
+// 使用php 序列化发送到kafka中
+func sendToKafka(task tables.Publication_task, taskProducts tables.Publication_products) {
 	var phpMap = map[string]string{
 		"task_id":    strconv.FormatInt(int64(task.Id), 10),
 		"site_id":    strconv.FormatInt(int64(task.Site_id), 10),
@@ -91,4 +96,5 @@ func sendToKafka(db *gorm.DB) {
 	phpSerialize, _ := gophp.Serialize(phpMap)
 
 	fmt.Println(string(phpSerialize))
+
 }
