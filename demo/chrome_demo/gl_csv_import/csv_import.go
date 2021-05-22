@@ -176,10 +176,10 @@ func taskOpenMenuCsv() chromedp.Tasks {
 	return chromedp.Tasks{
 		chromedp.WaitVisible("/html/body/div/aside[1]/div/div[4]/div/div/nav/ul/li[1]"),
 		chromedp.ActionFunc(logAction((">>>>>>>>>>>>>>>>>>>> Product IS VISIBLE"))),
-		chromedp.Sleep(time.Millisecond * 2000),
+		chromedp.Sleep(time.Millisecond * 1500),
 		chromedp.Click("/html/body/div/aside/div/div[4]/div/div/nav/ul/li[1]/a"),
 		chromedp.ActionFunc(logAction(">>>>>>>>>>>>>>>>>>>> Product IS Click")),
-		chromedp.Sleep(time.Millisecond * 3000),
+		chromedp.Sleep(time.Millisecond * 2500),
 
 		chromedp.WaitVisible("/html/body/div/aside[1]/div/div[4]/div/div/nav/ul/li[1]/ul/li[2]/a/p"),
 		chromedp.ActionFunc(logAction(">>>>>>>>>>>>>>>>>>>> Import Product IS VISIBLE")),
@@ -209,7 +209,7 @@ func taskGlImport(csvPath string) chromedp.Tasks {
 		chromedp.ActionFunc(logAction(">>>>>>>>>>>>>>>>>>>> gl file IS VISIBLE")),
 		chromedp.SendKeys("//*[@id=\"csv\"]", csvPath),
 		chromedp.ActionFunc(logAction(">>>>>>>>>>>>>>>>>>>> gl file IS Ready")),
-		chromedp.Sleep(time.Millisecond * 3000),
+		chromedp.Sleep(time.Millisecond * 2000),
 
 		chromedp.WaitVisible("//*[@id=\"currency\"]"),
 		chromedp.ActionFunc(logAction(">>>>>>>>>>>>>>>>>>>> gl currency IS VISIBLE")),
