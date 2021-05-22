@@ -159,9 +159,9 @@ func taskLogin(inEmail string, inPassword string) (tasks chromedp.Tasks, mapValu
 		chromedp.WaitVisible(`#username`, chromedp.ByID),
 		chromedp.WaitVisible(`#password`, chromedp.ByID),
 		chromedp.SendKeys("#username", inEmail, chromedp.ByID),
-		chromedp.Sleep(time.Millisecond * 600),
+		chromedp.Sleep(time.Millisecond * 1000),
 		chromedp.SendKeys("#password", inPassword, chromedp.ByID),
-		chromedp.Sleep(time.Millisecond * 600),
+		chromedp.Sleep(time.Millisecond * 2000),
 		chromedp.Value("#username", mapValue["username"], chromedp.ByID),
 		chromedp.Value("#password", mapValue["password"], chromedp.ByID),
 		chromedp.WaitVisible("#login-form .btn"),
@@ -176,10 +176,10 @@ func taskOpenMenuCsv() chromedp.Tasks {
 	return chromedp.Tasks{
 		chromedp.WaitVisible("/html/body/div/aside[1]/div/div[4]/div/div/nav/ul/li[1]"),
 		chromedp.ActionFunc(logAction((">>>>>>>>>>>>>>>>>>>> Product IS VISIBLE"))),
-		chromedp.Sleep(time.Millisecond * 600),
+		chromedp.Sleep(time.Millisecond * 2000),
 		chromedp.Click("/html/body/div/aside/div/div[4]/div/div/nav/ul/li[1]/a"),
 		chromedp.ActionFunc(logAction(">>>>>>>>>>>>>>>>>>>> Product IS Click")),
-		chromedp.Sleep(time.Millisecond * 600),
+		chromedp.Sleep(time.Millisecond * 3000),
 
 		chromedp.WaitVisible("/html/body/div/aside[1]/div/div[4]/div/div/nav/ul/li[1]/ul/li[2]/a/p"),
 		chromedp.ActionFunc(logAction(">>>>>>>>>>>>>>>>>>>> Import Product IS VISIBLE")),
@@ -194,7 +194,7 @@ func taskEntryCsv() chromedp.Tasks {
 		chromedp.ActionFunc(logAction(">>>>>>>>>>>>>>>>>>>> 新增产品 IS VISIBLE")),
 		chromedp.Click("//*[@id=\"actionChoose\"]/div[1]"),
 		chromedp.ActionFunc(logAction(">>>>>>>>>>>>>>>>>>>> 新增产品 IS Click")),
-		chromedp.Sleep(time.Millisecond * 600),
+		chromedp.Sleep(time.Millisecond * 3000),
 
 		chromedp.WaitVisible("//*[@id=\"import\"]/div[1]"),
 		chromedp.ActionFunc(logAction(">>>>>>>>>>>>>>>>>>>> 点击Gl IS VISIBLE")),
@@ -209,13 +209,13 @@ func taskGlImport(csvPath string) chromedp.Tasks {
 		chromedp.ActionFunc(logAction(">>>>>>>>>>>>>>>>>>>> gl file IS VISIBLE")),
 		chromedp.SendKeys("//*[@id=\"csv\"]", csvPath),
 		chromedp.ActionFunc(logAction(">>>>>>>>>>>>>>>>>>>> gl file IS Ready")),
-		chromedp.Sleep(time.Millisecond * 600),
+		chromedp.Sleep(time.Millisecond * 3000),
 
 		chromedp.WaitVisible("//*[@id=\"currency\"]"),
 		chromedp.ActionFunc(logAction(">>>>>>>>>>>>>>>>>>>> gl currency IS VISIBLE")),
 		chromedp.SendKeys("//*[@id=\"currency\"]", kb.ArrowDown),
 		chromedp.ActionFunc(logAction(">>>>>>>>>>>>>>>>>>>> gl currency IS Ready")),
-		chromedp.Sleep(time.Millisecond * 600),
+		chromedp.Sleep(time.Millisecond * 2000),
 
 		chromedp.WaitVisible("//*[@id=\"uploadForm\"]/div[3]/input"),
 		chromedp.ActionFunc(logAction(">>>>>>>>>>>>>>>>>>>> Button Validation IS VISIBLE")),
@@ -228,7 +228,7 @@ func taskClickGlImport() chromedp.Tasks {
 	return chromedp.Tasks{
 		chromedp.WaitVisible("//*[@id=\"importConfirmModal\"]/div/div/div[4]/input"),
 		chromedp.ActionFunc(logAction(">>>>>>>>>>>>>>>>>>>> Button Import IS VISIBLE")),
-		chromedp.Sleep(time.Second * 2),
+		chromedp.Sleep(time.Second * 5),
 		chromedp.Click("//*[@id=\"importConfirmModal\"]/div/div/div[4]/input"),
 		//chromedp.Click("//*[@id=\"importConfirmModal\"]/div/div/div[4]/button[1]"),
 		chromedp.ActionFunc(logAction(">>>>>>>>>>>>>>>>>>>> Button Import IS Click")),
