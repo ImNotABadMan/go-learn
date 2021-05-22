@@ -100,8 +100,8 @@ func OpenChrome(inEmail string, inPassword string, configPath string) {
 	}()
 
 	taskLogin, mapValue := taskLogin(inEmail, inPassword)
-	email, password := *mapValue["email"], *mapValue["password"]
-	fmt.Println("email:", email)
+	email, password := *mapValue["username"], *mapValue["password"]
+	fmt.Println("username:", email)
 	fmt.Println("password:", password)
 
 	taskOpenMenuCsv := taskOpenMenuCsv()
@@ -119,7 +119,8 @@ func OpenChrome(inEmail string, inPassword string, configPath string) {
 	taskClickGlImport := taskClickGlImport()
 
 	err = chromedp.Run(taskCtx,
-		chromedp.Navigate("http://v2.globaloutlet-backend.com:8011/login"),
+		//chromedp.Navigate("http://v2.globaloutlet-backend.com:8011/login"),
+		chromedp.Navigate("http://192.168.10.113:8011/login"),
 		taskLogin,
 		taskOpenMenuCsv,
 		taskEntryCsv,
@@ -146,22 +147,22 @@ func OpenChrome(inEmail string, inPassword string, configPath string) {
 
 func taskLogin(inEmail string, inPassword string) (tasks chromedp.Tasks, mapValue map[string](*string)) {
 
-	var email, password string
+	var username, password string
 	var mapValueLogin = map[string]*string{
-		"email":    &email,
+		"username": &username,
 		"password": &password,
 	}
 
 	mapValue = mapValueLogin
 
 	tasks = chromedp.Tasks{
-		chromedp.WaitVisible(`#email`, chromedp.ByID),
+		chromedp.WaitVisible(`#username`, chromedp.ByID),
 		chromedp.WaitVisible(`#password`, chromedp.ByID),
-		chromedp.SendKeys("#email", inEmail, chromedp.ByID),
+		chromedp.SendKeys("#username", inEmail, chromedp.ByID),
 		chromedp.Sleep(time.Millisecond * 600),
 		chromedp.SendKeys("#password", inPassword, chromedp.ByID),
 		chromedp.Sleep(time.Millisecond * 600),
-		chromedp.Value("#email", mapValue["email"], chromedp.ByID),
+		chromedp.Value("#username", mapValue["username"], chromedp.ByID),
 		chromedp.Value("#password", mapValue["password"], chromedp.ByID),
 		chromedp.WaitVisible("#login-form .btn"),
 		chromedp.Submit("#login-form .btn"),

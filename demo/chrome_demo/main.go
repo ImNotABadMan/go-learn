@@ -11,7 +11,7 @@ func main() {
 
 	//gl_csv_import.ReStartCsvQueue()
 	var ws = sync.WaitGroup{}
-	ws.Add(7)
+	ws.Add(2)
 
 	// 多个浏览器
 	go func() {
