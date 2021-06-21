@@ -20,7 +20,7 @@ func main() {
 	}()
 
 	go func() {
-		gl_csv_import.OpenChrome("crazyman", "test123", "/gl_csv_import/csv.json")
+		gl_csv_import.OpenChrome("crazyman", "test123", "/gl_csv_import/csv1.json")
 		ws.Done()
 	}()
 

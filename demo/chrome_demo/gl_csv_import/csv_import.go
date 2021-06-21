@@ -104,8 +104,8 @@ func OpenChrome(inEmail string, inPassword string, configPath string) {
 	fmt.Println("username:", email)
 	fmt.Println("password:", password)
 
-	taskOpenMenuCsv := taskOpenMenuCsv()
-	taskEntryCsv := taskEntryCsv()
+	//taskOpenMenuCsv, taskEntryCsv, taskImport, taskClickImport := taskImportGlCsv(configPath)
+	taskOpenMenuCsv, taskEntryCsv, taskImport, taskClickImport := taskImportShopifyCsv(configPath)
 
 	wdPath, _ := os.Getwd()
 	//csvFullPath := wdPath + "/gl_csv_import/test-import.csv"
@@ -115,17 +115,14 @@ func OpenChrome(inEmail string, inPassword string, configPath string) {
 
 	fmt.Println("Csv Path: ", csvPath)
 
-	taskGlImport := taskGlImport(csvPath)
-	taskClickGlImport := taskClickGlImport()
-
 	err = chromedp.Run(taskCtx,
 		//chromedp.Navigate("http://v2.globaloutlet-backend.com:8011/login"),
 		chromedp.Navigate("http://192.168.10.113:8011/login"),
 		taskLogin,
 		taskOpenMenuCsv,
 		taskEntryCsv,
-		taskGlImport,
-		taskClickGlImport,
+		taskImport,
+		taskClickImport,
 		chromedp.WaitVisible("body"),
 	)
 
@@ -172,6 +169,46 @@ func taskLogin(inEmail string, inPassword string) (tasks chromedp.Tasks, mapValu
 	return tasks, mapValue
 }
 
+func taskImportGlCsv(configPath string) (inTaskOpenMenuCsv chromedp.Tasks, inTaskEntryCsv chromedp.Tasks,
+	inTaskGlImport chromedp.Tasks, inTaskClickGlImport chromedp.Tasks) {
+
+	taskOpenMenuCsv := taskOpenMenuCsv()
+	taskEntryCsv := taskEntryGlCsv()
+
+	wdPath, _ := os.Getwd()
+	//csvFullPath := wdPath + "/gl_csv_import/test-import.csv"
+	//configFullPath := wdPath + configPath
+	pathStruct := GetCsvPath(configPath)
+	csvPath := wdPath + pathStruct.PathStr
+
+	fmt.Println("Csv Path: ", csvPath)
+
+	taskGlImport := taskGlImport(csvPath)
+	taskClickGlImport := taskClickGlImport()
+
+	return taskOpenMenuCsv, taskEntryCsv, taskGlImport, taskClickGlImport
+}
+
+func taskImportShopifyCsv(configPath string) (inTaskOpenMenuCsv chromedp.Tasks, inTaskEntryCsv chromedp.Tasks,
+	inTaskShopifyImport chromedp.Tasks, inTaskClickShopifyImport chromedp.Tasks) {
+
+	taskOpenMenuCsv := taskOpenMenuCsv()
+	taskEntryCsv := taskEntryShopifyCsv()
+
+	wdPath, _ := os.Getwd()
+	//csvFullPath := wdPath + "/gl_csv_import/test-import.csv"
+	//configFullPath := wdPath + configPath
+	pathStruct := GetCsvPath(configPath)
+	csvPath := wdPath + pathStruct.PathStr
+
+	fmt.Println("Csv Path: ", csvPath)
+
+	taskShopifyImport := taskShopifyImport(csvPath)
+	taskClickShopifyImport := taskClickShopifyImport()
+
+	return taskOpenMenuCsv, taskEntryCsv, taskShopifyImport, taskClickShopifyImport
+}
+
 func taskOpenMenuCsv() chromedp.Tasks {
 	return chromedp.Tasks{
 		chromedp.WaitVisible("/html/body/div/aside[1]/div/div[4]/div/div/nav/ul/li[1]"),
@@ -188,7 +225,7 @@ func taskOpenMenuCsv() chromedp.Tasks {
 	}
 }
 
-func taskEntryCsv() chromedp.Tasks {
+func taskEntryGlCsv() chromedp.Tasks {
 	return chromedp.Tasks{
 		chromedp.WaitVisible("//*[@id=\"actionChoose\"]/div[1]"),
 		chromedp.ActionFunc(logAction(">>>>>>>>>>>>>>>>>>>> 新增产品 IS VISIBLE")),
@@ -217,14 +254,61 @@ func taskGlImport(csvPath string) chromedp.Tasks {
 		chromedp.ActionFunc(logAction(">>>>>>>>>>>>>>>>>>>> gl currency IS Ready")),
 		chromedp.Sleep(time.Millisecond * 2000),
 
-		chromedp.WaitVisible("//*[@id=\"uploadForm\"]/div[3]/input"),
+		chromedp.WaitVisible("//*[@id=\"uploadForm\"]/div[4]/input[2]"),
 		chromedp.ActionFunc(logAction(">>>>>>>>>>>>>>>>>>>> Button Validation IS VISIBLE")),
-		chromedp.Click("//*[@id=\"uploadForm\"]/div[3]/input"),
+		chromedp.Click("//*[@id=\"uploadForm\"]/div[4]/input[2]"),
 		chromedp.ActionFunc(logAction(">>>>>>>>>>>>>>>>>>>> Button Validation IS Click")),
 	}
 }
 
 func taskClickGlImport() chromedp.Tasks {
+	return chromedp.Tasks{
+		chromedp.WaitVisible("//*[@id=\"importConfirmModal\"]/div/div/div[4]/input"),
+		chromedp.ActionFunc(logAction(">>>>>>>>>>>>>>>>>>>> Button Import IS VISIBLE")),
+		chromedp.Sleep(time.Second * 5),
+		chromedp.Click("//*[@id=\"importConfirmModal\"]/div/div/div[4]/input"),
+		//chromedp.Click("//*[@id=\"importConfirmModal\"]/div/div/div[4]/button[1]"),
+		chromedp.ActionFunc(logAction(">>>>>>>>>>>>>>>>>>>> Button Import IS Click")),
+	}
+}
+
+func taskEntryShopifyCsv() chromedp.Tasks {
+	return chromedp.Tasks{
+		chromedp.WaitVisible("//*[@id=\"actionChoose\"]/div[1]"),
+		chromedp.ActionFunc(logAction(">>>>>>>>>>>>>>>>>>>> 新增产品 IS VISIBLE")),
+		chromedp.Click("//*[@id=\"actionChoose\"]/div[1]"),
+		chromedp.ActionFunc(logAction(">>>>>>>>>>>>>>>>>>>> 新增产品 IS Click")),
+		chromedp.Sleep(time.Millisecond * 3000),
+
+		chromedp.WaitVisible("//*[@id=\"import\"]/div[3]"),
+		chromedp.ActionFunc(logAction(">>>>>>>>>>>>>>>>>>>> 点击Shopify //*[@id=\"import\"]/div[3] IS VISIBLE")),
+		chromedp.Click("//*[@id=\"import\"]/div[3]"),
+		chromedp.ActionFunc(logAction(">>>>>>>>>>>>>>>>>>>> 点击Shopify //*[@id=\"import\"]/div[3] IS Click")),
+	}
+}
+
+func taskShopifyImport(csvPath string) chromedp.Tasks {
+	return chromedp.Tasks{
+		chromedp.WaitVisible("//*[@id=\"csv\"]"),
+		chromedp.ActionFunc(logAction(">>>>>>>>>>>>>>>>>>>> shopify file IS VISIBLE")),
+		chromedp.SendKeys("//*[@id=\"csv\"]", csvPath),
+		chromedp.ActionFunc(logAction(">>>>>>>>>>>>>>>>>>>> shopify file IS Ready")),
+		chromedp.Sleep(time.Millisecond * 2000),
+
+		chromedp.WaitVisible("//*[@id=\"currency\"]"),
+		chromedp.ActionFunc(logAction(">>>>>>>>>>>>>>>>>>>> shopify currency IS VISIBLE")),
+		chromedp.SendKeys("//*[@id=\"currency\"]", kb.ArrowDown+kb.ArrowDown),
+		chromedp.ActionFunc(logAction(">>>>>>>>>>>>>>>>>>>> shopify currency IS Ready")),
+		chromedp.Sleep(time.Millisecond * 2000),
+
+		chromedp.WaitVisible("//*[@id=\"uploadForm\"]/div[4]/input[2]"),
+		chromedp.ActionFunc(logAction(">>>>>>>>>>>>>>>>>>>> Button Validation IS VISIBLE")),
+		chromedp.Click("//*[@id=\"uploadForm\"]/div[4]/input[2]"),
+		chromedp.ActionFunc(logAction(">>>>>>>>>>>>>>>>>>>> Button Validation IS Click")),
+	}
+}
+
+func taskClickShopifyImport() chromedp.Tasks {
 	return chromedp.Tasks{
 		chromedp.WaitVisible("//*[@id=\"importConfirmModal\"]/div/div/div[4]/input"),
 		chromedp.ActionFunc(logAction(">>>>>>>>>>>>>>>>>>>> Button Import IS VISIBLE")),
