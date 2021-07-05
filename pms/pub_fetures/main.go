@@ -16,7 +16,7 @@ import (
 
 func main() {
 	db := Connect()
-	//createTask(db)
+	createTask(db)
 	task, taskProducts := getTask(db)
 	sendToKafka(task, taskProducts)
 }
@@ -38,7 +38,7 @@ func Connect() *gorm.DB {
 }
 
 func createTask(db *gorm.DB) {
-	products := create.GetProducts(db, 73532, 73532)
+	products := create.GetProducts(db, 58934, 58934)
 	sites := create.GetSites(db)
 	categories := create.GetSiteCategory(db)
 	//fmt.Println(categories)

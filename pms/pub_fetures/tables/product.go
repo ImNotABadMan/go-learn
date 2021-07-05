@@ -47,7 +47,7 @@ type Product_additional struct {
 	Supplier_url          string
 	Purchase_agent        int
 	Listing_agent         int
-	Review_agent          int
+	Developer_agent       int
 	Lead_time             int
 	Seasonal              int
 	Months                string
