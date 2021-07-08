@@ -19,7 +19,7 @@ import (
 func main() {
 	db := Connect()
 
-	pubIDs := createTask(db, 56556, 58233)
+	pubIDs := createTask(db, 56556)
 	if len(pubIDs) == 0 {
 		PrettyPrint("没有可创建的刊登")
 		return

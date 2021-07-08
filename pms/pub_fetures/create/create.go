@@ -57,7 +57,7 @@ func GetProducts(db *gorm.DB, minProductID int, maxProductID ...int) []tables.Pr
 			Joins("Additional").Preload("Prices").Find(&products)
 	} else {
 		db.Where("ss_products.productID >= ?", minProductID).
-			Where("ss_products.group_parent is Null").Limit(2).
+			Where("ss_products.group_parent is Null").Limit(1).
 			Joins("Additional").Preload("Prices").Find(&products)
 	}
 
