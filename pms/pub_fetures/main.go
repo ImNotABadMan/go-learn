@@ -62,7 +62,6 @@ func createTask(db *gorm.DB, minProductID int, maxProductID ...int) []int {
 	}
 	//sites := create.GetSites(db)
 	categories := create.GetSiteCategory(db)
-	//log.Println(categories)
 	//PrettyPrint(categories)
 	//PrettyPrint(sites)
 	//PrettyPrint(products)
