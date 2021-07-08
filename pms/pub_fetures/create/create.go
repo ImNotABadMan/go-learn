@@ -1,6 +1,7 @@
 package create
 
 import (
+	"database/sql"
 	"fmt"
 	"gorm.io/gorm"
 	"log"
@@ -9,36 +10,56 @@ import (
 	"time"
 )
 
-func GetTasks(db *gorm.DB, id ...int) tables.Publication_task {
+func GetTasks(db *gorm.DB, id ...int) []tables.PublicationTask {
+	var rows *sql.Rows
 	var (
-		task   tables.Publication_task
+		task   tables.PublicationTask
 		taskID int
 	)
-	if len(id) > 0 {
+	taskList := []tables.PublicationTask{}
+
+	if len(id) > 0 && id[0] > 0 {
 		taskID = id[0]
 	} else {
-		taskID = 136
+		taskID = 1
 	}
-	db.Raw("select * from ss_publication_task where id = ?", taskID).Scan(&task)
+	if len(id) > 0 && id[0] > 0 {
+		rows, _ = db.Raw("select * from ss_publication_task where id between ? and ?", taskID, id[0]).Rows()
+	} else {
+		rows, _ = db.Raw("select * from ss_publication_task where id = ?", taskID).Rows()
+	}
+	defer rows.Close()
 
-	return task
+	for rows.Next() {
+		db.ScanRows(rows, &task)
+		taskList = append(taskList, task)
+	}
+
+	return taskList
 }
 
-func GetTaskProducts(db *gorm.DB) tables.Publication_products {
-	var taskProduct tables.Publication_products
-	db.Raw("select * from ss_publication_products where publication_id = ?", 136).Scan(&taskProduct)
+func GetTaskProducts(db *gorm.DB, pubID int) tables.PublicationProducts {
+	var taskProduct tables.PublicationProducts
+	db.Raw("select * from ss_publication_products where publication_id = ?", pubID).Scan(&taskProduct)
 
 	return taskProduct
 }
 
 // 获取产品
-func GetProducts(db *gorm.DB, minProductID int, maxProductID int) []tables.Products {
+func GetProducts(db *gorm.DB, minProductID int, maxProductID ...int) []tables.Products {
 	var (
 		products []tables.Products
 	)
 
-	db.Where("ss_products.productID between ? and ?", minProductID, maxProductID).
-		Joins("Additional").Preload("Prices").Find(&products)
+	if len(maxProductID) > 0 {
+		db.Where("ss_products.productID between ? and ?", minProductID, maxProductID[0]).
+			Where("ss_products.group_parent is Null").
+			Joins("Additional").Preload("Prices").Find(&products)
+	} else {
+		db.Where("ss_products.productID >= ?", minProductID).
+			Where("ss_products.group_parent is Null").Limit(2).
+			Joins("Additional").Preload("Prices").Find(&products)
+	}
 
 	//fmt.Println(len(products))
 
@@ -47,23 +68,22 @@ func GetProducts(db *gorm.DB, minProductID int, maxProductID int) []tables.Produ
 
 func GetSiteProducts(db *gorm.DB, productID int, siteID int) bool {
 	type test struct {
-		id int
+		ID int
 	}
+
 	var tmpRes = test{}
 
 	db.Raw("select * from ss_publication_products "+
 		"join ss_publication_task on ss_publication_task.id = ss_publication_products.publication_id "+
-		" where productID = ? and ss_publication_task.site_id = ? ", productID, siteID).Scan(&tmpRes)
+		" where productID = ? and ss_publication_task.site_id = ? limit 1", productID, siteID).Scan(&tmpRes)
 
-	//fmt.Println(len(products))
-
-	return tmpRes.id > 0
+	return tmpRes.ID > 0
 }
 
 // 获取全部站点
-func GetSites(db *gorm.DB) []tables.Site_config {
+func GetSites(db *gorm.DB) []tables.SiteConfig {
 	var (
-		sites []tables.Site_config
+		sites []tables.SiteConfig
 	)
 
 	db.Find(&sites)
@@ -74,20 +94,20 @@ func GetSites(db *gorm.DB) []tables.Site_config {
 }
 
 // 获取全部分类
-func GetSiteCategory(db *gorm.DB) map[int][]tables.Site_category {
+func GetSiteCategory(db *gorm.DB) map[int][]tables.SiteCategory {
 	var (
-		categories    []tables.Site_category
-		resCategories = make(map[int][]tables.Site_category)
+		categories    []tables.SiteCategory
+		resCategories = make(map[int][]tables.SiteCategory)
 	)
 
 	db.Where("type != ?", "smart").Find(&categories)
 
 	for _, category := range categories {
-		_, ok := resCategories[category.Site_id]
+		_, ok := resCategories[category.SiteID]
 		if ok {
-			resCategories[category.Site_id] = append(resCategories[category.Site_id], category)
+			resCategories[category.SiteID] = append(resCategories[category.SiteID], category)
 		} else {
-			resCategories[category.Site_id] = []tables.Site_category{category}
+			resCategories[category.SiteID] = []tables.SiteCategory{category}
 		}
 	}
 
@@ -96,73 +116,74 @@ func GetSiteCategory(db *gorm.DB) map[int][]tables.Site_category {
 	return resCategories
 }
 
-func InsertTask(db *gorm.DB, product tables.Products, categories map[int][]tables.Site_category, siteID int) int {
-	task := tables.Publication_task{
-		Site_id:    siteID,
-		Admin_id:   1221,
-		Updated_at: time.Now(),
-		Created_at: time.Now(),
+func InsertTask(db *gorm.DB, product tables.Products, categories map[int][]tables.SiteCategory, siteID int) int {
+	task := tables.PublicationTask{
+		SiteID:    siteID,
+		AdminID:   1221,
+		UpdatedAt: time.Now(),
+		CreatedAt: time.Now(),
 	}
 
-	result := db.Debug().Create(&task)
+	result := db.Create(&task)
 
 	if result.Error != nil {
 		fmt.Println(result.Error)
 		return 0
 	}
 
-	insertProduct(db, product, categories, task.Id)
+	insertProduct(db, product, categories, task.ID)
 
-	return task.Id
+	return task.ID
 }
 
-func insertProduct(db *gorm.DB, product tables.Products, categories map[int][]tables.Site_category, taskID int) {
+func insertProduct(db *gorm.DB, product tables.Products, categories map[int][]tables.SiteCategory, taskID int) {
 	var (
 		cateMap = make(map[int]int)
 	)
 
 	currencyID := rand.Intn(len(product.Prices))
 
-	pubProduct := tables.Publication_products{
-		Publication_id: taskID,
-		ProductID:      product.ProductID,
-		Name:           product.Name,
-		Is_logistics:   product.Additional.Out_stock_strategy,
-		Is_taxable:     rand.Intn(2),
-		Is_group:       product.Isgroup,
-		Product_code:   product.Product_code,
-		Currency_id:    product.Prices[currencyID].CurrencyID,
-		Created_at:     time.Now(),
-		Updated_at:     time.Now(),
+	pubProduct := tables.PublicationProducts{
+		PublicationID: taskID,
+		ProductID:     product.ProductID,
+		Name:          product.Name,
+		IsLogistics:   product.Additional.OutStockStrategy,
+		IsTaxable:     rand.Intn(2),
+		IsGroup:       product.Isgroup,
+		Enabled:       1,
+		ProductCode:   product.ProductCode,
+		CurrencyID:    product.Prices[currencyID].CurrencyID,
+		CreatedAt:     time.Now(),
+		UpdatedAt:     time.Now(),
 	}
 
-	result := db.Debug().Create(&pubProduct)
+	result := db.Create(&pubProduct)
 	if result.Error != nil {
 		log.Println(result.Error)
 		return
 	}
 
-	task := GetTasks(db)
+	task := GetTasks(db, taskID)[0]
 
 	// 插入category
-	cateCount := rand.Intn(len(categories[task.Site_id]))
+	cateCount := rand.Intn(len(categories[task.SiteID]))
 
 	for i := 0; i < cateCount; i++ {
-		index := rand.Intn(len(categories[task.Site_id]))
-		_, ok := cateMap[categories[task.Site_id][index].Id]
+		index := rand.Intn(len(categories[task.SiteID]))
+		_, ok := cateMap[categories[task.SiteID][index].Id]
 		if ok {
 			i--
 		} else {
-			cateMap[categories[task.Site_id][index].Id] = categories[task.Site_id][index].Id
+			cateMap[categories[task.SiteID][index].Id] = categories[task.SiteID][index].Id
 		}
 	}
 
 	for _, randCate := range cateMap {
-		db.Debug().Create(&tables.Publication_product_category{
-			Publication_id:   taskID,
-			Site_category_id: randCate,
-			Created_at:       time.Now(),
-			Updated_at:       time.Now(),
+		db.Create(&tables.PublicationProductCategory{
+			PublicationID:  taskID,
+			SiteCategoryID: randCate,
+			CreatedAt:      time.Now(),
+			UpdatedAt:      time.Now(),
 		})
 	}
 
@@ -172,19 +193,19 @@ func insertProduct(db *gorm.DB, product tables.Products, categories map[int][]ta
 
 func insertSub(db *gorm.DB, product tables.Products, taskID int) {
 	if product.Isgroup == 0 {
-		sub := tables.Publication_product_sub{
-			Publication_id:     taskID,
-			Co_productID:       product.ProductID,
-			Co_product_code:    product.Product_code,
-			Price:              product.Prices[0].Price,
-			Original_price:     product.Prices[0].Original_price,
-			In_stock:           product.In_stock,
-			Out_stock_strategy: product.Additional.Out_stock_strategy,
-			Created_at:         time.Now(),
-			Updated_at:         time.Now(),
+		sub := tables.PublicationProductSub{
+			PublicationID:    taskID,
+			CoProductID:      product.ProductID,
+			CoProductCode:    product.ProductCode,
+			Price:            product.Prices[0].Price,
+			OriginalPrice:    product.Prices[0].OriginalPrice,
+			InStock:          product.InStock,
+			OutStockStrategy: product.Additional.OutStockStrategy,
+			CreatedAt:        time.Now(),
+			UpdatedAt:        time.Now(),
 		}
 
-		db.Debug().Create(&sub)
+		db.Create(&sub)
 		return
 	}
 
@@ -194,21 +215,18 @@ func insertSub(db *gorm.DB, product tables.Products, taskID int) {
 		Preload("Additional").Preload("Prices").Find(&subs)
 
 	for _, sub := range subs {
-		insertSub := tables.Publication_product_sub{
-			Publication_id:     taskID,
-			Co_productID:       sub.ProductID,
-			Co_product_code:    sub.Product_code,
-			Price:              sub.Prices[0].Price,
-			Original_price:     sub.Prices[0].Original_price,
-			In_stock:           sub.In_stock,
-			Out_stock_strategy: sub.Additional.Out_stock_strategy,
-			Created_at:         time.Now(),
-			Updated_at:         time.Now(),
+		insertSub := tables.PublicationProductSub{
+			PublicationID:    taskID,
+			CoProductID:      sub.ProductID,
+			CoProductCode:    sub.ProductCode,
+			Price:            sub.Prices[0].Price,
+			OriginalPrice:    sub.Prices[0].OriginalPrice,
+			InStock:          sub.InStock,
+			OutStockStrategy: sub.Additional.OutStockStrategy,
+			CreatedAt:        time.Now(),
+			UpdatedAt:        time.Now(),
 		}
-		db.Debug().Create(&insertSub)
-
-		db.Model(&tables.Products{}).
-			Where("taskID = ?", taskID).Update("currency_id", sub.Prices[0].CurrencyID)
+		db.Create(&insertSub)
 	}
 
 }
