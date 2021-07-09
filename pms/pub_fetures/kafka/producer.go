@@ -3,8 +3,6 @@ package kafka
 import (
 	"github.com/Shopify/sarama"
 	"log"
-	"os"
-	"os/signal"
 	"sync"
 )
 
@@ -28,15 +26,40 @@ func (kafka *Kafka) Producer() *Kafka {
 }
 
 func (kafka *Kafka) Produce(topic string, messages []string) {
-	signals := make(chan os.Signal, 1)
-	signal.Notify(signals, os.Interrupt)
+	//signals := make(chan os.Signal, 1)
+	//signal.Notify(signals, os.Interrupt)
 
+	var enqueued int
+
+	for _, message := range messages {
+		// 生产消息
+		produceMessage := &sarama.ProducerMessage{
+			Topic: topic,
+			Value: sarama.StringEncoder(message),
+		}
+
+		//select {
+		kafka.AsyncProducer.Input() <- produceMessage
+		enqueued++
+		//case <-signals:
+		// 命令行接受断开信号
+	}
+}
+
+func (kafka *Kafka) Close() {
+	kafka.AsyncProducer.AsyncClose()
+}
+
+func (kafka *Kafka) WaitProduce() {
 	var (
-		wg                        sync.WaitGroup
-		success, errors, enqueued int
+		wg              sync.WaitGroup
+		success, errors int
 	)
 
 	wg.Add(2)
+
+	log.Printf("Prepare produce: %d; errors: %d\n", success, errors)
+
 	// goroutine 发送成功
 	go func() {
 		defer wg.Done()
@@ -52,24 +75,6 @@ func (kafka *Kafka) Produce(topic string, messages []string) {
 			errors++
 		}
 	}()
-
-	log.Printf("Prepare produce: %d; errors: %d\n", success, errors)
-
-	for _, message := range messages {
-		// 生产消息
-		produceMessage := &sarama.ProducerMessage{
-			Topic: topic,
-			Value: sarama.StringEncoder(message),
-		}
-
-		//select {
-		kafka.AsyncProducer.Input() <- produceMessage
-		enqueued++
-		//case <-signals:
-		// 命令行接受断开信号
-	}
-
-	kafka.AsyncProducer.AsyncClose()
 
 	wg.Wait()
 

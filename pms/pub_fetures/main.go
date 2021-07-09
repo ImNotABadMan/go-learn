@@ -18,8 +18,10 @@ import (
 
 func main() {
 	db := Connect()
+	kafkaQueue := kafka.Kafka{}
+	producer := kafkaQueue.Producer()
 
-	pubIDs := createTask(db, 56556)
+	pubIDs := createTask(db, 57938, 58011)
 	if len(pubIDs) == 0 {
 		PrettyPrint("没有可创建的刊登")
 		return
@@ -28,8 +30,13 @@ func main() {
 	// 发送到kafka
 	for _, pubID := range pubIDs {
 		task, taskProducts := getTask(db, pubID, 0)
-		sendToKafka(task, taskProducts)
+		sendToKafka(producer, task, taskProducts)
 	}
+
+	kafkaQueue.Close()
+
+	kafkaQueue.WaitProduce()
+
 }
 
 func Connect() *gorm.DB {
@@ -116,7 +123,7 @@ func getTask(db *gorm.DB, pubID int, maxPubID int) (tables.PublicationTask, tabl
 }
 
 // 使用php 序列化发送到kafka中
-func sendToKafka(task tables.PublicationTask, taskProducts tables.PublicationProducts) {
+func sendToKafka(kafkaQueue *kafka.Kafka, task tables.PublicationTask, taskProducts tables.PublicationProducts) {
 	var (
 		phpMap = map[string]string{
 			"task_id":    strconv.FormatInt(int64(task.ID), 10),
@@ -132,9 +139,7 @@ func sendToKafka(task tables.PublicationTask, taskProducts tables.PublicationPro
 
 	fmt.Println(string(phpSerialize))
 
-	kafkaQueue := kafka.Kafka{}
-
-	kafkaQueue.Producer().Produce(kafka.TopicShopifyPublish, []string{string(phpSerialize)})
+	kafkaQueue.Produce(kafka.TopicShopifyPublish, []string{string(phpSerialize)})
 }
 
 func PrettyPrint(v interface{}) {
