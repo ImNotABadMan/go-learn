@@ -1,0 +1,1798 @@
+{
+    "ROOT_QUERY": {
+        "employeeHasDiscountsAccess": null,
+        "shop": {
+            "type": "id",
+            "generated": false,
+            "id": "Shop:gid://shopify/Shop/43930910881",
+            "typename": "Shop"
+        },
+        "staffMember": {
+            "type": "id",
+            "generated": false,
+            "id": "StaffMember:gid://shopify/StaffMember/71735967905",
+            "typename": "StaffMember"
+        },
+        "appByHandle({\"handle\":\"online_store\"})": {
+            "type": "id",
+            "generated": false,
+            "id": "App:gid://shopify/App/580111",
+            "typename": "App"
+        },
+        "onlineStore": {
+            "type": "id",
+            "generated": true,
+            "id": "$ROOT_QUERY.onlineStore",
+            "typename": "OnlineStore"
+        },
+        "locations({\"first\":250,\"includeLegacy\":true,\"query\":\"legacy:true\"})": {
+            "type": "id",
+            "generated": true,
+            "id": "$ROOT_QUERY.locations({\"first\":250,\"includeLegacy\":true,\"query\":\"legacy:true\"})",
+            "typename": "LocationConnection"
+        },
+        "locations({\"first\":250})": {
+            "type": "id",
+            "generated": true,
+            "id": "$ROOT_QUERY.locations({\"first\":250})",
+            "typename": "LocationConnection"
+        },
+        "product({\"id\":\"gid://shopify/Product/6635169185953\"})": {
+            "type": "id",
+            "generated": false,
+            "id": "Product:gid://shopify/Product/6635169185953",
+            "typename": "Product"
+        },
+        "publications({\"first\":250})": {
+            "type": "id",
+            "generated": true,
+            "id": "$ROOT_QUERY.publications({\"first\":250})",
+            "typename": "PublicationConnection"
+        },
+        "elementDismissed({\"handle\":\"page_presence_onboarding\"})": false,
+        "elementDismissed({\"handle\":\"rich_media_theme_warning\"})": false,
+        "metafieldDefinitionsCounts({\"ownerTypes\":[\"PRODUCT\"]})": [
+            {
+                "type": "id",
+                "generated": true,
+                "id": "ROOT_QUERY.metafieldDefinitionsCounts({\"ownerTypes\":[\"PRODUCT\"]}).0",
+                "typename": "MetafieldDefinitionCountForOwnerType"
+            }
+        ],
+        "products({\"before\":\"eyJsaW1pdCI6MSwib3JkZXIiOiJpZCBhc2MiLCJsYXN0X2lkIjo2NjM1MTY5MTg1OTUzLCJsYXN0X3ZhbHVlIjo2NjM1MTY5MTg1OTUzLCJkaXJlY3Rpb24iOiJuZXh0In0=\",\"last\":1})": {
+            "type": "id",
+            "generated": true,
+            "id": "$ROOT_QUERY.products({\"before\":\"eyJsaW1pdCI6MSwib3JkZXIiOiJpZCBhc2MiLCJsYXN0X2lkIjo2NjM1MTY5MTg1OTUzLCJsYXN0X3ZhbHVlIjo2NjM1MTY5MTg1OTUzLCJkaXJlY3Rpb24iOiJuZXh0In0=\",\"last\":1})",
+            "typename": "ProductConnection"
+        },
+        "products({\"after\":\"eyJsaW1pdCI6MSwib3JkZXIiOiJpZCBhc2MiLCJsYXN0X2lkIjo2NjM1MTY5MTg1OTUzLCJsYXN0X3ZhbHVlIjo2NjM1MTY5MTg1OTUzLCJkaXJlY3Rpb24iOiJuZXh0In0=\",\"first\":1})": {
+            "type": "id",
+            "generated": true,
+            "id": "$ROOT_QUERY.products({\"after\":\"eyJsaW1pdCI6MSwib3JkZXIiOiJpZCBhc2MiLCJsYXN0X2lkIjo2NjM1MTY5MTg1OTUzLCJsYXN0X3ZhbHVlIjo2NjM1MTY5MTg1OTUzLCJkaXJlY3Rpb24iOiJuZXh0In0=\",\"first\":1})",
+            "typename": "ProductConnection"
+        }
+    },
+    "Shop:gid://shopify/Shop/43930910881": {
+        "id": "gid://shopify/Shop/43930910881",
+        "name": "faleful",
+        "email": "elita_yang@comprame.com",
+        "currencyCode": "USD",
+        "ianaTimezone": "Asia/Shanghai",
+        "timezoneOffsetMinutes": 480,
+        "timezoneAbbreviation": "CST",
+        "myshopifyDomain": "reeneefashion.myshopify.com",
+        "authorizedAnalyticsToken": "WyI0MzkzMDkxMDg4MSIsIjIwMjEtMDctMTVUMjM6MTU6NDArMDg6MDAiLHsiZWRpdGluZyI6ZmFsc2UsInVzZXJfaWQiOjcxNzM1OTY3OTA1LCJhcGlfY2xpZW50X2lkIjoxODMwMjc5fV0=--c47a7198793ec802b8ba22af378c8f2eedd32563",
+        "analyticsHost": "https://analytics.shopify.com",
+        "chinaCdnEnabled": true,
+        "shopifyEmployeeSession": false,
+        "shopifyEmployeeId": null,
+        "features": {
+            "type": "id",
+            "generated": true,
+            "id": "$Shop:gid://shopify/Shop/43930910881.features",
+            "typename": "ShopFeatures"
+        },
+        "__typename": "Shop",
+        "setupRequired": false,
+        "billingAddress": {
+            "type": "id",
+            "generated": false,
+            "id": "MailingAddress:gid://shopify/MailingAddress/43930910881?model_name=ShopAddress",
+            "typename": "MailingAddress"
+        },
+        "plan": {
+            "type": "id",
+            "generated": true,
+            "id": "$Shop:gid://shopify/Shop/43930910881.plan",
+            "typename": "ShopPlan"
+        },
+        "accountOwner": {
+            "type": "id",
+            "generated": false,
+            "id": "StaffMember:gid://shopify/StaffMember/59772403873",
+            "typename": "StaffMember"
+        },
+        "isTrackable": true,
+        "primaryDomain": {
+            "type": "id",
+            "generated": false,
+            "id": "Domain:gid://shopify/Domain/67639214241",
+            "typename": "Domain"
+        },
+        "enabledBetas({\"names\":[\"abandoned_checkouts\",\"abandoned_checkouts_opt_out\",\"abc_analytics\",\"ad_audiences_alpha_onboarding\",\"add_tracking_in_bulk\",\"admin_create_hydrogen_channels\",\"always_attempts_new_pay_bill_mutation_in_admin_billing\",\"app_notifications_display\",\"argo_extensions_dev_portal\",\"balance_transactions_route\",\"brand_settings\",\"checkout_subscriptions\",\"disable_checkout_subscriptions\",\"discounts_disallow_employee_access\",\"customer_tax_exemptions\",\"display_shop_performance_score\",\"display_shop_performance_timeline\",\"deferred_payments\",\"deferred_payments_pay_by_credit_card_kill_switch\",\"dompurify_rich_text_editor\",\"educating_merchants_on_shipping_labels_during_covid\",\"estuary_product_insights\",\"eu_lpms_for_all_merchants_rollout\",\"fulfillment_order_aware_refunds\",\"display_fulfill_by_features\",\"fullstory_script\",\"fullstory_script_killswitch\",\"global_nav_dev_preview\",\"jumbo_extended_variants_per_product\",\"landed_cost_opt_in\",\"landed_cost_incoterms\",\"landed_cost_onboarding\",\"live_selling\",\"manual_fulfillment_holds\",\"marketing_section_default_30_day_metrics\",\"marketing_section_delete_marketing_campaign\",\"marketing_section_live_activity_updates\",\"marketing_section_email_pricing_information\",\"marketing_section_single_step_automation\",\"marketing_section_automation_v2\",\"marketing_section_use_engagement_reportify_v2\",\"markets_settings_route\",\"multi_currency_draft_orders\",\"multi_currency_paypal_enabled\",\"multi_currency_rounding_rules_shipping\",\"nav_next\",\"nav_next_ui_only\",\"new-admin\",\"new-admin-account-setup-route\",\"new-admin-collection-list-route\",\"new-admin-declarative-form\",\"new-admin-draft-order-detail-route\",\"new-admin-gift-card-details-route\",\"new-admin-redirect-list-route\",\"new-admin-redirect-list-route-opt-out\",\"new-admin-redirect-details-route\",\"new-admin-redirect-details-route-opt-out\",\"new-admin-redirect-import-modal\",\"new-admin-redirect-import-modal-opt-out\",\"new-admin-request-grant-route\",\"new-admin-request-grant-route-opt-out\",\"new-admin-settings-checkout-upgrade-route\",\"new-admin-settings-locations-details-route\",\"new_admin_payouts_details_route\",\"new_admin_payouts_details_route_opt_out\",\"new_admin_payouts_list_route\",\"new_admin_payouts_list_route_opt_out\",\"new_admin_domains_settings_route\",\"new_admin_domains_settings_route_opt_out\",\"nexus_insights\",\"new_admin_gift_cards_settings_route\",\"onboarding_task_list_progress_footer\",\"order_list_bulk_print_packing_slips\",\"online_store_power_editor\",\"order_index_presence\",\"panel_presence\",\"payment_terms\",\"pickup_order_editing\",\"polaris-icons-analytics\",\"post_purchase_paypal_express\",\"post_purchase_step\",\"pre_launch_theme\",\"price_by_measure_opt_in\",\"purchase_orders\",\"purchase_orders_rollout_new\",\"risk_filter_risk_recommendation_migration\",\"subscriptions_paypal_express\",\"use_active_tax_engine\",\"use_active_tax_engine_usa\",\"use_active_tax_engine_eu\",\"use_active_tax_engine_core_row\",\"use_active_tax_engine_row\",\"saml_sso\",\"sfn_self_serve_activation\",\"shop_pay_installments_merchant_dashboard_v1\",\"shop_pay_installments_onboarding_default_on\",\"shop_pay_installments_selfserve_onboarding_enabled\",\"shopify_installments\",\"shopify_installments_admin_onboarding\",\"shopify_markets_sell_page\",\"shopify_payments_compliant_onboarding_au\",\"shopify_payments_compliant_onboarding_de\",\"shopify_payments_compliant_onboarding_dk\",\"shopify_payments_compliant_onboarding_es\",\"shopify_payments_compliant_onboarding_gb\",\"shopify_payments_compliant_onboarding_ie\",\"shopify_payments_compliant_onboarding_it\",\"shopify_payments_compliant_onboarding_nl\",\"shopify_payments_compliant_onboarding_nz\",\"shopify_payments_compliant_onboarding_se\",\"shopify_payments_compliant_onboarding_us\",\"shopify_payments_dispute_evidences_webification\",\"shopify_payments_paypal_france\",\"shopify_payments_requested_documents_webification\",\"shopify_payments_settings_new_layout_v1\",\"sp_decoupling_bypass\",\"local_delivery_opt_out\",\"localized_domains\",\"argo_extensions_shops\",\"customers_segmentation_web\",\"delivery_expectation\",\"use_customer_csv_import_operations\",\"argus_connect_opt_out\",\"deferred_fulfillment_orders\",\"hcaptcha_experiment\",\"new-admin-file-routes\",\"contextual_learning_content_feed\",\"merchant_metafields\",\"local_delivery_multiple_zones\",\"scripts_platform_merchant_ux\",\"new_language_editor_route\",\"scripts_platform\",\"balance_card_customization\",\"inbox_in_admin\",\"ups_return_address_sync\",\"shop_identity_tfa_enroll\",\"tracking_carrier_defaults\",\"shipping_package_defaults\",\"translations_csv_export_import\",\"balance_new_bottom_section\",\"taxes_eu_oss_calculation\",\"defer_10f\",\"online_store_2\",\"shopify_banking_sp_onboarding\",\"pick_period_redesign\",\"admin-finances-section\",\"custom_and_standard_product_types\",\"merchant_custom_apps\",\"orders_saved_views\"]})": {
+            "type": "json",
+            "json": [
+                "nav_next",
+                "use_active_tax_engine",
+                "use_active_tax_engine_usa",
+                "use_active_tax_engine_eu",
+                "use_active_tax_engine_core_row",
+                "new-admin",
+                "fulfillment_order_aware_refunds",
+                "marketing_section_live_activity_updates",
+                "purchase_orders_rollout_new",
+                "display_shop_performance_score",
+                "localized_domains",
+                "dompurify_rich_text_editor",
+                "marketing_section_email_pricing_information",
+                "abc_analytics",
+                "checkout_subscriptions",
+                "argo_extensions_shops",
+                "marketing_section_use_engagement_reportify_v2",
+                "order_list_bulk_print_packing_slips",
+                "display_shop_performance_timeline",
+                "deferred_payments",
+                "post_purchase_step",
+                "new-admin-collection-list-route",
+                "marketing_section_delete_marketing_campaign",
+                "delivery_expectation",
+                "marketing_section_default_30_day_metrics",
+                "multi_currency_paypal_enabled",
+                "multi_currency_draft_orders",
+                "shopify_payments_settings_new_layout_v1",
+                "subscriptions_paypal_express",
+                "new-admin-draft-order-detail-route",
+                "new-admin-redirect-details-route",
+                "shopify_payments_dispute_evidences_webification",
+                "shopify_payments_requested_documents_webification",
+                "new-admin-redirect-import-modal",
+                "new-admin-redirect-list-route",
+                "multi_currency_rounding_rules_shipping",
+                "balance_card_customization",
+                "shop_pay_installments_onboarding_default_on",
+                "abandoned_checkouts",
+                "argo_extensions_dev_portal",
+                "shop_pay_installments_selfserve_onboarding_enabled",
+                "post_purchase_paypal_express",
+                "always_attempts_new_pay_bill_mutation_in_admin_billing",
+                "discounts_disallow_employee_access",
+                "translations_csv_export_import",
+                "taxes_eu_oss_calculation",
+                "online_store_2",
+                "inbox_in_admin"
+            ]
+        },
+        "onlineStore": {
+            "type": "id",
+            "generated": true,
+            "id": "$Shop:gid://shopify/Shop/43930910881.onlineStore",
+            "typename": "OnlineStore"
+        },
+        "navigationItems({\"type\":\"SALES_CHANNEL\"})": [
+            {
+                "type": "id",
+                "generated": true,
+                "id": "Shop:gid://shopify/Shop/43930910881.navigationItems({\"type\":\"SALES_CHANNEL\"}).0",
+                "typename": "NavigationItemV2"
+            },
+            {
+                "type": "id",
+                "generated": true,
+                "id": "Shop:gid://shopify/Shop/43930910881.navigationItems({\"type\":\"SALES_CHANNEL\"}).1",
+                "typename": "NavigationItemV2"
+            }
+        ],
+        "developerPreview": null,
+        "transferDisabled": false,
+        "alerts": [],
+        "shopIdentificationSettings": {
+            "type": "id",
+            "generated": true,
+            "id": "$Shop:gid://shopify/Shop/43930910881.shopIdentificationSettings",
+            "typename": "ShopIdentificationSettings"
+        },
+        "experimentAssignment({\"name\":\"compass_holdout_l2c\"})": null,
+        "industry": "other",
+        "storefrontUrl": "https://reeneefashion.myshopify.com",
+        "usesIncoming": false,
+        "weightUnit": "KILOGRAMS",
+        "trialPlan": false,
+        "resourceLimits": {
+            "type": "id",
+            "generated": true,
+            "id": "$Shop:gid://shopify/Shop/43930910881.resourceLimits",
+            "typename": "ShopResourceLimits"
+        },
+        "fulfillmentServices": [
+            {
+                "type": "id",
+                "generated": false,
+                "id": "FulfillmentService:gid://shopify/FulfillmentService/manual",
+                "typename": "FulfillmentService"
+            }
+        ],
+        "taxesIncluded": false,
+        "products({\"first\":2})": {
+            "type": "id",
+            "generated": true,
+            "id": "$Shop:gid://shopify/Shop/43930910881.products({\"first\":2})",
+            "typename": "ProductConnection"
+        }
+    },
+    "$Shop:gid://shopify/Shop/43930910881.features": {
+        "addressServices": true,
+        "__typename": "ShopFeatures",
+        "argusConnect": true,
+        "banking": false,
+        "capital": true,
+        "deliveryExpectations": true,
+        "hasMultipleLocations": false,
+        "insightsAnalyticsNextProductInsightsExperience": true,
+        "locationsEnabled": true,
+        "marketing": true,
+        "multiLocation": false,
+        "multiManagedInventory": false,
+        "newAdminInventoryTransfers": false,
+        "newCustomerAccounts": false,
+        "newAdminOrderDetailsRoute": true,
+        "newAdminPreparePackageRoute": true,
+        "newAdminRequestFulfillmentRoute": true,
+        "newAdminSalesChannelSettingsRoute": false,
+        "onboardingVisual": false,
+        "onlineStoreWebAppDomain": false,
+        "onlineStoreWebNavigationDetails": true,
+        "onlineStoreWebNavigationIndex": true,
+        "orderEditing": true,
+        "packingSlips": true,
+        "productProtection": false,
+        "pseudotranslation": false,
+        "purchaseOrders": false,
+        "reports": false,
+        "reportsEditing": false,
+        "sellsSubscriptions": false,
+        "shippingLabels": true,
+        "shopifyPaymentsDisputeEvidencesWebification": true,
+        "shopifyPaymentsRequestedDocumentsWebification": true,
+        "showMetrics": true,
+        "storefront": true,
+        "tagsPerProductLimitEnabled": true,
+        "usBasedTracking": true,
+        "branding": "SHOPIFY",
+        "userJourneyTracking": true,
+        "inContextSupport": true,
+        "avalaraAvatax": false,
+        "giftCards": true,
+        "hsCodeSelectorEnabled": true,
+        "unitPriceEnabled": false,
+        "richMedia": true,
+        "insightsProductShowInsightsExperience": true,
+        "merchandisingVariantNewUx": false
+    },
+    "MailingAddress:gid://shopify/MailingAddress/43930910881?model_name=ShopAddress": {
+        "id": "gid://shopify/MailingAddress/43930910881?model_name=ShopAddress",
+        "countryCodeV2": "CN",
+        "__typename": "MailingAddress"
+    },
+    "$Shop:gid://shopify/Shop/43930910881.plan": {
+        "displayName": "Basic Shopify",
+        "shopifyPlus": false,
+        "__typename": "ShopPlan",
+        "partnerDevelopment": false
+    },
+    "StaffMember:gid://shopify/StaffMember/59772403873": {
+        "id": "gid://shopify/StaffMember/59772403873",
+        "__typename": "StaffMember"
+    },
+    "Domain:gid://shopify/Domain/67639214241": {
+        "id": "gid://shopify/Domain/67639214241",
+        "host": "reeneefashion.myshopify.com",
+        "__typename": "Domain",
+        "url": "https://reeneefashion.myshopify.com"
+    },
+    "StaffMember:gid://shopify/StaffMember/71735967905": {
+        "id": "gid://shopify/StaffMember/71735967905",
+        "locale": "zh-CN",
+        "accountAccess": "Full access",
+        "isShopOwner": false,
+        "name": "zhengbin",
+        "permissions": {
+            "type": "id",
+            "generated": true,
+            "id": "$StaffMember:gid://shopify/StaffMember/71735967905.permissions",
+            "typename": "StaffMemberPermissions"
+        },
+        "__typename": "StaffMember",
+        "hasDefaultName": false,
+        "email": "binzheng@jiebeili.cn",
+        "initials": {
+            "type": "json",
+            "json": [
+                "b",
+                "z"
+            ]
+        },
+        "avatar({\"fallback\":\"NOT_FOUND\"})": {
+            "type": "id",
+            "generated": true,
+            "id": "$StaffMember:gid://shopify/StaffMember/71735967905.avatar({\"fallback\":\"NOT_FOUND\"})",
+            "typename": "Image"
+        },
+        "identityAccountUrl": "https://accounts.shopify.com/accounts/5c110e6f-7c92-4d1d-99ef-64a48639f9f9/redirect",
+        "privateData": {
+            "type": "id",
+            "generated": true,
+            "id": "$StaffMember:gid://shopify/StaffMember/71735967905.privateData",
+            "typename": "StaffMemberPrivateData"
+        },
+        "destinationsToken": {
+            "type": "id",
+            "generated": true,
+            "id": "$StaffMember:gid://shopify/StaffMember/71735967905.destinationsToken",
+            "typename": "DestinationsToken"
+        }
+    },
+    "$StaffMember:gid://shopify/StaffMember/71735967905.permissions": {
+        "userPermissions": {
+            "type": "json",
+            "json": [
+                "APPLICATIONS",
+                "CUSTOMERS",
+                "DASHBOARD",
+                "DOMAINS",
+                "DRAFT_ORDERS",
+                "EDIT_ORDERS",
+                "EDIT_PRIVATE_APPS",
+                "GIFT_CARDS",
+                "LINKS",
+                "LOCATIONS",
+                "MARKETING",
+                "MARKETING_SECTION",
+                "ORDERS",
+                "OVERVIEWS",
+                "PAGES",
+                "PREFERENCES",
+                "PRODUCTS",
+                "REPORTS",
+                "THEMES",
+                "VIEW_PRIVATE_APPS",
+                "SHOPIFY_PAYMENTS_ACCOUNTS",
+                "SHOPIFY_PAYMENTS_TRANSFERS",
+                "STAFF_AUDIT_LOG_VIEW",
+                "STAFF_MANAGEMENT_UPDATE",
+                "BILLING_CHARGES",
+                "BILLING_INVOICES_VIEW",
+                "BILLING_PAYMENT_METHODS_VIEW",
+                "STAFF_MANAGEMENT_ACTIVATION",
+                "STAFF_MANAGEMENT_CREATE",
+                "STAFF_MANAGEMENT_DELETE",
+                "FULL",
+                "EXPORT_CUSTOMERS",
+                "EXPORT_DRAFT_ORDERS",
+                "EXPORT_ORDERS",
+                "EXPORT_PRODUCTS",
+                "CHANNELS",
+                "TRANSLATIONS"
+            ]
+        },
+        "__typename": "StaffMemberPermissions"
+    },
+    "App:gid://shopify/App/580111": {
+        "id": "gid://shopify/App/580111",
+        "title": "在线商店",
+        "apiKey": "650f1a14fa979ec5c74d063e968411d4",
+        "handle": "online_store",
+        "installation": {
+            "type": "id",
+            "generated": false,
+            "id": "AppInstallation:gid://shopify/AppInstallation/265968943265",
+            "typename": "AppInstallation"
+        },
+        "__typename": "App",
+        "feedback": null
+    },
+    "AppInstallation:gid://shopify/AppInstallation/265968943265": {
+        "id": "gid://shopify/AppInstallation/265968943265",
+        "appUrl": "https://online-store-web.shopifyapps.com/?hmac=5ce91b07d9219993148e86aefaad4df1e92cad946efa3b826cd72188d6b5a266&host=cmVlbmVlZmFzaGlvbi5teXNob3BpZnkuY29tL2FkbWlu&locale=zh-CN&new_design_language=true&session=b6bcebf9e9bd71a8037e1f647399b0a42daa6c77c06ed5a1acf68d82492814d0&shop=reeneefashion.myshopify.com&timestamp=1626358540",
+        "__typename": "AppInstallation"
+    },
+    "$ROOT_QUERY.onlineStore": {
+        "compatibleWithEditor": true,
+        "__typename": "OnlineStore",
+        "passwordEnabled": false,
+        "availableTemplateOptions({\"resourceType\":\"PRODUCT\"})": {
+            "type": "json",
+            "json": [
+                "product"
+            ]
+        },
+        "availableTemplateOptions({\"resourceType\":\"GIFT_CARD\"})": {
+            "type": "json",
+            "json": [
+                "gift_card"
+            ]
+        }
+    },
+    "$Shop:gid://shopify/Shop/43930910881.onlineStore": {
+        "urlWithStorefrontDigest": "https://reeneefashion.myshopify.com/?_cd=65477a157d64b9e5640b4073da95b02da6d9cb2d8da12a17e8ff86e8a6dc2d8c&_uid=71735967905&preview_theme_id=",
+        "__typename": "OnlineStore"
+    },
+    "Shop:gid://shopify/Shop/43930910881.navigationItems({\"type\":\"SALES_CHANNEL\"}).0": {
+        "label": "在线商店",
+        "url": "https://reeneefashion.myshopify.com/admin/themes",
+        "disabled": false,
+        "iconBody": "<svg xmlns=\"http://www.w3.org/2000/svg\" viewBox=\"0 0 20 20\"><path d=\"M2.971 1.545A1 1 0 013.861 1h12.277a1 1 0 01.89.545l1.669 3.128c.03.062.063.138.094.224.09.228.153.47.185.722.015.098.024.189.024.263V6a2.992 2.992 0 01-1.092 2.315A2.988 2.988 0 0116 9c-.617 0-1.19-.186-1.666-.505A2.997 2.997 0 0113 6v.02A2.997 2.997 0 0110 9a2.986 2.986 0 01-1.677-.512A2.997 2.997 0 017 6.019 2.997 2.997 0 014 9c-.768 0-1.47-.289-2-.764C1.386 7.686 1 6.888 1 6v-.118c0-.063.007-.137.019-.218.049-.443.194-.856.415-1.219l1.537-2.9zM18 17.5v-6.916A4.983 4.983 0 0116 11a4.978 4.978 0 01-3-1c-.836.628-1.874 1-3 1a4.978 4.978 0 01-3-1c-.836.628-1.874 1-3 1a4.983 4.983 0 01-2-.416V17.5A1.5 1.5 0 003.5 19h2A1.5 1.5 0 007 17.5v-3A1.5 1.5 0 018.5 13h3a1.5 1.5 0 011.5 1.5v3a1.5 1.5 0 001.5 1.5h2a1.5 1.5 0 001.5-1.5z\"/></svg>",
+        "matchPaths": {
+            "type": "json",
+            "json": [
+                "/admin/themes",
+                "/admin/articles",
+                "/admin/pages",
+                "/admin/menus",
+                "/admin/settings/domains",
+                "/admin/online_store/preferences",
+                "/admin/blogs",
+                "/admin/comments",
+                "/admin/link_lists",
+                "/admin/redirects"
+            ]
+        },
+        "excludePaths": {
+            "type": "json",
+            "json": []
+        },
+        "matchExactPath": false,
+        "hasStorefrontLink": true,
+        "children": [
+            {
+                "type": "id",
+                "generated": true,
+                "id": "Shop:gid://shopify/Shop/43930910881.navigationItems({\"type\":\"SALES_CHANNEL\"}).0.children.0",
+                "typename": "NavigationItemV2"
+            },
+            {
+                "type": "id",
+                "generated": true,
+                "id": "Shop:gid://shopify/Shop/43930910881.navigationItems({\"type\":\"SALES_CHANNEL\"}).0.children.1",
+                "typename": "NavigationItemV2"
+            },
+            {
+                "type": "id",
+                "generated": true,
+                "id": "Shop:gid://shopify/Shop/43930910881.navigationItems({\"type\":\"SALES_CHANNEL\"}).0.children.2",
+                "typename": "NavigationItemV2"
+            },
+            {
+                "type": "id",
+                "generated": true,
+                "id": "Shop:gid://shopify/Shop/43930910881.navigationItems({\"type\":\"SALES_CHANNEL\"}).0.children.3",
+                "typename": "NavigationItemV2"
+            },
+            {
+                "type": "id",
+                "generated": true,
+                "id": "Shop:gid://shopify/Shop/43930910881.navigationItems({\"type\":\"SALES_CHANNEL\"}).0.children.4",
+                "typename": "NavigationItemV2"
+            },
+            {
+                "type": "id",
+                "generated": true,
+                "id": "Shop:gid://shopify/Shop/43930910881.navigationItems({\"type\":\"SALES_CHANNEL\"}).0.children.5",
+                "typename": "NavigationItemV2"
+            }
+        ],
+        "__typename": "NavigationItemV2"
+    },
+    "Shop:gid://shopify/Shop/43930910881.navigationItems({\"type\":\"SALES_CHANNEL\"}).0.children.0": {
+        "label": "模板",
+        "url": "https://reeneefashion.myshopify.com/admin/themes",
+        "disabled": false,
+        "matchPaths": {
+            "type": "json",
+            "json": []
+        },
+        "excludePaths": {
+            "type": "json",
+            "json": []
+        },
+        "matchExactPath": false,
+        "__typename": "NavigationItemV2"
+    },
+    "Shop:gid://shopify/Shop/43930910881.navigationItems({\"type\":\"SALES_CHANNEL\"}).0.children.1": {
+        "label": "博客文章",
+        "url": "https://reeneefashion.myshopify.com/admin/articles",
+        "disabled": false,
+        "matchPaths": {
+            "type": "json",
+            "json": [
+                "/admin/blogs",
+                "/admin/comments"
+            ]
+        },
+        "excludePaths": {
+            "type": "json",
+            "json": []
+        },
+        "matchExactPath": false,
+        "__typename": "NavigationItemV2"
+    },
+    "Shop:gid://shopify/Shop/43930910881.navigationItems({\"type\":\"SALES_CHANNEL\"}).0.children.2": {
+        "label": "页面",
+        "url": "https://reeneefashion.myshopify.com/admin/pages",
+        "disabled": false,
+        "matchPaths": {
+            "type": "json",
+            "json": []
+        },
+        "excludePaths": {
+            "type": "json",
+            "json": []
+        },
+        "matchExactPath": false,
+        "__typename": "NavigationItemV2"
+    },
+    "Shop:gid://shopify/Shop/43930910881.navigationItems({\"type\":\"SALES_CHANNEL\"}).0.children.3": {
+        "label": "网站地图",
+        "url": "https://reeneefashion.myshopify.com/admin/menus",
+        "disabled": false,
+        "matchPaths": {
+            "type": "json",
+            "json": [
+                "/admin/menus",
+                "/admin/link_lists",
+                "/admin/redirects"
+            ]
+        },
+        "excludePaths": {
+            "type": "json",
+            "json": []
+        },
+        "matchExactPath": false,
+        "__typename": "NavigationItemV2"
+    },
+    "Shop:gid://shopify/Shop/43930910881.navigationItems({\"type\":\"SALES_CHANNEL\"}).0.children.4": {
+        "label": "域名",
+        "url": "https://reeneefashion.myshopify.com/admin/settings/domains",
+        "disabled": false,
+        "matchPaths": {
+            "type": "json",
+            "json": [
+                "/admin/settings/domains"
+            ]
+        },
+        "excludePaths": {
+            "type": "json",
+            "json": []
+        },
+        "matchExactPath": false,
+        "__typename": "NavigationItemV2"
+    },
+    "Shop:gid://shopify/Shop/43930910881.navigationItems({\"type\":\"SALES_CHANNEL\"}).0.children.5": {
+        "label": "偏好设置",
+        "url": "https://reeneefashion.myshopify.com/admin/online_store/preferences",
+        "disabled": false,
+        "matchPaths": {
+            "type": "json",
+            "json": []
+        },
+        "excludePaths": {
+            "type": "json",
+            "json": []
+        },
+        "matchExactPath": false,
+        "__typename": "NavigationItemV2"
+    },
+    "Shop:gid://shopify/Shop/43930910881.navigationItems({\"type\":\"SALES_CHANNEL\"}).1": {
+        "label": "Facebook",
+        "url": "https://reeneefashion.myshopify.com/admin/apps/facebook-ads",
+        "disabled": false,
+        "iconBody": "<svg xmlns=\"http://www.w3.org/2000/svg\" width=\"16\" height=\"16\" viewBox=\"0 0 16 16\"><path d=\"M16 8.04889C16 3.60361 12.4183 0 8 0C3.58172 0 0 3.60361 0 8.04889C0 12.0663 2.92548 15.3962 6.75 16V10.3755H4.71875V8.04889H6.75V6.27562C6.75 4.25837 7.94434 3.1441 9.77172 3.1441C10.647 3.1441 11.5625 3.3013 11.5625 3.3013V5.28208H10.5537C9.55992 5.28208 9.25 5.90253 9.25 6.53905V8.04889H11.4688L11.1141 10.3755H9.25V16C13.0745 15.3962 16 12.0663 16 8.04889Z\"/></svg>",
+        "matchPaths": {
+            "type": "json",
+            "json": [
+                "/admin/apps/21d07b9a03ab6e538a053381def7b15d"
+            ]
+        },
+        "excludePaths": {
+            "type": "json",
+            "json": []
+        },
+        "matchExactPath": false,
+        "hasStorefrontLink": false,
+        "children": [],
+        "__typename": "NavigationItemV2"
+    },
+    "$Shop:gid://shopify/Shop/43930910881.shopIdentificationSettings": {
+        "internalName": "faleful",
+        "__typename": "ShopIdentificationSettings"
+    },
+    "$StaffMember:gid://shopify/StaffMember/71735967905.avatar({\"fallback\":\"NOT_FOUND\"})": {
+        "transformedSrc({\"maxWidth\":128})": "https://cdn.shopifycdn.net/proxy/1c0964a7bd5580ec5eb26c9480845ca3d45a1763f5e104c5c4b0a9a46e6ba13a/www.gravatar.com/avatar/65a92287ae9001ca4de49f6107a1d5c2.jpg?s=128&d=404",
+        "__typename": "Image"
+    },
+    "$StaffMember:gid://shopify/StaffMember/71735967905.privateData": {
+        "createdAt": "2021-03-16T02:42:27Z",
+        "identityOwned": true,
+        "identityUuid": "5c110e6f-7c92-4d1d-99ef-64a48639f9f9",
+        "__typename": "StaffMemberPrivateData"
+    },
+    "$StaffMember:gid://shopify/StaffMember/71735967905.destinationsToken": {
+        "token": "atkn_eyJhbGciOiJSUzI1NiIsImtpZCI6Ik4teW1MUDR5TWt2MlR2X3hjWkNNSlltZ2JDbjhQbm5WLWRBbUJHbTlHb3cifQ.eyJ0IjoiRXQxd01BSmtYK1ZhM0ZVaUxHVWxGZXJ5eWk0WXRjNSsxbHJJN1BONGc2MD0ifQ.TEsSkrqIlkb_0C7U9FgMnwl4OlepnFSY5jHHKh4CwV8NmGMpHAmt5jmKrJMMPbWojfnCH_eA2B_shpjTBKu3HtCMJWLzkQsMa_a-pqYeOwa4vUxXSSPaCseF1hCG2lA9abXPSAy0bvJOdwpssHPy3ewp48fYNtWpUWQb6id_Whg5JHh7NOD4TSiE8mUv7XDqoYloFLGnM93IlQVRi77aSN06tkbiQz5Ch3G-To3V7Rk6Rkf8T60vtIVxjSORIAsl-eRXVK0xCwEiyYNhp5PLQkzbIDMECBiGZXGZ0ngWtn2yO3oQpwedOiFaty0qZF0HsjhHBOiBpHoAvUzUuKsyoQ",
+        "__typename": "DestinationsToken"
+    },
+    "$Shop:gid://shopify/Shop/43930910881.resourceLimits": {
+        "maxProductOptions": 3,
+        "redirectLimitReached": false,
+        "skuResourceLimits": {
+            "type": "id",
+            "generated": true,
+            "id": "$Shop:gid://shopify/Shop/43930910881.resourceLimits.skuResourceLimits",
+            "typename": "ResourceLimit"
+        },
+        "__typename": "ShopResourceLimits"
+    },
+    "$Shop:gid://shopify/Shop/43930910881.resourceLimits.skuResourceLimits": {
+        "available": true,
+        "quantityLimit": null,
+        "quantityUsed": null,
+        "__typename": "ResourceLimit"
+    },
+    "FulfillmentService:gid://shopify/FulfillmentService/manual": {
+        "id": "gid://shopify/FulfillmentService/manual",
+        "inventoryManagement": false,
+        "permitsSkuSharing": true,
+        "productBased": true,
+        "serviceName": "手动",
+        "location": {
+            "type": "id",
+            "generated": false,
+            "id": "Location:gid://shopify/Location/50784305313",
+            "typename": "Location"
+        },
+        "__typename": "FulfillmentService",
+        "handle": "manual"
+    },
+    "Location:gid://shopify/Location/50784305313": {
+        "id": "gid://shopify/Location/50784305313",
+        "__typename": "Location",
+        "isActive": true,
+        "name": "Tianhe, Guangzhou, Guangdong, China",
+        "fulfillmentService": null,
+        "shipsInventory": true
+    },
+    "Product:gid://shopify/Product/5593495601313": {
+        "id": "gid://shopify/Product/5593495601313",
+        "__typename": "Product"
+    },
+    "$Shop:gid://shopify/Shop/43930910881.products({\"first\":2}).edges.0": {
+        "node": {
+            "type": "id",
+            "generated": false,
+            "id": "Product:gid://shopify/Product/5593495601313",
+            "typename": "Product"
+        },
+        "__typename": "ProductEdge"
+    },
+    "Product:gid://shopify/Product/5593495765153": {
+        "id": "gid://shopify/Product/5593495765153",
+        "__typename": "Product"
+    },
+    "$Shop:gid://shopify/Shop/43930910881.products({\"first\":2}).edges.1": {
+        "node": {
+            "type": "id",
+            "generated": false,
+            "id": "Product:gid://shopify/Product/5593495765153",
+            "typename": "Product"
+        },
+        "__typename": "ProductEdge"
+    },
+    "$Shop:gid://shopify/Shop/43930910881.products({\"first\":2})": {
+        "edges": [
+            {
+                "type": "id",
+                "generated": true,
+                "id": "$Shop:gid://shopify/Shop/43930910881.products({\"first\":2}).edges.0",
+                "typename": "ProductEdge"
+            },
+            {
+                "type": "id",
+                "generated": true,
+                "id": "$Shop:gid://shopify/Shop/43930910881.products({\"first\":2}).edges.1",
+                "typename": "ProductEdge"
+            }
+        ],
+        "__typename": "ProductConnection"
+    },
+    "$ROOT_QUERY.locations({\"first\":250,\"includeLegacy\":true,\"query\":\"legacy:true\"})": {
+        "edges": [],
+        "__typename": "LocationConnection"
+    },
+    "$ROOT_QUERY.locations({\"first\":250}).edges.0": {
+        "node": {
+            "type": "id",
+            "generated": false,
+            "id": "Location:gid://shopify/Location/50784305313",
+            "typename": "Location"
+        },
+        "__typename": "LocationEdge"
+    },
+    "$ROOT_QUERY.locations({\"first\":250})": {
+        "edges": [
+            {
+                "type": "id",
+                "generated": true,
+                "id": "$ROOT_QUERY.locations({\"first\":250}).edges.0",
+                "typename": "LocationEdge"
+            }
+        ],
+        "__typename": "LocationConnection"
+    },
+    "Product:gid://shopify/Product/6635169185953": {
+        "id": "gid://shopify/Product/6635169185953",
+        "description": "Lining Texture: Polyester Material: Polyester Popular Elements: Folding Pack Receiving Pack Shoulder strap root: double Functions: waterproof, breathable, wear-resistant, anti-theft, load-reducing, anti-seismic Hardness: Medium Luggage Shape: Vertical Square Whether there is a tie rod or not: No Size: 15.6 inches Opening mode: zipper Package internal structure: ID bag, mobile phone bag, sandwich zipper bag, zipper bag, computer pocket Bearing system: arc shoulder strap",
+        "defaultCursor": "eyJsaW1pdCI6MSwib3JkZXIiOiJpZCBhc2MiLCJsYXN0X2lkIjo2NjM1MTY5MTg1OTUzLCJsYXN0X3ZhbHVlIjo2NjM1MTY5MTg1OTUzLCJkaXJlY3Rpb24iOiJuZXh0In0=",
+        "handle": "15-inch-portable-outdoor-waterproof-computer-bag-recreational-shoulder-backpack-folding-receiving-bag2021-03-30-22-15-25",
+        "status": "ACTIVE",
+        "totalVariants": 3,
+        "totalInventory": 130,
+        "hasOnlyDefaultVariant": false,
+        "onlineStoreUrl": "https://reeneefashion.myshopify.com/products/15-inch-portable-outdoor-waterproof-computer-bag-recreational-shoulder-backpack-folding-receiving-bag2021-03-30-22-15-25",
+        "onlineStoreRenderingStrategy": "TEMPLATE",
+        "resourceAlerts": [],
+        "variants({\"first\":100})": {
+            "type": "id",
+            "generated": true,
+            "id": "$Product:gid://shopify/Product/6635169185953.variants({\"first\":100})",
+            "typename": "ProductVariantConnection"
+        },
+        "isGiftCard": false,
+        "requiresSellingPlan": false,
+        "variants({\"first\":1})": {
+            "type": "id",
+            "generated": true,
+            "id": "$Product:gid://shopify/Product/6635169185953.variants({\"first\":1})",
+            "typename": "ProductVariantConnection"
+        },
+        "images({\"after\":null,\"first\":11})": {
+            "type": "id",
+            "generated": true,
+            "id": "$Product:gid://shopify/Product/6635169185953.images({\"after\":null,\"first\":11})",
+            "typename": "ImageConnection"
+        },
+        "aggregatedSellingPlanGroupCount": 0,
+        "feedback": {
+            "type": "id",
+            "generated": true,
+            "id": "$Product:gid://shopify/Product/6635169185953.feedback",
+            "typename": "ResourceFeedback"
+        },
+        "resourcePublicationsV2({\"first\":250,\"onlyPublished\":false})": {
+            "type": "id",
+            "generated": true,
+            "id": "$Product:gid://shopify/Product/6635169185953.resourcePublicationsV2({\"first\":250,\"onlyPublished\":false})",
+            "typename": "ResourcePublicationV2Connection"
+        },
+        "__typename": "Product",
+        "options": [
+            {
+                "type": "id",
+                "generated": false,
+                "id": "ProductOption:gid://shopify/ProductOption/8520350728353",
+                "typename": "ProductOption"
+            },
+            {
+                "type": "id",
+                "generated": false,
+                "id": "ProductOption:gid://shopify/ProductOption/8520350761121",
+                "typename": "ProductOption"
+            }
+        ],
+        "templateSuffix": null,
+        "giftCardTemplateSuffix": null,
+        "seo": {
+            "type": "id",
+            "generated": true,
+            "id": "$Product:gid://shopify/Product/6635169185953.seo",
+            "typename": "SEO"
+        },
+        "descriptionHtml": "Lining Texture: Polyester<br>\r\nMaterial: Polyester<br>\r\nPopular Elements: Folding Pack Receiving Pack<br>\r\nShoulder strap root: double<br>\r\nFunctions: waterproof, breathable, wear-resistant, anti-theft, load-reducing, anti-seismic<br>\r\nHardness: Medium<br>\r\nLuggage Shape: Vertical Square<br>\r\nWhether there is a tie rod or not: No<br>\r\nSize: 15.6 inches<br>\r\nOpening mode: zipper<br>\r\nPackage internal structure: ID bag, mobile phone bag, sandwich zipper bag, zipper bag, computer pocket<br>\r\nBearing system: arc shoulder strap",
+        "title": "15-inch Portable Outdoor Waterproof Computer Bag Recreational Shoulder Backpack Folding Receiving Bag"
+    },
+    "$Product:gid://shopify/Product/6635169185953.variants({\"first\":100}).edges.0": {
+        "cursor": "eyJsYXN0X2lkIjozOTUzMDcwMzUxOTkwNSwibGFzdF92YWx1ZSI6MX0=",
+        "node": {
+            "type": "id",
+            "generated": false,
+            "id": "ProductVariant:gid://shopify/ProductVariant/39530703519905",
+            "typename": "ProductVariant"
+        },
+        "__typename": "ProductVariantEdge"
+    },
+    "ProductVariant:gid://shopify/ProductVariant/39530703519905": {
+        "id": "gid://shopify/ProductVariant/39530703519905",
+        "barcode": "",
+        "price": "20.00",
+        "compareAtPrice": "50.00",
+        "requiresShipping": true,
+        "inventoryQuantity": 122,
+        "position": 1,
+        "sku": "popo-1",
+        "taxable": true,
+        "weight": 10,
+        "weightUnit": "KILOGRAMS",
+        "fulfillmentService": {
+            "type": "id",
+            "generated": false,
+            "id": "FulfillmentService:gid://shopify/FulfillmentService/manual",
+            "typename": "FulfillmentService"
+        },
+        "inventoryItem": {
+            "type": "id",
+            "generated": false,
+            "id": "InventoryItem:gid://shopify/InventoryItem/41624852398241",
+            "typename": "InventoryItem"
+        },
+        "__typename": "ProductVariant",
+        "inventoryPolicy": "DENY",
+        "image": {
+            "type": "id",
+            "generated": false,
+            "id": "Image:gid://shopify/ProductImage/28434680840353",
+            "typename": "Image"
+        },
+        "selectedOptions": [
+            {
+                "type": "id",
+                "generated": true,
+                "id": "ProductVariant:gid://shopify/ProductVariant/39530703519905.selectedOptions.0",
+                "typename": "SelectedOption"
+            },
+            {
+                "type": "id",
+                "generated": true,
+                "id": "ProductVariant:gid://shopify/ProductVariant/39530703519905.selectedOptions.1",
+                "typename": "SelectedOption"
+            }
+        ],
+        "taxCode": null,
+        "skuRequired": false,
+        "fulfillmentServiceEditable": {
+            "type": "id",
+            "generated": true,
+            "id": "$ProductVariant:gid://shopify/ProductVariant/39530703519905.fulfillmentServiceEditable",
+            "typename": "EditableProperty"
+        },
+        "presentmentPrices({\"first\":2})": {
+            "type": "id",
+            "generated": true,
+            "id": "$ProductVariant:gid://shopify/ProductVariant/39530703519905.presentmentPrices({\"first\":2})",
+            "typename": "ProductVariantPricePairConnection"
+        },
+        "showUnitPrice": false,
+        "unitPriceMeasurement": {
+            "type": "id",
+            "generated": true,
+            "id": "$ProductVariant:gid://shopify/ProductVariant/39530703519905.unitPriceMeasurement",
+            "typename": "UnitPriceMeasurement"
+        }
+    },
+    "InventoryItem:gid://shopify/InventoryItem/41624852398241": {
+        "locationsCount": 1,
+        "__typename": "InventoryItem",
+        "id": "gid://shopify/InventoryItem/41624852398241",
+        "tracked": true,
+        "trackedEditable": {
+            "type": "id",
+            "generated": true,
+            "id": "$InventoryItem:gid://shopify/InventoryItem/41624852398241.trackedEditable",
+            "typename": "EditableProperty"
+        },
+        "unitCost": null,
+        "countryCodeOfOrigin": null,
+        "provinceCodeOfOrigin": null,
+        "harmonizedSystemCode": null,
+        "inventoryLevels({\"first\":1})": {
+            "type": "id",
+            "generated": true,
+            "id": "$InventoryItem:gid://shopify/InventoryItem/41624852398241.inventoryLevels({\"first\":1})",
+            "typename": "InventoryLevelConnection"
+        },
+        "inventoryLevels({\"first\":250})": {
+            "type": "id",
+            "generated": true,
+            "id": "$InventoryItem:gid://shopify/InventoryItem/41624852398241.inventoryLevels({\"first\":250})",
+            "typename": "InventoryLevelConnection"
+        }
+    },
+    "$InventoryItem:gid://shopify/InventoryItem/41624852398241.trackedEditable": {
+        "locked": false,
+        "reason": null,
+        "__typename": "EditableProperty"
+    },
+    "InventoryLevel:gid://shopify/InventoryLevel/84949532833?inventory_item_id=41624852398241": {
+        "id": "gid://shopify/InventoryLevel/84949532833?inventory_item_id=41624852398241",
+        "available": 122,
+        "canDeactivate": true,
+        "deactivationAlertHtml": "此地点的 122 个库存单位将被删除。",
+        "incoming": 0,
+        "location": {
+            "type": "id",
+            "generated": false,
+            "id": "Location:gid://shopify/Location/50784305313",
+            "typename": "Location"
+        },
+        "item": {
+            "type": "id",
+            "generated": false,
+            "id": "InventoryItem:gid://shopify/InventoryItem/41624852398241",
+            "typename": "InventoryItem"
+        },
+        "activeTransfers({\"first\":5})": {
+            "type": "id",
+            "generated": true,
+            "id": "$InventoryLevel:gid://shopify/InventoryLevel/84949532833?inventory_item_id=41624852398241.activeTransfers({\"first\":5})",
+            "typename": "InventoryLevelTransferLineItemConnection"
+        },
+        "incomingPurchaseOrderLineItems({\"first\":5})": {
+            "type": "id",
+            "generated": true,
+            "id": "$InventoryLevel:gid://shopify/InventoryLevel/84949532833?inventory_item_id=41624852398241.incomingPurchaseOrderLineItems({\"first\":5})",
+            "typename": "PurchaseOrderLineItemConnection"
+        },
+        "__typename": "InventoryLevel"
+    },
+    "$InventoryLevel:gid://shopify/InventoryLevel/84949532833?inventory_item_id=41624852398241.activeTransfers({\"first\":5})": {
+        "edges": [],
+        "__typename": "InventoryLevelTransferLineItemConnection"
+    },
+    "$InventoryLevel:gid://shopify/InventoryLevel/84949532833?inventory_item_id=41624852398241.incomingPurchaseOrderLineItems({\"first\":5})": {
+        "edges": [],
+        "__typename": "PurchaseOrderLineItemConnection"
+    },
+    "$InventoryItem:gid://shopify/InventoryItem/41624852398241.inventoryLevels({\"first\":1}).edges.0": {
+        "node": {
+            "type": "id",
+            "generated": false,
+            "id": "InventoryLevel:gid://shopify/InventoryLevel/84949532833?inventory_item_id=41624852398241",
+            "typename": "InventoryLevel"
+        },
+        "__typename": "InventoryLevelEdge"
+    },
+    "$InventoryItem:gid://shopify/InventoryItem/41624852398241.inventoryLevels({\"first\":1})": {
+        "edges": [
+            {
+                "type": "id",
+                "generated": true,
+                "id": "$InventoryItem:gid://shopify/InventoryItem/41624852398241.inventoryLevels({\"first\":1}).edges.0",
+                "typename": "InventoryLevelEdge"
+            }
+        ],
+        "__typename": "InventoryLevelConnection"
+    },
+    "Image:gid://shopify/ProductImage/28434680840353": {
+        "id": "gid://shopify/ProductImage/28434680840353",
+        "originalSrc": "https://cdn.shopifycdn.net/s/files/1/0439/3091/0881/products/db21301d3824c653ce68fa5ccf8a196a.jpg?v=1617113731",
+        "altText": null,
+        "__typename": "Image"
+    },
+    "ProductVariant:gid://shopify/ProductVariant/39530703519905.selectedOptions.0": {
+        "name": "Color",
+        "value": "Gris",
+        "__typename": "SelectedOption"
+    },
+    "ProductVariant:gid://shopify/ProductVariant/39530703519905.selectedOptions.1": {
+        "name": "Tama",
+        "value": "15.6",
+        "__typename": "SelectedOption"
+    },
+    "$Product:gid://shopify/Product/6635169185953.variants({\"first\":100}).edges.1": {
+        "cursor": "eyJsYXN0X2lkIjozOTUzMDcwMzU1MjY3MywibGFzdF92YWx1ZSI6Mn0=",
+        "node": {
+            "type": "id",
+            "generated": false,
+            "id": "ProductVariant:gid://shopify/ProductVariant/39530703552673",
+            "typename": "ProductVariant"
+        },
+        "__typename": "ProductVariantEdge"
+    },
+    "ProductVariant:gid://shopify/ProductVariant/39530703552673": {
+        "id": "gid://shopify/ProductVariant/39530703552673",
+        "barcode": "",
+        "price": "1.00",
+        "compareAtPrice": "4.00",
+        "requiresShipping": true,
+        "inventoryQuantity": 2,
+        "position": 2,
+        "sku": "popo-2",
+        "taxable": true,
+        "weight": 10,
+        "weightUnit": "KILOGRAMS",
+        "fulfillmentService": {
+            "type": "id",
+            "generated": false,
+            "id": "FulfillmentService:gid://shopify/FulfillmentService/manual",
+            "typename": "FulfillmentService"
+        },
+        "inventoryItem": {
+            "type": "id",
+            "generated": false,
+            "id": "InventoryItem:gid://shopify/InventoryItem/41624852431009",
+            "typename": "InventoryItem"
+        },
+        "__typename": "ProductVariant",
+        "inventoryPolicy": "DENY",
+        "image": {
+            "type": "id",
+            "generated": false,
+            "id": "Image:gid://shopify/ProductImage/28434680774817",
+            "typename": "Image"
+        },
+        "selectedOptions": [
+            {
+                "type": "id",
+                "generated": true,
+                "id": "ProductVariant:gid://shopify/ProductVariant/39530703552673.selectedOptions.0",
+                "typename": "SelectedOption"
+            },
+            {
+                "type": "id",
+                "generated": true,
+                "id": "ProductVariant:gid://shopify/ProductVariant/39530703552673.selectedOptions.1",
+                "typename": "SelectedOption"
+            }
+        ],
+        "taxCode": null,
+        "skuRequired": false
+    },
+    "InventoryItem:gid://shopify/InventoryItem/41624852431009": {
+        "locationsCount": 1,
+        "__typename": "InventoryItem",
+        "id": "gid://shopify/InventoryItem/41624852431009",
+        "tracked": true,
+        "trackedEditable": {
+            "type": "id",
+            "generated": true,
+            "id": "$InventoryItem:gid://shopify/InventoryItem/41624852431009.trackedEditable",
+            "typename": "EditableProperty"
+        },
+        "unitCost": null,
+        "countryCodeOfOrigin": null,
+        "provinceCodeOfOrigin": null,
+        "harmonizedSystemCode": null,
+        "inventoryLevels({\"first\":1})": {
+            "type": "id",
+            "generated": true,
+            "id": "$InventoryItem:gid://shopify/InventoryItem/41624852431009.inventoryLevels({\"first\":1})",
+            "typename": "InventoryLevelConnection"
+        }
+    },
+    "$InventoryItem:gid://shopify/InventoryItem/41624852431009.trackedEditable": {
+        "locked": false,
+        "reason": null,
+        "__typename": "EditableProperty"
+    },
+    "InventoryLevel:gid://shopify/InventoryLevel/84949532833?inventory_item_id=41624852431009": {
+        "id": "gid://shopify/InventoryLevel/84949532833?inventory_item_id=41624852431009",
+        "available": 2,
+        "canDeactivate": true,
+        "deactivationAlertHtml": "此地点的 2 个库存单位将被删除。",
+        "incoming": 0,
+        "location": {
+            "type": "id",
+            "generated": false,
+            "id": "Location:gid://shopify/Location/50784305313",
+            "typename": "Location"
+        },
+        "item": {
+            "type": "id",
+            "generated": false,
+            "id": "InventoryItem:gid://shopify/InventoryItem/41624852431009",
+            "typename": "InventoryItem"
+        },
+        "activeTransfers({\"first\":5})": {
+            "type": "id",
+            "generated": true,
+            "id": "$InventoryLevel:gid://shopify/InventoryLevel/84949532833?inventory_item_id=41624852431009.activeTransfers({\"first\":5})",
+            "typename": "InventoryLevelTransferLineItemConnection"
+        },
+        "incomingPurchaseOrderLineItems({\"first\":5})": {
+            "type": "id",
+            "generated": true,
+            "id": "$InventoryLevel:gid://shopify/InventoryLevel/84949532833?inventory_item_id=41624852431009.incomingPurchaseOrderLineItems({\"first\":5})",
+            "typename": "PurchaseOrderLineItemConnection"
+        },
+        "__typename": "InventoryLevel"
+    },
+    "$InventoryLevel:gid://shopify/InventoryLevel/84949532833?inventory_item_id=41624852431009.activeTransfers({\"first\":5})": {
+        "edges": [],
+        "__typename": "InventoryLevelTransferLineItemConnection"
+    },
+    "$InventoryLevel:gid://shopify/InventoryLevel/84949532833?inventory_item_id=41624852431009.incomingPurchaseOrderLineItems({\"first\":5})": {
+        "edges": [],
+        "__typename": "PurchaseOrderLineItemConnection"
+    },
+    "$InventoryItem:gid://shopify/InventoryItem/41624852431009.inventoryLevels({\"first\":1}).edges.0": {
+        "node": {
+            "type": "id",
+            "generated": false,
+            "id": "InventoryLevel:gid://shopify/InventoryLevel/84949532833?inventory_item_id=41624852431009",
+            "typename": "InventoryLevel"
+        },
+        "__typename": "InventoryLevelEdge"
+    },
+    "$InventoryItem:gid://shopify/InventoryItem/41624852431009.inventoryLevels({\"first\":1})": {
+        "edges": [
+            {
+                "type": "id",
+                "generated": true,
+                "id": "$InventoryItem:gid://shopify/InventoryItem/41624852431009.inventoryLevels({\"first\":1}).edges.0",
+                "typename": "InventoryLevelEdge"
+            }
+        ],
+        "__typename": "InventoryLevelConnection"
+    },
+    "Image:gid://shopify/ProductImage/28434680774817": {
+        "id": "gid://shopify/ProductImage/28434680774817",
+        "originalSrc": "https://cdn.shopifycdn.net/s/files/1/0439/3091/0881/products/0d80c9ea687d3e11732fcd063c5609c9.jpg?v=1617113731",
+        "altText": null,
+        "__typename": "Image"
+    },
+    "ProductVariant:gid://shopify/ProductVariant/39530703552673.selectedOptions.0": {
+        "name": "Color",
+        "value": "Negro",
+        "__typename": "SelectedOption"
+    },
+    "ProductVariant:gid://shopify/ProductVariant/39530703552673.selectedOptions.1": {
+        "name": "Tama",
+        "value": "15.6",
+        "__typename": "SelectedOption"
+    },
+    "$Product:gid://shopify/Product/6635169185953.variants({\"first\":100}).edges.2": {
+        "cursor": "eyJsYXN0X2lkIjozOTUzMDcwMzU4NTQ0MSwibGFzdF92YWx1ZSI6M30=",
+        "node": {
+            "type": "id",
+            "generated": false,
+            "id": "ProductVariant:gid://shopify/ProductVariant/39530703585441",
+            "typename": "ProductVariant"
+        },
+        "__typename": "ProductVariantEdge"
+    },
+    "ProductVariant:gid://shopify/ProductVariant/39530703585441": {
+        "id": "gid://shopify/ProductVariant/39530703585441",
+        "barcode": "",
+        "price": "5.00",
+        "compareAtPrice": "5.00",
+        "requiresShipping": true,
+        "inventoryQuantity": 6,
+        "position": 3,
+        "sku": "popo-3",
+        "taxable": true,
+        "weight": 10,
+        "weightUnit": "KILOGRAMS",
+        "fulfillmentService": {
+            "type": "id",
+            "generated": false,
+            "id": "FulfillmentService:gid://shopify/FulfillmentService/manual",
+            "typename": "FulfillmentService"
+        },
+        "inventoryItem": {
+            "type": "id",
+            "generated": false,
+            "id": "InventoryItem:gid://shopify/InventoryItem/41624852463777",
+            "typename": "InventoryItem"
+        },
+        "__typename": "ProductVariant",
+        "inventoryPolicy": "DENY",
+        "image": {
+            "type": "id",
+            "generated": false,
+            "id": "Image:gid://shopify/ProductImage/28434680807585",
+            "typename": "Image"
+        },
+        "selectedOptions": [
+            {
+                "type": "id",
+                "generated": true,
+                "id": "ProductVariant:gid://shopify/ProductVariant/39530703585441.selectedOptions.0",
+                "typename": "SelectedOption"
+            },
+            {
+                "type": "id",
+                "generated": true,
+                "id": "ProductVariant:gid://shopify/ProductVariant/39530703585441.selectedOptions.1",
+                "typename": "SelectedOption"
+            }
+        ],
+        "taxCode": null,
+        "skuRequired": false
+    },
+    "InventoryItem:gid://shopify/InventoryItem/41624852463777": {
+        "locationsCount": 1,
+        "__typename": "InventoryItem",
+        "id": "gid://shopify/InventoryItem/41624852463777",
+        "tracked": true,
+        "trackedEditable": {
+            "type": "id",
+            "generated": true,
+            "id": "$InventoryItem:gid://shopify/InventoryItem/41624852463777.trackedEditable",
+            "typename": "EditableProperty"
+        },
+        "unitCost": null,
+        "countryCodeOfOrigin": null,
+        "provinceCodeOfOrigin": null,
+        "harmonizedSystemCode": null,
+        "inventoryLevels({\"first\":1})": {
+            "type": "id",
+            "generated": true,
+            "id": "$InventoryItem:gid://shopify/InventoryItem/41624852463777.inventoryLevels({\"first\":1})",
+            "typename": "InventoryLevelConnection"
+        }
+    },
+    "$InventoryItem:gid://shopify/InventoryItem/41624852463777.trackedEditable": {
+        "locked": false,
+        "reason": null,
+        "__typename": "EditableProperty"
+    },
+    "InventoryLevel:gid://shopify/InventoryLevel/84949532833?inventory_item_id=41624852463777": {
+        "id": "gid://shopify/InventoryLevel/84949532833?inventory_item_id=41624852463777",
+        "available": 6,
+        "canDeactivate": true,
+        "deactivationAlertHtml": "此地点的 6 个库存单位将被删除。",
+        "incoming": 0,
+        "location": {
+            "type": "id",
+            "generated": false,
+            "id": "Location:gid://shopify/Location/50784305313",
+            "typename": "Location"
+        },
+        "item": {
+            "type": "id",
+            "generated": false,
+            "id": "InventoryItem:gid://shopify/InventoryItem/41624852463777",
+            "typename": "InventoryItem"
+        },
+        "activeTransfers({\"first\":5})": {
+            "type": "id",
+            "generated": true,
+            "id": "$InventoryLevel:gid://shopify/InventoryLevel/84949532833?inventory_item_id=41624852463777.activeTransfers({\"first\":5})",
+            "typename": "InventoryLevelTransferLineItemConnection"
+        },
+        "incomingPurchaseOrderLineItems({\"first\":5})": {
+            "type": "id",
+            "generated": true,
+            "id": "$InventoryLevel:gid://shopify/InventoryLevel/84949532833?inventory_item_id=41624852463777.incomingPurchaseOrderLineItems({\"first\":5})",
+            "typename": "PurchaseOrderLineItemConnection"
+        },
+        "__typename": "InventoryLevel"
+    },
+    "$InventoryLevel:gid://shopify/InventoryLevel/84949532833?inventory_item_id=41624852463777.activeTransfers({\"first\":5})": {
+        "edges": [],
+        "__typename": "InventoryLevelTransferLineItemConnection"
+    },
+    "$InventoryLevel:gid://shopify/InventoryLevel/84949532833?inventory_item_id=41624852463777.incomingPurchaseOrderLineItems({\"first\":5})": {
+        "edges": [],
+        "__typename": "PurchaseOrderLineItemConnection"
+    },
+    "$InventoryItem:gid://shopify/InventoryItem/41624852463777.inventoryLevels({\"first\":1}).edges.0": {
+        "node": {
+            "type": "id",
+            "generated": false,
+            "id": "InventoryLevel:gid://shopify/InventoryLevel/84949532833?inventory_item_id=41624852463777",
+            "typename": "InventoryLevel"
+        },
+        "__typename": "InventoryLevelEdge"
+    },
+    "$InventoryItem:gid://shopify/InventoryItem/41624852463777.inventoryLevels({\"first\":1})": {
+        "edges": [
+            {
+                "type": "id",
+                "generated": true,
+                "id": "$InventoryItem:gid://shopify/InventoryItem/41624852463777.inventoryLevels({\"first\":1}).edges.0",
+                "typename": "InventoryLevelEdge"
+            }
+        ],
+        "__typename": "InventoryLevelConnection"
+    },
+    "Image:gid://shopify/ProductImage/28434680807585": {
+        "id": "gid://shopify/ProductImage/28434680807585",
+        "originalSrc": "https://cdn.shopifycdn.net/s/files/1/0439/3091/0881/products/a5aca6cdc7ec38f22212491e6701d38f.png?v=1617113731",
+        "altText": null,
+        "__typename": "Image"
+    },
+    "ProductVariant:gid://shopify/ProductVariant/39530703585441.selectedOptions.0": {
+        "name": "Color",
+        "value": "Azul",
+        "__typename": "SelectedOption"
+    },
+    "ProductVariant:gid://shopify/ProductVariant/39530703585441.selectedOptions.1": {
+        "name": "Tama",
+        "value": "15.6",
+        "__typename": "SelectedOption"
+    },
+    "$Product:gid://shopify/Product/6635169185953.variants({\"first\":100})": {
+        "edges": [
+            {
+                "type": "id",
+                "generated": true,
+                "id": "$Product:gid://shopify/Product/6635169185953.variants({\"first\":100}).edges.0",
+                "typename": "ProductVariantEdge"
+            },
+            {
+                "type": "id",
+                "generated": true,
+                "id": "$Product:gid://shopify/Product/6635169185953.variants({\"first\":100}).edges.1",
+                "typename": "ProductVariantEdge"
+            },
+            {
+                "type": "id",
+                "generated": true,
+                "id": "$Product:gid://shopify/Product/6635169185953.variants({\"first\":100}).edges.2",
+                "typename": "ProductVariantEdge"
+            }
+        ],
+        "__typename": "ProductVariantConnection"
+    },
+    "$ProductVariant:gid://shopify/ProductVariant/39530703519905.fulfillmentServiceEditable": {
+        "locked": false,
+        "reason": null,
+        "__typename": "EditableProperty"
+    },
+    "$InventoryItem:gid://shopify/InventoryItem/41624852398241.inventoryLevels({\"first\":250}).edges.0": {
+        "node": {
+            "type": "id",
+            "generated": false,
+            "id": "InventoryLevel:gid://shopify/InventoryLevel/84949532833?inventory_item_id=41624852398241",
+            "typename": "InventoryLevel"
+        },
+        "__typename": "InventoryLevelEdge"
+    },
+    "$InventoryItem:gid://shopify/InventoryItem/41624852398241.inventoryLevels({\"first\":250})": {
+        "edges": [
+            {
+                "type": "id",
+                "generated": true,
+                "id": "$InventoryItem:gid://shopify/InventoryItem/41624852398241.inventoryLevels({\"first\":250}).edges.0",
+                "typename": "InventoryLevelEdge"
+            }
+        ],
+        "__typename": "InventoryLevelConnection"
+    },
+    "$ProductVariant:gid://shopify/ProductVariant/39530703519905.presentmentPrices({\"first\":2}).edges.0.node.price": {
+        "amount": "20.0",
+        "__typename": "MoneyV2"
+    },
+    "$ProductVariant:gid://shopify/ProductVariant/39530703519905.presentmentPrices({\"first\":2}).edges.0.node": {
+        "price": {
+            "type": "id",
+            "generated": true,
+            "id": "$ProductVariant:gid://shopify/ProductVariant/39530703519905.presentmentPrices({\"first\":2}).edges.0.node.price",
+            "typename": "MoneyV2"
+        },
+        "__typename": "ProductVariantPricePair"
+    },
+    "$ProductVariant:gid://shopify/ProductVariant/39530703519905.presentmentPrices({\"first\":2}).edges.0": {
+        "node": {
+            "type": "id",
+            "generated": true,
+            "id": "$ProductVariant:gid://shopify/ProductVariant/39530703519905.presentmentPrices({\"first\":2}).edges.0.node",
+            "typename": "ProductVariantPricePair"
+        },
+        "__typename": "ProductVariantPricePairEdge"
+    },
+    "$ProductVariant:gid://shopify/ProductVariant/39530703519905.presentmentPrices({\"first\":2})": {
+        "edges": [
+            {
+                "type": "id",
+                "generated": true,
+                "id": "$ProductVariant:gid://shopify/ProductVariant/39530703519905.presentmentPrices({\"first\":2}).edges.0",
+                "typename": "ProductVariantPricePairEdge"
+            }
+        ],
+        "__typename": "ProductVariantPricePairConnection"
+    },
+    "$ProductVariant:gid://shopify/ProductVariant/39530703519905.unitPriceMeasurement": {
+        "quantityValue": 0,
+        "quantityUnit": null,
+        "referenceValue": 0,
+        "referenceUnit": null,
+        "__typename": "UnitPriceMeasurement"
+    },
+    "$Product:gid://shopify/Product/6635169185953.variants({\"first\":1}).edges.0": {
+        "node": {
+            "type": "id",
+            "generated": false,
+            "id": "ProductVariant:gid://shopify/ProductVariant/39530703519905",
+            "typename": "ProductVariant"
+        },
+        "__typename": "ProductVariantEdge"
+    },
+    "$Product:gid://shopify/Product/6635169185953.variants({\"first\":1})": {
+        "edges": [
+            {
+                "type": "id",
+                "generated": true,
+                "id": "$Product:gid://shopify/Product/6635169185953.variants({\"first\":1}).edges.0",
+                "typename": "ProductVariantEdge"
+            }
+        ],
+        "__typename": "ProductVariantConnection"
+    },
+    "$Product:gid://shopify/Product/6635169185953.images({\"after\":null,\"first\":11}).edges.0": {
+        "node": {
+            "type": "id",
+            "generated": false,
+            "id": "Image:gid://shopify/ProductImage/28434680774817",
+            "typename": "Image"
+        },
+        "cursor": "eyJsYXN0X2lkIjoyODQzNDY4MDc3NDgxNywibGFzdF92YWx1ZSI6MX0=",
+        "__typename": "ImageEdge"
+    },
+    "$Product:gid://shopify/Product/6635169185953.images({\"after\":null,\"first\":11}).edges.1": {
+        "node": {
+            "type": "id",
+            "generated": false,
+            "id": "Image:gid://shopify/ProductImage/28434680807585",
+            "typename": "Image"
+        },
+        "cursor": "eyJsYXN0X2lkIjoyODQzNDY4MDgwNzU4NSwibGFzdF92YWx1ZSI6Mn0=",
+        "__typename": "ImageEdge"
+    },
+    "$Product:gid://shopify/Product/6635169185953.images({\"after\":null,\"first\":11}).edges.2": {
+        "node": {
+            "type": "id",
+            "generated": false,
+            "id": "Image:gid://shopify/ProductImage/28434680840353",
+            "typename": "Image"
+        },
+        "cursor": "eyJsYXN0X2lkIjoyODQzNDY4MDg0MDM1MywibGFzdF92YWx1ZSI6NH0=",
+        "__typename": "ImageEdge"
+    },
+    "$Product:gid://shopify/Product/6635169185953.images({\"after\":null,\"first\":11})": {
+        "edges": [
+            {
+                "type": "id",
+                "generated": true,
+                "id": "$Product:gid://shopify/Product/6635169185953.images({\"after\":null,\"first\":11}).edges.0",
+                "typename": "ImageEdge"
+            },
+            {
+                "type": "id",
+                "generated": true,
+                "id": "$Product:gid://shopify/Product/6635169185953.images({\"after\":null,\"first\":11}).edges.1",
+                "typename": "ImageEdge"
+            },
+            {
+                "type": "id",
+                "generated": true,
+                "id": "$Product:gid://shopify/Product/6635169185953.images({\"after\":null,\"first\":11}).edges.2",
+                "typename": "ImageEdge"
+            }
+        ],
+        "pageInfo": {
+            "type": "id",
+            "generated": true,
+            "id": "$Product:gid://shopify/Product/6635169185953.images({\"after\":null,\"first\":11}).pageInfo",
+            "typename": "PageInfo"
+        },
+        "__typename": "ImageConnection"
+    },
+    "$Product:gid://shopify/Product/6635169185953.images({\"after\":null,\"first\":11}).pageInfo": {
+        "hasNextPage": false,
+        "__typename": "PageInfo"
+    },
+    "$Product:gid://shopify/Product/6635169185953.feedback": {
+        "details": [],
+        "__typename": "ResourceFeedback"
+    },
+    "$Product:gid://shopify/Product/6635169185953.resourcePublicationsV2({\"first\":250,\"onlyPublished\":false}).edges.0.node": {
+        "publishDate": "2021-03-30T14:15:30Z",
+        "isPublished": true,
+        "publication": {
+            "type": "id",
+            "generated": false,
+            "id": "Publication:gid://shopify/Publication/60536881313",
+            "typename": "Publication"
+        },
+        "__typename": "ResourcePublicationV2"
+    },
+    "Publication:gid://shopify/Publication/60536881313": {
+        "id": "gid://shopify/Publication/60536881313",
+        "name": "在线商店",
+        "supportsSellingPlans": true,
+        "supportsFuturePublishing": true,
+        "app": {
+            "type": "id",
+            "generated": false,
+            "id": "App:gid://shopify/App/580111",
+            "typename": "App"
+        },
+        "__typename": "Publication"
+    },
+    "$Product:gid://shopify/Product/6635169185953.resourcePublicationsV2({\"first\":250,\"onlyPublished\":false}).edges.0": {
+        "node": {
+            "type": "id",
+            "generated": true,
+            "id": "$Product:gid://shopify/Product/6635169185953.resourcePublicationsV2({\"first\":250,\"onlyPublished\":false}).edges.0.node",
+            "typename": "ResourcePublicationV2"
+        },
+        "__typename": "ResourcePublicationV2Edge"
+    },
+    "$Product:gid://shopify/Product/6635169185953.resourcePublicationsV2({\"first\":250,\"onlyPublished\":false}).edges.1.node": {
+        "publishDate": "2021-06-30T06:17:57Z",
+        "isPublished": true,
+        "publication": {
+            "type": "id",
+            "generated": false,
+            "id": "Publication:gid://shopify/Publication/74919084193",
+            "typename": "Publication"
+        },
+        "__typename": "ResourcePublicationV2"
+    },
+    "Publication:gid://shopify/Publication/74919084193": {
+        "id": "gid://shopify/Publication/74919084193",
+        "name": "Facebook",
+        "supportsSellingPlans": false,
+        "supportsFuturePublishing": false,
+        "app": {
+            "type": "id",
+            "generated": false,
+            "id": "App:gid://shopify/App/2329312",
+            "typename": "App"
+        },
+        "__typename": "Publication"
+    },
+    "App:gid://shopify/App/2329312": {
+        "id": "gid://shopify/App/2329312",
+        "title": "Facebook",
+        "handle": "facebook-ads",
+        "feedback": {
+            "type": "id",
+            "generated": true,
+            "id": "$App:gid://shopify/App/2329312.feedback",
+            "typename": "AppFeedback"
+        },
+        "__typename": "App"
+    },
+    "$App:gid://shopify/App/2329312.feedback.messages.0": {
+        "message": "Facebook is not connected to a Page. To continue using this app, connect a Facebook Page.",
+        "__typename": "UserError"
+    },
+    "$App:gid://shopify/App/2329312.feedback": {
+        "messages": [
+            {
+                "type": "id",
+                "generated": true,
+                "id": "$App:gid://shopify/App/2329312.feedback.messages.0",
+                "typename": "UserError"
+            }
+        ],
+        "link": {
+            "type": "id",
+            "generated": true,
+            "id": "$App:gid://shopify/App/2329312.feedback.link",
+            "typename": "Link"
+        },
+        "__typename": "AppFeedback"
+    },
+    "$App:gid://shopify/App/2329312.feedback.link": {
+        "url": "https://reeneefashion.myshopify.com/admin/apps/facebook-ads",
+        "label": "了解详细信息",
+        "__typename": "Link"
+    },
+    "$Product:gid://shopify/Product/6635169185953.resourcePublicationsV2({\"first\":250,\"onlyPublished\":false}).edges.1": {
+        "node": {
+            "type": "id",
+            "generated": true,
+            "id": "$Product:gid://shopify/Product/6635169185953.resourcePublicationsV2({\"first\":250,\"onlyPublished\":false}).edges.1.node",
+            "typename": "ResourcePublicationV2"
+        },
+        "__typename": "ResourcePublicationV2Edge"
+    },
+    "$Product:gid://shopify/Product/6635169185953.resourcePublicationsV2({\"first\":250,\"onlyPublished\":false}).edges.2.node": {
+        "publishDate": "2021-07-13T03:27:27Z",
+        "isPublished": true,
+        "publication": {
+            "type": "id",
+            "generated": false,
+            "id": "Publication:gid://shopify/Publication/75210490017",
+            "typename": "Publication"
+        },
+        "__typename": "ResourcePublicationV2"
+    },
+    "Publication:gid://shopify/Publication/75210490017": {
+        "id": "gid://shopify/Publication/75210490017",
+        "name": "Shopify GraphiQL App",
+        "supportsSellingPlans": false,
+        "supportsFuturePublishing": false,
+        "app": {
+            "type": "id",
+            "generated": false,
+            "id": "App:gid://shopify/App/2315872",
+            "typename": "App"
+        },
+        "__typename": "Publication"
+    },
+    "App:gid://shopify/App/2315872": {
+        "id": "gid://shopify/App/2315872",
+        "title": "Shopify GraphiQL App",
+        "handle": "shopify-graphiql-app",
+        "feedback": null,
+        "__typename": "App"
+    },
+    "$Product:gid://shopify/Product/6635169185953.resourcePublicationsV2({\"first\":250,\"onlyPublished\":false}).edges.2": {
+        "node": {
+            "type": "id",
+            "generated": true,
+            "id": "$Product:gid://shopify/Product/6635169185953.resourcePublicationsV2({\"first\":250,\"onlyPublished\":false}).edges.2.node",
+            "typename": "ResourcePublicationV2"
+        },
+        "__typename": "ResourcePublicationV2Edge"
+    },
+    "$Product:gid://shopify/Product/6635169185953.resourcePublicationsV2({\"first\":250,\"onlyPublished\":false})": {
+        "edges": [
+            {
+                "type": "id",
+                "generated": true,
+                "id": "$Product:gid://shopify/Product/6635169185953.resourcePublicationsV2({\"first\":250,\"onlyPublished\":false}).edges.0",
+                "typename": "ResourcePublicationV2Edge"
+            },
+            {
+                "type": "id",
+                "generated": true,
+                "id": "$Product:gid://shopify/Product/6635169185953.resourcePublicationsV2({\"first\":250,\"onlyPublished\":false}).edges.1",
+                "typename": "ResourcePublicationV2Edge"
+            },
+            {
+                "type": "id",
+                "generated": true,
+                "id": "$Product:gid://shopify/Product/6635169185953.resourcePublicationsV2({\"first\":250,\"onlyPublished\":false}).edges.2",
+                "typename": "ResourcePublicationV2Edge"
+            }
+        ],
+        "__typename": "ResourcePublicationV2Connection"
+    },
+    "ProductOption:gid://shopify/ProductOption/8520350728353": {
+        "id": "gid://shopify/ProductOption/8520350728353",
+        "name": "Color",
+        "position": 1,
+        "values": {
+            "type": "json",
+            "json": [
+                "Gris",
+                "Negro",
+                "Azul"
+            ]
+        },
+        "__typename": "ProductOption"
+    },
+    "ProductOption:gid://shopify/ProductOption/8520350761121": {
+        "id": "gid://shopify/ProductOption/8520350761121",
+        "name": "Tama",
+        "position": 2,
+        "values": {
+            "type": "json",
+            "json": [
+                "15.6"
+            ]
+        },
+        "__typename": "ProductOption"
+    },
+    "$Product:gid://shopify/Product/6635169185953.seo": {
+        "title": "15-inch Portable Outdoor Waterproof Computer Bag Recreational Shoulde",
+        "description": "Lining Texture: Polyester Material: Polyester Popular Elements: Folding Pack Receiving Pack Shoulder strap root: double Functions: waterproof, breathable, wear-resistant, anti-theft, load-reducing, anti-seismic Hardness: Medium Luggage Shape: Vertical Square Whether there is a tie rod or not: No Size: 15.6 inches Openi",
+        "__typename": "SEO"
+    },
+    "$ROOT_QUERY.publications({\"first\":250}).edges.0": {
+        "node": {
+            "type": "id",
+            "generated": false,
+            "id": "Publication:gid://shopify/Publication/60536881313",
+            "typename": "Publication"
+        },
+        "__typename": "PublicationEdge"
+    },
+    "$ROOT_QUERY.publications({\"first\":250}).edges.1": {
+        "node": {
+            "type": "id",
+            "generated": false,
+            "id": "Publication:gid://shopify/Publication/74919084193",
+            "typename": "Publication"
+        },
+        "__typename": "PublicationEdge"
+    },
+    "$ROOT_QUERY.publications({\"first\":250}).edges.2": {
+        "node": {
+            "type": "id",
+            "generated": false,
+            "id": "Publication:gid://shopify/Publication/75210490017",
+            "typename": "Publication"
+        },
+        "__typename": "PublicationEdge"
+    },
+    "$ROOT_QUERY.publications({\"first\":250})": {
+        "edges": [
+            {
+                "type": "id",
+                "generated": true,
+                "id": "$ROOT_QUERY.publications({\"first\":250}).edges.0",
+                "typename": "PublicationEdge"
+            },
+            {
+                "type": "id",
+                "generated": true,
+                "id": "$ROOT_QUERY.publications({\"first\":250}).edges.1",
+                "typename": "PublicationEdge"
+            },
+            {
+                "type": "id",
+                "generated": true,
+                "id": "$ROOT_QUERY.publications({\"first\":250}).edges.2",
+                "typename": "PublicationEdge"
+            }
+        ],
+        "__typename": "PublicationConnection"
+    },
+    "ROOT_QUERY.metafieldDefinitionsCounts({\"ownerTypes\":[\"PRODUCT\"]}).0": {
+        "count": 0,
+        "__typename": "MetafieldDefinitionCountForOwnerType"
+    },
+    "$ROOT_QUERY.products({\"before\":\"eyJsaW1pdCI6MSwib3JkZXIiOiJpZCBhc2MiLCJsYXN0X2lkIjo2NjM1MTY5MTg1OTUzLCJsYXN0X3ZhbHVlIjo2NjM1MTY5MTg1OTUzLCJkaXJlY3Rpb24iOiJuZXh0In0=\",\"last\":1}).edges.0": {
+        "cursor": "eyJsYXN0X2lkIjo2NTkxMDc0ODI4NDQ5LCJsYXN0X3ZhbHVlIjoiNjU5MTA3NDgyODQ0OSJ9",
+        "node": {
+            "type": "id",
+            "generated": false,
+            "id": "Product:gid://shopify/Product/6591074828449",
+            "typename": "Product"
+        },
+        "__typename": "ProductEdge"
+    },
+    "Product:gid://shopify/Product/6591074828449": {
+        "id": "gid://shopify/Product/6591074828449",
+        "__typename": "Product"
+    },
+    "$ROOT_QUERY.products({\"before\":\"eyJsaW1pdCI6MSwib3JkZXIiOiJpZCBhc2MiLCJsYXN0X2lkIjo2NjM1MTY5MTg1OTUzLCJsYXN0X3ZhbHVlIjo2NjM1MTY5MTg1OTUzLCJkaXJlY3Rpb24iOiJuZXh0In0=\",\"last\":1})": {
+        "edges": [
+            {
+                "type": "id",
+                "generated": true,
+                "id": "$ROOT_QUERY.products({\"before\":\"eyJsaW1pdCI6MSwib3JkZXIiOiJpZCBhc2MiLCJsYXN0X2lkIjo2NjM1MTY5MTg1OTUzLCJsYXN0X3ZhbHVlIjo2NjM1MTY5MTg1OTUzLCJkaXJlY3Rpb24iOiJuZXh0In0=\",\"last\":1}).edges.0",
+                "typename": "ProductEdge"
+            }
+        ],
+        "__typename": "ProductConnection"
+    },
+    "$ROOT_QUERY.products({\"after\":\"eyJsaW1pdCI6MSwib3JkZXIiOiJpZCBhc2MiLCJsYXN0X2lkIjo2NjM1MTY5MTg1OTUzLCJsYXN0X3ZhbHVlIjo2NjM1MTY5MTg1OTUzLCJkaXJlY3Rpb24iOiJuZXh0In0=\",\"first\":1}).edges.0": {
+        "cursor": "eyJsYXN0X2lkIjo2NjM1MTgzMTQ1MTIxLCJsYXN0X3ZhbHVlIjoiNjYzNTE4MzE0NTEyMSJ9",
+        "node": {
+            "type": "id",
+            "generated": false,
+            "id": "Product:gid://shopify/Product/6635183145121",
+            "typename": "Product"
+        },
+        "__typename": "ProductEdge"
+    },
+    "Product:gid://shopify/Product/6635183145121": {
+        "id": "gid://shopify/Product/6635183145121",
+        "__typename": "Product"
+    },
+    "$ROOT_QUERY.products({\"after\":\"eyJsaW1pdCI6MSwib3JkZXIiOiJpZCBhc2MiLCJsYXN0X2lkIjo2NjM1MTY5MTg1OTUzLCJsYXN0X3ZhbHVlIjo2NjM1MTY5MTg1OTUzLCJkaXJlY3Rpb24iOiJuZXh0In0=\",\"first\":1})": {
+        "edges": [
+            {
+                "type": "id",
+                "generated": true,
+                "id": "$ROOT_QUERY.products({\"after\":\"eyJsaW1pdCI6MSwib3JkZXIiOiJpZCBhc2MiLCJsYXN0X2lkIjo2NjM1MTY5MTg1OTUzLCJsYXN0X3ZhbHVlIjo2NjM1MTY5MTg1OTUzLCJkaXJlY3Rpb24iOiJuZXh0In0=\",\"first\":1}).edges.0",
+                "typename": "ProductEdge"
+            }
+        ],
+        "__typename": "ProductConnection"
+    }
+}
