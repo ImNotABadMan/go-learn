@@ -18,6 +18,8 @@ func main() {
 
 	var url string
 
+	log.Println(os.Args)
+
 	if len(os.Args) > 1 {
 		url = os.Args[1]
 	}
