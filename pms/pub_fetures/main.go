@@ -21,7 +21,8 @@ func main() {
 	kafkaQueue := kafka.Kafka{}
 	producer := kafkaQueue.Producer()
 
-	pubIDs := createTask(db, 57938, 58011)
+	//pubIDs := createTask(db, 57938, 58011)
+	pubIDs := createTask(db, 56556, 58286)
 	if len(pubIDs) == 0 {
 		PrettyPrint("没有可创建的刊登")
 		return
