@@ -54,10 +54,16 @@ func main() {
 		go func(start int) {
 			for i := start; i < start+onceLen; i++ {
 				urlResponse, err := http.Get(urlSlice[i])
-				if err != nil || urlResponse.StatusCode != 200 {
-					fmt.Println("error index: ", i, urlSlice[i], urlResponse.Status, err)
+				if err != nil || urlResponse == nil {
+					fmt.Println("error index: ", i, urlSlice[i], urlResponse, err)
+					continue
 				}
-				fmt.Println("index: ", i, urlSlice[i], urlResponse.Status, err)
+
+				if urlResponse.StatusCode != 200 {
+					fmt.Println("error index: ", i, urlSlice[i], urlResponse.Status, err)
+				} else {
+					fmt.Println("index: ", i, urlSlice[i], urlResponse.Status, err)
+				}
 
 				time.Sleep(time.Millisecond * 100)
 			}
