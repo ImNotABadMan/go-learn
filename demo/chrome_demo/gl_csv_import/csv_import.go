@@ -218,9 +218,9 @@ func taskOpenMenuCsv() chromedp.Tasks {
 		chromedp.ActionFunc(logAction(">>>>>>>>>>>>>>>>>>>> Product IS Click")),
 		chromedp.Sleep(time.Millisecond * 2500),
 
-		chromedp.WaitVisible("/html/body/div/aside[1]/div/div[4]/div/div/nav/ul/li[1]/ul/li[2]/a/p"),
+		chromedp.WaitVisible("/html/body/div/aside[1]/div/div[4]/div/div/nav/ul/li[1]/ul/li[3]/a/p"),
 		chromedp.ActionFunc(logAction(">>>>>>>>>>>>>>>>>>>> Import Product IS VISIBLE")),
-		chromedp.Click("/html/body/div/aside[1]/div/div[4]/div/div/nav/ul/li[1]/ul/li[2]/a"),
+		chromedp.Click("/html/body/div/aside[1]/div/div[4]/div/div/nav/ul/li[1]/ul/li[3]/a"),
 		chromedp.ActionFunc(logAction(">>>>>>>>>>>>>>>>>>>> Import Product IS Click")),
 	}
 }
