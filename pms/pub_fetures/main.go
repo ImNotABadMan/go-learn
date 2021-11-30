@@ -17,12 +17,47 @@ import (
 )
 
 func main() {
+	//pubIDs := []int{600, 598, 597, 596, 595}
+	//pubIDs := []int{600}
+
+	pubIDs := make([]int, 150)
+	for i := 0; i < 150; i++ {
+		pubIDs[i] = i + 1
+	}
+	getTaskSendToKafka(pubIDs)
+
+	//createPubAndSendToKafka(56556, 58137)
+}
+
+func getTaskSendToKafka(pubIDs []int) {
+	db := Connect()
+	kafkaQueue := kafka.Kafka{}
+	producer := kafkaQueue.Producer()
+
+	if len(pubIDs) == 0 {
+		PrettyPrint("没有可创建的刊登")
+		return
+	}
+
+	// 发送到kafka
+	for _, pubID := range pubIDs {
+		task, taskProducts := getTask(db, pubID, 0)
+		sendToKafka(producer, task, taskProducts)
+	}
+
+	kafkaQueue.Close()
+
+	kafkaQueue.WaitProduce()
+}
+
+func createPubAndSendToKafka(minProductID int, maxProductID int) {
 	db := Connect()
 	kafkaQueue := kafka.Kafka{}
 	producer := kafkaQueue.Producer()
 
 	//pubIDs := createTask(db, 57938, 58011)
-	pubIDs := createTask(db, 56556, 58286)
+	pubIDs := createTask(db, minProductID, maxProductID)
+
 	if len(pubIDs) == 0 {
 		PrettyPrint("没有可创建的刊登")
 		return
@@ -129,6 +164,7 @@ func sendToKafka(kafkaQueue *kafka.Kafka, task tables.PublicationTask, taskProdu
 		phpMap = map[string]string{
 			"task_id":    strconv.FormatInt(int64(task.ID), 10),
 			"site_id":    strconv.FormatInt(int64(task.SiteID), 10),
+			"tries":      "0",
 			"admin_id":   strconv.FormatInt(int64(task.AdminID), 10),
 			"created_at": task.CreatedAt.String(),
 		}

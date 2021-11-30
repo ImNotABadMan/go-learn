@@ -147,14 +147,15 @@ func insertProduct(db *gorm.DB, product tables.Products, categories map[int][]ta
 		PublicationID: taskID,
 		ProductID:     product.ProductID,
 		Name:          product.Name,
-		IsLogistics:   product.Additional.OutStockStrategy,
-		IsTaxable:     rand.Intn(2),
-		IsGroup:       product.Isgroup,
-		Enabled:       1,
-		ProductCode:   product.ProductCode,
-		CurrencyID:    product.Prices[currencyID].CurrencyID,
-		CreatedAt:     time.Now(),
-		UpdatedAt:     time.Now(),
+		//IsLogistics:   product.Additional.OutStockStrategy,
+		IsLogistics: 1,
+		IsTaxable:   rand.Intn(2),
+		IsGroup:     product.Isgroup,
+		Enabled:     1,
+		ProductCode: product.ProductCode,
+		CurrencyID:  product.Prices[currencyID].CurrencyID,
+		CreatedAt:   time.Now(),
+		UpdatedAt:   time.Now(),
 	}
 
 	result := db.Create(&pubProduct)
