@@ -12,7 +12,7 @@ import (
 
 func main() {
 	var (
-		goCount = 5
+		goCount = 2
 	)
 	wg := sync.WaitGroup{}
 	wg.Add(goCount)
